@@ -1,0 +1,88 @@
+[{
+    "bone": "Frontal",
+    "bilateral": false
+}, {
+    "bone": "Parietal",
+    "bilateral": true
+}, {
+    "bone": "Temporal",
+    "bilateral": true
+}, {
+    "bone": "Occipital",
+    "bilateral": false
+}, {
+    "bone": "Esfenoide",
+    "bilateral": false
+}, {
+    "bone": "Etmoide",
+    "bilateral": false
+}, {
+    "bone": "Maxila",
+    "bilateral": true
+}, {
+    "bone": "Mandíbula",
+    "bilateral": true
+}, {
+    "bone": "Nasal",
+    "bilateral": true
+}, {
+    "bone": "Zigomático",
+    "bilateral": true
+}, {
+    "bone": "Lacrimal",
+    "bilateral": true
+}, {
+    "bone": "Palatino",
+    "bilateral": true
+}, {
+    "bone": "Cornete inferior",
+    "bilateral": true
+}, {
+    "bone": "Vômer",
+    "bilateral": false
+}, {
+    "bone": "Hióide",
+    "bilateral": false
+}, {
+    "bone": "Clavícula",
+    "bilateral": true
+}, {
+    "bone": "Escápula",
+    "bilateral": true
+}, {
+    "bone": "Esterno",
+    "bilateral": false
+}, {
+    "bone": "Costa",
+    "bilateral": true
+}, {
+    "bone": "Coxal",
+    "bilateral": true
+}, {
+    "bone": "Fêmur",
+    "bilateral": true
+}, {
+    "bone": "Patela",
+    "bilateral": true
+}, {
+    "bone": "Tíbia",
+    "bilateral": true
+}, {
+    "bone": "Fíbula",
+    "bilateral": true
+}, {
+    "bone": "Metacarpos",
+    "bilateral": true
+}, {
+    "bone": "Falanges das mãos",
+    "bilateral": true
+}, {
+    "bone": "Tarsos",
+    "bilateral": true
+}, {
+    "bone": "Metatarsos",
+    "bilateral": true
+}, {
+    "bone": "Falanges dos pés",
+    "bilateral": true
+}]
