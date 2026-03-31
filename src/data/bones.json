@@ -1,0 +1,828 @@
+{
+  "schema": "bones_v1",
+  "geradoEm": "2026-03-31",
+  "itens": [
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Frontal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Frontal_bone_lateral3.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Frontal_bone.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Parietal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Parietal_bone_lateral.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Parietal_bone_posterior2.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Temporal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Temporal_bone.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Temporal_bone.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Occipital",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Occipital_bone_090_000.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Occipital_bone_090_000.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Esfenoide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sphenoid_bone_-_lateral_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sphenoid_bone_-_superior_view_animation2.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Osso": "Etmoide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Ethmoid.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Rotation_ethmoid.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Nasal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Nasal_bone_anterior.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Nasal_bone_lateral.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Lacrimal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lacrimal_bone_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lacrimal_bone_-_lateral_view6.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Zigomático",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Zygomatic_bone_anterior.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Zygomatic_bone.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Maxila",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Maxilla_anterior.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Maxilla_anterior2.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Concha nasal inferior",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Inferior_nasal_concha_-_animation_01.gif",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Inferior_nasal_concha_-_animation_02.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Palatino",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Palatine_bone.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Palatine_bone_-_animation_01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Vômer",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Vomer_bone.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Vomer_-_animation_01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Osso": "Mandíbula",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Mandible_anterior.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Mandible_bone.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Osso hióide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hyoid_bone_-_animation.gif",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hyoid_bone_-_close-up_-_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Vértebras cervicais (CI–CVII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cervical_vertebrae_lateral2.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cervical_vertebrae_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Atlas (CI)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Atlas_(C1)_lateral.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Atlas_(C1)_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Áxis (CII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/C2_lateral.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/C2_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Vértebra proeminente (CVII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/C7_lateral.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/C7_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Vértebras torácicas (TI–TXII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Thoracic_vertebrae_lateral7.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Thoracic_vertebrae_-_close-up_-_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Vértebras lombares (LI–LV)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lumbar_vertebrae_anterior.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lumbar_vertebrae_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Vértebras sacrais / Osso sacro (SI–SV)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrum_-_anterior_view04.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrum_-_animation01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Osso": "Cóccix (CO I–CO IV)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Coccyx_-_anterior_view02.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Coccyx_-_animation01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Tórax",
+      "Osso": "Costelas (I–XII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_frontal.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_frontal.png"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+      }
+    },
+    {
+      "Grupo": "Tórax",
+      "Osso": "Costelas verdadeiras (I–VII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_frontal.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+      }
+    },
+    {
+      "Grupo": "Tórax",
+      "Osso": "Costelas falsas (VIII–X)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_frontal.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+      }
+    },
+    {
+      "Grupo": "Tórax",
+      "Osso": "Costelas flutuantes (XI–XII)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Floating_ribs_frontal.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Floating_ribs_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+      }
+    },
+    {
+      "Grupo": "Tórax",
+      "Osso": "Esterno",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sternum_front.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sternum_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D/Anatomography (DBCLS)",
+        "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+      }
+    },
+    {
+      "Grupo": "Membro superior > Cíngulo",
+      "Osso": "Escápula",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Scapula_-_posterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Scapula_-_anterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Cíngulo",
+      "Osso": "Clavícula",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Clavicle_-_superior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Clavicle_-_anterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Osso": "Úmero",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Humerus_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Humerus_-_posterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Osso": "Rádio",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Radius_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Radius_-_posterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Osso": "Ulna",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Ulna_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Ulna_-_animation.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Escafoide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Scaphoid_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Scaphoid_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Semilunar",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lunate_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Lunate_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Piramidal",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Triangular_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Triangular_bone_(left_hand)_03_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Pisiforme",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Pisiform_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Pisiform_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Osso": "Metacarpal I",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/First_metacarpal_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/First_metacarpal_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Osso": "Metacarpal II",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Second_metacarpal_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Second_metacarpal_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Osso": "Metacarpal III",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Third_metacarpal_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Third_metacarpal_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Osso": "Metacarpal IV",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fourth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fourth_metacarpal_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Osso": "Metacarpal V",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fifth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fifth_metacarpal_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Osso": "Falange proximal do dedo da mão",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Osso": "Falange média do dedo da mão",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Intermediate_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Intermediate_phalanges_of_the_hand_(left_hand)_01_palmar_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Osso": "Falange distal do dedo da mão",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Trapézio",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezium_bone_(left)01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezium_bone_(left)_-_animation01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Trapezoide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezoid_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezoid_bone_(left_hand)_-_animation01.gif"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Capitato",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Capitate_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Capitate_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Osso": "Hamato (com hâmulo)",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hamate_bone_(left_hand)_01_palmar_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hamate_bone_(left_hand)_02_dorsal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Cíngulo",
+      "Osso": "Osso do quadril",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hip_bone_anterior2.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hip_bone_posterior2.png"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Osso": "Fêmur",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Femur_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Femur_-_posterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Osso": "Patela",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Patella_ant.jpg",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Patella_post.jpg"
+      ],
+      "Copyright": {
+        "licenca": "desconhecida",
+        "fonte": "Wikimedia Commons",
+        "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Osso": "Tíbia",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Tibia_-_frontal_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Tibia_-_frontal_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Osso": "Fíbula",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fibula_-_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Fibula_-_posterior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Osso": "Tálus",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Talus_bone_01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Talus_bone_03_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Osso": "Navicular",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Navicular_bone01.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Navicular_bone02.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Osso": "Cuneiformes medial, intermédio e lateral",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone01.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone02.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Osso": "Cuboide",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cuboid_bone_01.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Cuboid_bone_02.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Osso": "Metatarsal I",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/First_metatarsal_bone01_superior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/First_metatarsal_bone02_inferior_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Osso": "Metatarsal II",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Second_metatarsal_bone01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Second_metatarsal_bone02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Osso": "Metatarsal III",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Third_metatarsal_bone01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Third_metatarsal_bone02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Osso": "Metatarsal IV",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fourth_metatarsal_bone01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fourth_metatarsal_bone02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Osso": "Metatarsal V",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fifth_metatarsal_bone01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fifth_metatarsal_bone02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Osso": "Falange proximal do dedo do pé",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_foot01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_foot02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Osso": "Falange média do dedo do pé",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Middle_phalanges_of_foot01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Middle_phalanges_of_foot02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Osso": "Falange distal do dedo do pé",
+      "Imagens": [
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_foot01_anterior_view.png",
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_foot02_lateral_view.png"
+      ],
+      "Copyright": {
+        "licenca": "CC BY-SA 2.1 JP",
+        "fonte": "BodyParts3D / Anatomography (DBCLS)"
+      }
+    }
+  ]
+}
