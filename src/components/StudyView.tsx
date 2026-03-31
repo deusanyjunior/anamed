@@ -8,6 +8,7 @@ export function StudyView({ items }: { items: BoneItem[] }) {
   const grouped = React.useMemo(() => groupBy(items, (i) => i.Grupo), [items]);
   const groups = React.useMemo(() => Object.keys(grouped).sort(), [grouped]);
   const [open, setOpen] = React.useState<string | null>(null);
+  const groupRefs = React.useRef<Record<string, HTMLDivElement | null>>({});
 
   return (
     <div className="card" style={{ padding: 16 }}>
@@ -27,11 +28,15 @@ export function StudyView({ items }: { items: BoneItem[] }) {
         {groups.map((g) => {
           const isOpen = open === g;
           return (
-            <div key={g} className="card" style={{ padding: 12, background: 'rgba(255,255,255,.03)' }}>
+            <div key={g} ref={(el) => { groupRefs.current[g] = el; }} className="card" style={{ padding: 12, background: 'rgba(255,255,255,.03)' }}>
               <button
                 className="btn"
                 style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
-                onClick={() => setOpen(isOpen ? null : g)}
+                onClick={() => {
+                  const next = isOpen ? null : g;
+                  setOpen(next);
+                  if (next) setTimeout(() => groupRefs.current[next]?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }}
                 aria-expanded={isOpen}
               >
                 <span style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
