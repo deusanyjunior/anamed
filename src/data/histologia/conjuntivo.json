@@ -1,0 +1,22 @@
+{
+  "schema": "conjuntivo_v1",
+  "geradoEm": "2026-03-31",
+  "itens": [
+    {
+      "Grupo": "Conceitos gerais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibroblast_(NIH_BioArt_152_-_629743).png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura conjuntiva em destaque"
+        }
+      ],
+      "Pergunta": "Qual célula é considerada a mais comum no tecido conjuntivo propriamente dito?",
+      "Resposta": "Fibroblasto"
+    }
+  ]
+}

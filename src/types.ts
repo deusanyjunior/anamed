@@ -4,17 +4,43 @@ export type CopyrightInfo = {
   observacao?: string;
 };
 
-export type BoneItem = {
+export type StudyItem = {
   Grupo: string;
-  Osso: string;
-  Imagens: [string, string];
-  Copyright: CopyrightInfo;
+  Pergunta: string;
+  Resposta: string;
+  Imagens: Array<{
+    url: string;
+    indicação?: string;
+    Copyright?: CopyrightInfo;
+  }>;
 };
 
-export type BonesDataset = {
+export type StudyDataset = {
   schema?: string;
   geradoEm?: string;
-  itens: BoneItem[];
+  itens: StudyItem[];
+};
+
+export type EstudoImagemItem = {
+  url: string;
+  Copyright?: CopyrightInfo;
+};
+
+export type EstudoRef = {
+  Titulo: string;
+  Exercicios: string;
+  Imagem?: string | EstudoImagemItem[];
+  Copyright?: CopyrightInfo;
+};
+
+export type Disciplina = {
+  Disciplina: string;
+  Estudos: EstudoRef[];
+};
+
+export type EstudosCatalog = {
+  schema?: string;
+  itens: Disciplina[];
 };
 
 export type QuizSession = {

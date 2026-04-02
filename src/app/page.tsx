@@ -1,37 +1,63 @@
-'use client';
-
-import React from 'react';
-import dataset from '@/data/bones.json';
-import type { BonesDataset, BoneItem } from '@/types';
-import { Tabs, type TabKey } from '@/components/Tabs';
-import { StudyView } from '@/components/StudyView';
-import { QuizView } from '@/components/QuizView';
+import Link from 'next/link';
+import { getDisciplinas, getEstudoCapa, slugify } from '@/lib/studies';
 
 export default function Page() {
-  const [tab, setTab] = React.useState<TabKey>('estudo');
-  const data = dataset as unknown as BonesDataset;
-  const items = (data.itens ?? []) as BoneItem[];
+  const disciplinas = getDisciplinas();
 
   return (
     <>
-      <h1 className="title">
-        <span className="brandBlue">Ana</span>
-        <span className="brandRed">Med</span>
-        {" "}— Criando sinapses com a Turma 94 da EPM
-      </h1>
+      <div className="small" style={{ marginBottom: 10 }}>
+        <span>Inicio</span>
+      </div>
       <p className="subtitle">
-        ✅ Estudo: Reveja cada grupo de ossos.<br />
-        ✅ Quiz: Avalie sua memorização.
+        Escolha uma disciplina para ver os estudos disponiveis.
       </p>
 
-      <Tabs value={tab} onChange={setTab} />
-
-      <div style={{ marginTop: 14 }}>
-        {tab === 'estudo' ? <StudyView items={items} /> : <QuizView items={items} />}
-      </div>
-
-      <div style={{ marginTop: 14 }} className="small">
-        Dataset em <code>src/data/bones.json</code>. Imagens via URLs externas (Wikimedia Commons).
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: 12
+        }}
+      >
+        {disciplinas.map((d) => {
+          const firstStudy = d.Estudos[0];
+          const capa = firstStudy ? getEstudoCapa(firstStudy) : { url: undefined };
+          return (
+            <Link
+              key={d.Disciplina}
+              href={`/disciplina/${slugify(d.Disciplina)}`}
+              className="card"
+              style={{ textDecoration: 'none', color: 'inherit', overflow: 'hidden', padding: 0 }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  aspectRatio: '16 / 9',
+                  background: 'rgba(255,255,255,.04)',
+                  overflow: 'hidden'
+                }}
+              >
+                {capa.url ? (
+                  <img
+                    src={capa.url}
+                    alt={d.Disciplina}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div className="small" style={{ padding: 12 }}>Sem imagem</div>
+                )}
+              </div>
+              <div style={{ padding: 14 }}>
+                <div className="pill">Disciplina</div>
+                <div style={{ fontWeight: 800, fontSize: 18, marginTop: 10 }}>{d.Disciplina}</div>
+                <div className="small" style={{ marginTop: 8 }}>
+                  {d.Estudos.length} estudo(s)
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </>
   );

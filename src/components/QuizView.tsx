@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import type { BoneItem, QuizSession } from '@/types';
+import type { StudyItem, QuizSession } from '@/types';
 import { normalizeAnswer, shuffle, groupBy, uid, formatDateTime } from './utils';
 
 type Phase = 'setup' | 'question' | 'reveal' | 'done';
@@ -15,28 +15,28 @@ const HISTORY_KEY = 'anatomia_quiz_history_v1';
 const SETTINGS_KEY = 'anatomia_quiz_settings_v1';
 const MAX_AUTO_RETRY_PER_ITEM = 2;
 
-function keyOf(it: BoneItem) {
-  return `${it.Grupo}|||${it.Osso}`;
+function keyOf(it: StudyItem) {
+  return `${it.Grupo}|||${it.Pergunta}|||${it.Resposta}`;
 }
 
-export function QuizView({ items }: { items: BoneItem[] }) {
+export function QuizView({ items }: { items: StudyItem[] }) {
   const grouped = React.useMemo(() => groupBy(items, (i) => i.Grupo), [items]);
   const groupNames = React.useMemo(() => Object.keys(grouped).sort(), [grouped]);
 
   const [selectedGroups, setSelectedGroups] = React.useState<string[]>([]);
   const [phase, setPhase] = React.useState<Phase>('setup');
 
-  const [deck, setDeck] = React.useState<BoneItem[]>([]);
+  const [deck, setDeck] = React.useState<StudyItem[]>([]);
   const [idx, setIdx] = React.useState(0);
   const [answer, setAnswer] = React.useState('');
   const [isCorrect, setIsCorrect] = React.useState<boolean | null>(null);
   const [score, setScore] = React.useState<Score>({ corretas: 0, respondidas: 0 });
 
   // Auto-retry state
-  const [retryQueue, setRetryQueue] = React.useState<BoneItem[]>([]);
+  const [retryQueue, setRetryQueue] = React.useState<StudyItem[]>([]);
   const [attemptsByKey, setAttemptsByKey] = React.useState<Record<string, number>>({});
   const [mistakeKeys, setMistakeKeys] = React.useState<Record<string, true>>({});
-  const [mistakeList, setMistakeList] = React.useState<BoneItem[]>([]);
+  const [mistakeList, setMistakeList] = React.useState<StudyItem[]>([]);
 
   // Session timing + history
   const [startedAt, setStartedAt] = React.useState<string>('');
@@ -82,8 +82,10 @@ export function QuizView({ items }: { items: BoneItem[] }) {
   }, [items, selectedGroups]);
 
   const current = deck[idx];
+  const currentImages = current?.Imagens ?? [];
+  const currentCopyright = currentImages[0]?.Copyright;
 
-  const startQuiz = (overrideItems?: BoneItem[]) => {
+  const startQuiz = (overrideItems?: StudyItem[]) => {
     const base = overrideItems ?? (filteredItems.length ? filteredItems : items);
     setDeck(shuffle(base));
     setIdx(0);
@@ -107,7 +109,7 @@ export function QuizView({ items }: { items: BoneItem[] }) {
     if (!current) return;
 
     const user = normalizeAnswer(answer);
-    const correct = normalizeAnswer(current.Osso);
+    const correct = normalizeAnswer(current.Resposta);
     const ok = user.length > 0 && (user === correct || correct.includes(user) || user.includes(correct));
 
     setIsCorrect(ok);
@@ -217,7 +219,7 @@ export function QuizView({ items }: { items: BoneItem[] }) {
           <div>
             <div className="pill">🧠 Quiz</div>
             <div className="small" style={{ marginTop: 8 }}>
-              Selecione os grupos e inicie. O quiz é randômico e refaz automaticamente os erros.
+              Selecione os grupos e inicie. O quiz e randomico e refaz automaticamente os erros.
             </div>
           </div>
           <div className="pill">{countSelected} itens selecionados</div>
@@ -232,7 +234,7 @@ export function QuizView({ items }: { items: BoneItem[] }) {
               <input type="checkbox" checked={allChecked} onChange={(e) => toggleAll(e.target.checked)} />
               Selecionar todos
             </label>
-            <div className="small">Você pode focar em “Crânio”, “Coluna” ou “Tórax”.</div>
+            <div className="small">Voce pode focar apenas nos grupos desejados.</div>
           </div>
 
           <div className="divider" />
@@ -314,7 +316,7 @@ export function QuizView({ items }: { items: BoneItem[] }) {
           <div>
             <div className="pill">✅ Quiz finalizado</div>
             <div className="small" style={{ marginTop: 8 }}>
-              Pontuação: <strong>{score.corretas}</strong> / {total} ({pct}%) • Erros: {total - score.corretas}
+              Pontuacao: <strong>{score.corretas}</strong> / {total} ({pct}%) - Erros: {total - score.corretas}
             </div>
             {canRedoMistakes && (
               <div className="small" style={{ marginTop: 6 }}>
@@ -352,7 +354,7 @@ export function QuizView({ items }: { items: BoneItem[] }) {
       <div className="row" style={{ alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
           <div className="pill">🧠 Quiz</div>
-          <div className="small" style={{ marginTop: 8 }}>Qual é o nome do osso?</div>
+          <div className="small" style={{ marginTop: 8 }}>{current.Pergunta}</div>
         </div>
 
         <div className="row" style={{ alignItems: 'center' }}>
@@ -364,22 +366,33 @@ export function QuizView({ items }: { items: BoneItem[] }) {
 
       <div className="divider" />
 
-      <div className="grid2">
-        <div className="imgWrap"><img src={current.Imagens[0]} alt="Imagem 1" /></div>
-        <div className="imgWrap"><img src={current.Imagens[1]} alt="Imagem 2" /></div>
+      <div style={{ display: 'grid', gap: 10, gridTemplateColumns: `repeat(${Math.min(currentImages.length, 2)}, 1fr)` }}>
+        {currentImages.map((img, i) => (
+          <div key={`${img.url}-${i}`}>
+            <div className="imgWrap"><img src={img.url} alt={`Imagem ${i + 1}`} /></div>
+            {img.indicação && (
+              <div className="small" style={{ marginTop: 6 }}>Indicação: {img.indicação}</div>
+            )}
+            {img.Copyright && (
+              <div className="small" style={{ marginTop: 4, opacity: 0.6 }}>
+                {img.Copyright.licenca} • {img.Copyright.fonte}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
       <div style={{ marginTop: 14 }}>
         {phase === 'question' && (
           <>
-            <label className="small" htmlFor="answer">Digite o nome do osso</label>
+            <label className="small" htmlFor="answer">Digite sua resposta</label>
             <div className="row" style={{ marginTop: 8 }}>
               <input
                 id="answer"
                 className="input"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
-                placeholder="Ex.: Esfenoide"
+                placeholder="Ex.: sua resposta"
                 onKeyDown={(e) => e.key === 'Enter' && submit()}
               />
               <button className="btn btnPrimary" onClick={submit} disabled={answer.trim().length === 0}>
@@ -393,9 +406,14 @@ export function QuizView({ items }: { items: BoneItem[] }) {
           <>
             <div className="row" style={{ alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <div style={{ fontWeight: 800, fontSize: 18 }}>Resposta correta: {current.Osso}</div>
+                <div style={{ fontWeight: 800, fontSize: 18 }}>Resposta correta: {current.Resposta}</div>
                 <div className="small">Grupo: {current.Grupo}</div>
-                <div className="small">Licença: {current.Copyright?.licenca} • Fonte: {current.Copyright?.fonte}</div>
+                {currentImages[0]?.indicação && (
+                  <div className="small">Indicação: {currentImages[0].indicação}</div>
+                )}
+                <div className="small">
+                  Licença: {currentCopyright?.licenca ?? 'desconhecida'} • Fonte: {currentCopyright?.fonte ?? 'Wikimedia Commons'}
+                </div>
               </div>
               <div className="pill" style={{ borderColor: isCorrect ? 'rgba(34,197,94,.55)' : 'rgba(239,68,68,.55)', color: isCorrect ? '#bbf7d0' : '#fecaca' }}>
                 {isCorrect ? '✔ Você acertou' : '✘ Você errou'}

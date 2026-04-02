@@ -1,0 +1,104 @@
+{
+  "schema": "epitelial_v1",
+  "geradoEm": "2026-03-31",
+  "itens": [
+    {
+      "Grupo": "Classificação > Número de camadas",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        }
+      ],
+      "Pergunta": "Tipo de epitélio quanto ao número de camadas",
+      "Resposta": "Simples"
+    },
+    {
+      "Grupo": "Classificação > Número de camadas",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_squamous_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_cuboidal_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        }
+      ],
+      "Pergunta": "Tipo de epitélio quanto ao número de camadas",
+      "Resposta": "Estratificado"
+    },
+    {
+      "Grupo": "Classificação > Tipo de epitélio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        }
+      ],
+      "Pergunta": "Epitélio fomado por células achatadas na superfície",
+      "Resposta": "Epitélio pavimentoso ou escamoso"
+    },
+    {
+      "Grupo": "Classificação > Tipo de epitélio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        }
+      ],
+      "Pergunta": "Epitélio formado por células com altura e largura semelhantes na superfície",
+      "Resposta": "Epitélio cúbico"
+    },
+    {
+      "Grupo": "Classificação > Tipo de epitélio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_columnar_epithelium.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Estrutura epitelial em destaque"
+        }
+      ],
+      "Pergunta": "Epitélio formado por células mais altas que largas na superfície",
+      "Resposta": "Epitélio cilíndrico, colunar ou prismático"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import type { BoneItem } from '@/types';
+import type { StudyItem } from '@/types';
 import { groupBy } from './utils';
 
-export function StudyView({ items }: { items: BoneItem[] }) {
+export function StudyView({ items }: { items: StudyItem[] }) {
   const grouped = React.useMemo(() => groupBy(items, (i) => i.Grupo), [items]);
   const groups = React.useMemo(() => Object.keys(grouped).sort(), [grouped]);
   const [open, setOpen] = React.useState<string | null>(null);
@@ -50,17 +50,38 @@ export function StudyView({ items }: { items: BoneItem[] }) {
               {isOpen && (
                 <div style={{ marginTop: 12, display: 'grid', gap: 12 }}>
                   {grouped[g].map((it) => (
-                    <div key={`${it.Grupo}-${it.Osso}`} className="card" style={{ padding: 12 }}>
+                    <div key={`${it.Grupo}-${it.Pergunta}-${it.Resposta}`} className="card" style={{ padding: 12 }}>
+                      {(() => {
+                        const firstImage = it.Imagens?.[0];
+                        const license = firstImage?.Copyright?.licenca ?? 'desconhecida';
+                        const source = firstImage?.Copyright?.fonte ?? 'Wikimedia Commons';
+                        return (
                       <div className="row" style={{ alignItems: 'baseline', justifyContent: 'space-between' }}>
                         <div>
-                          <div style={{ fontWeight: 800, fontSize: 16 }}>{it.Osso}</div>
-                          <div className="small">Licença: {it.Copyright?.licenca} • Fonte: {it.Copyright?.fonte}</div>
+                          <div style={{ fontWeight: 800, fontSize: 16 }}>{it.Resposta}</div>
+                          <div className="small">{it.Pergunta}</div>
+                          <div className="small">Licença: {license} • Fonte: {source}</div>
                         </div>
-                        <a className="btn" href={it.Imagens[0]} target="_blank" rel="noreferrer">Abrir</a>
+                        <a className="btn" href={firstImage?.url} target="_blank" rel="noreferrer">Abrir</a>
                       </div>
-                      <div className="grid2" style={{ marginTop: 12 }}>
-                        <div className="imgWrap"><img loading="lazy" src={it.Imagens[0]} alt={`${it.Osso} imagem 1`} /></div>
-                        <div className="imgWrap"><img loading="lazy" src={it.Imagens[1]} alt={`${it.Osso} imagem 2`} /></div>
+                        );
+                      })()}
+                      <div style={{ marginTop: 12, display: 'grid', gap: 10, gridTemplateColumns: `repeat(${Math.min((it.Imagens ?? []).length, 2)}, 1fr)` }}>
+                        {(it.Imagens ?? []).map((img, idx) => (
+                          <div key={`${img.url}-${idx}`}>
+                            <div className="imgWrap">
+                              <img loading="lazy" src={img.url} alt={`${it.Resposta} imagem ${idx + 1}`} />
+                            </div>
+                            {img.indicação && (
+                              <div className="small" style={{ marginTop: 6 }}>Indicação: {img.indicação}</div>
+                            )}
+                            {img.Copyright && (
+                              <div className="small" style={{ marginTop: 4, opacity: 0.6 }}>
+                                {img.Copyright.licenca} • {img.Copyright.fonte}
+                              </div>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   ))}

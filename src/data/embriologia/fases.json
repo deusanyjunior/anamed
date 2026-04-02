@@ -1,0 +1,54 @@
+{
+  "schema": "embriologia_fases_v1",
+  "geradoEm": "2026-03-31",
+  "itens": [
+    {
+      "Grupo": "Primeira semana",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Blastocyst.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Fase do desenvolvimento em destaque"
+        }
+      ],
+      "Pergunta": "Estrutura com trofoblasto, embrioblasto e blastocele",
+      "Resposta": "Blastocisto"
+    },
+    {
+      "Grupo": "Terceira semana",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gastrulation.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Fase do desenvolvimento em destaque"
+        }
+      ],
+      "Pergunta": "Processo que origina os três folhetos germinativos",
+      "Resposta": "Gastrulação"
+    },
+    {
+      "Grupo": "Terceira a quarta semana",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gray18.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Fase do desenvolvimento em destaque"
+        }
+      ],
+      "Pergunta": "Processo de formação do tubo neural a partir da placa neural",
+      "Resposta": "Neurulação"
+    }
+  ]
+}

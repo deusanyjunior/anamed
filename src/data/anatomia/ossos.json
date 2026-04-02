@@ -1,0 +1,1630 @@
+{
+  "schema": "bones_v1",
+  "geradoEm": "2026-03-31",
+  "itens": [
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frontal_bone_lateral3.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frontal_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso frontal"
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Parietal_bone_lateral.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Parietal_bone_posterior2.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso parietal"
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temporal_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Temporal_bone_-_animation_02.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso temporal"
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Occipital_bone_090_000.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Occipital_bone_-_animation_02.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso occipital"
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sphenoid_bone_-_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sphenoid_bone_-_superior_view_animation2.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso esfenóide"
+    },
+    {
+      "Grupo": "Crânio > Neurocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ethmoid.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rotation_ethmoid.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso etmóide"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasal_bone_anterior.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nasal_bone_lateral.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso nasal"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lacrimal_bone_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lacrimal_bone_-_lateral_view6.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso lacrimal"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zygomatic_bone_anterior.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zygomatic_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso zigomático"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maxilla_anterior.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maxilla_anterior2.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso maxilar"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inferior_nasal_concha_-_animation_01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inferior_nasal_concha_-_animation_02.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso concha nasal inferior"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palatine_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palatine_bone_-_animation_01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso palatino"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vomer_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vomer_-_animation_01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em branco"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso vômer"
+    },
+    {
+      "Grupo": "Crânio > Viscerocrânio",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mandible_anterior.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mandible_bone.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Mandíbula"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyoid_bone_-_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hyoid_bone_-_close-up_-_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso hióide"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cervical_vertebrae_lateral2.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cervical_vertebrae_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das vértebras cervicais (CI–CVII)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Atlas_(C1)_lateral.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Atlas_(C1)_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso atlas (CI)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/C2_lateral.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/C2_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso áxis (CII)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/C7_lateral.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/C7_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso da vértebra proeminente (CVII)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thoracic_vertebrae_lateral7.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em azul e amarelo"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thoracic_vertebrae_-_close-up_-_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso girando"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das vértebras torácicas (TI–TXII)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lumbar_vertebrae_anterior.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lumbar_vertebrae_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Vértebras lombares (LI–LV)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrum_-_anterior_view04.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrum_-_animation01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Vértebras sacrais / Osso sacro (SI–SV)"
+    },
+    {
+      "Grupo": "Coluna vertebral",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Coccyx_-_anterior_view02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Coccyx_-_animation01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso cóccix (CO I–CO IV)"
+    },
+    {
+      "Grupo": "Tórax",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_frontal.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_frontal.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das costelas (I–XII)"
+    },
+    {
+      "Grupo": "Tórax",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_frontal.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/True_ribs_animation.gif",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das costelas verdadeiras (I–VII)"
+    },
+    {
+      "Grupo": "Tórax",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_frontal.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/False_ribs_animation.gif",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das costelas falsas (VIII–X)"
+    },
+    {
+      "Grupo": "Tórax",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Floating_ribs_frontal.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Floating_ribs_animation.gif",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Não confirmei a licença deste arquivo específico nesta conversação; consulte a página do arquivo."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das costelas flutuantes (XI–XII)"
+    },
+    {
+      "Grupo": "Tórax",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sternum_front.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sternum_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D/Anatomography (DBCLS)",
+            "observacao": "Verifique a página do arquivo no Wikimedia Commons para requisitos de atribuição específicos."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso esterno"
+    },
+    {
+      "Grupo": "Membro superior > Cíngulo",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scapula_-_posterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scapula_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso escápula"
+    },
+    {
+      "Grupo": "Membro superior > Cíngulo",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Clavicle_-_superior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Clavicle_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso clavícula"
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Humerus_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Humerus_-_posterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso úmero"
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Radius_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Radius_-_posterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso rádio"
+    },
+    {
+      "Grupo": "Membro superior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulna_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ulna_-_animation.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso ulna"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scaphoid_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scaphoid_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso escafoide"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunate_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lunate_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso semilunar"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Triangular_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Triangular_bone_(left_hand)_03_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso piramidal"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pisiform_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pisiform_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso pisiforme"
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/First_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/First_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metacarpal I"
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Second_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Second_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metacarpal II"
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Third_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Third_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metacarpal III"
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fourth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fourth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metacarpal IV"
+    },
+    {
+      "Grupo": "Membro superior > Ossos metacarpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fifth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fifth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metacarpal V"
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos da falanges proximais dos dedos da mão"
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Intermediate_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Intermediate_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos da falange média dos dedos da mão"
+    },
+    {
+      "Grupo": "Membro superior > Falanges da mão",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das falanges distais dos dedos da mão"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezium_bone_(left)01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezium_bone_(left)_-_animation01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso trapézio"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezoid_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trapezoid_bone_(left_hand)_-_animation01.gif",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso trapezóide"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capitate_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Capitate_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso capitato"
+    },
+    {
+      "Grupo": "Membro superior > Ossos carpais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamate_bone_(left_hand)_01_palmar_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamate_bone_(left_hand)_02_dorsal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso hamato"
+    },
+    {
+      "Grupo": "Membro inferior > Cíngulo",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hip_bone_anterior2.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hip_bone_posterior2.png",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso do quadril"
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Femur_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Femur_-_posterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso fêmur"
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Patella_ant.jpg",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Face anterior do osso"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Patella_post.jpg",
+          "Copyright": {
+            "licenca": "desconhecida",
+            "fonte": "Wikimedia Commons",
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+          },
+          "indicação": "Face posterior do osso"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso patela"
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tibia_-_frontal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tibia_-_frontal_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso tíbia"
+    },
+    {
+      "Grupo": "Membro inferior > Parte livre",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibula_-_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibula_-_posterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso fíbula"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Talus_bone_01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Talus_bone_03_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso tálus"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navicular_bone01.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navicular_bone02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso navicular"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone01.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso cuneiforme medial"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone01.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em amarelo"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em amarelo"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso cuneiforme intermédio"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone01.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuneiform_bone02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso cuneiforme lateral"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos tarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuboid_bone_01.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cuboid_bone_02.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso cuboide"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/First_metatarsal_bone01_superior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/First_metatarsal_bone02_inferior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metatarsal I"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Second_metatarsal_bone01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Second_metatarsal_bone02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metatarsal II"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Third_metatarsal_bone01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Third_metatarsal_bone02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metatarsal III"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fourth_metatarsal_bone01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fourth_metatarsal_bone02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metatarsal IV"
+    },
+    {
+      "Grupo": "Membro inferior > Ossos metatarsais",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fifth_metatarsal_bone01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Left_Fifth_metatarsal_bone02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em verde"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso metatarsal V"
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_foot01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Proximal_phalanges_of_foot02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das falanges proximais dos dedos do pé"
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Middle_phalanges_of_foot01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Middle_phalanges_of_foot02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das falanges médias dos dedos do pé"
+    },
+    {
+      "Grupo": "Membro inferior > Falanges do pé",
+      "Imagens": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_foot01_anterior_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Distal_phalanges_of_foot02_lateral_view.png",
+          "Copyright": {
+            "licenca": "CC BY-SA 2.1 JP",
+            "fonte": "BodyParts3D / Anatomography (DBCLS)"
+          },
+          "indicação": "Osso em vermelho"
+        }
+      ],
+      "Pergunta": "Nome do osso",
+      "Resposta": "Ossos das falanges distais dos dedos do pé"
+    }
+  ]
+}
