@@ -369,13 +369,16 @@ export function QuizView({ items }: { items: StudyItem[] }) {
       <div style={{ display: 'grid', gap: 10, gridTemplateColumns: `repeat(${Math.min(currentImages.length, 2)}, 1fr)` }}>
         {currentImages.map((img, i) => (
           <div key={`${img.url}-${i}`}>
-            <div className="imgWrap"><img src={img.url} alt={`Imagem ${i + 1}`} /></div>
             {img.indicação && (
               <div className="small" style={{ marginTop: 6 }}>Indicação: {img.indicação}</div>
             )}
+            <div className="imgWrap"><img src={img.url} alt={`Imagem ${i + 1}`} /></div>
             {img.Copyright && (
               <div className="small" style={{ marginTop: 4, opacity: 0.6 }}>
-                {img.Copyright.licenca} • {img.Copyright.fonte}
+                Licença: {img.Copyright.licenca} • Fonte: {img.Copyright.fonte}
+                {img.Copyright.urlOriginal && (
+                  <> • <a href={img.Copyright.urlOriginal} target="_blank" rel="noreferrer">fonte original</a></>
+                )}
               </div>
             )}
           </div>

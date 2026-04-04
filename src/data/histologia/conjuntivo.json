@@ -6,11 +6,12 @@
       "Grupo": "Conceitos gerais",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibroblast_(NIH_BioArt_152_-_629743).png",
+          "url": "/assets/histologia/conjuntivo/Fibroblast_(NIH_BioArt_152_-_629743).png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
-            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
+            "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença.",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Fibroblast_(NIH_BioArt_152_-_629743).png"
           },
           "indicação": "Estrutura conjuntiva em destaque"
         }

@@ -1,6 +1,7 @@
 export type CopyrightInfo = {
   licenca: string;
   fonte: string;
+  urlOriginal?: string;
   observacao?: string;
 };
 

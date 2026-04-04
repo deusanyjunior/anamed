@@ -6,19 +6,21 @@
       "Grupo": "Classificação > Número de camadas",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
+          "url": "/assets/histologia/epitelial/Simple_squamous_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
         },
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
+          "url": "/assets/histologia/epitelial/Simple_cuboidal_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
@@ -31,19 +33,21 @@
       "Grupo": "Classificação > Número de camadas",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_squamous_epithelium.png",
+          "url": "/assets/histologia/epitelial/Stratified_squamous_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_squamous_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
         },
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_cuboidal_epithelium.png",
+          "url": "/assets/histologia/epitelial/Stratified_cuboidal_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Stratified_cuboidal_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
@@ -56,10 +60,11 @@
       "Grupo": "Classificação > Tipo de epitélio",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
+          "url": "/assets/histologia/epitelial/Simple_squamous_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_squamous_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
@@ -72,10 +77,11 @@
       "Grupo": "Classificação > Tipo de epitélio",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
+          "url": "/assets/histologia/epitelial/Simple_cuboidal_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_cuboidal_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"
@@ -88,10 +94,11 @@
       "Grupo": "Classificação > Tipo de epitélio",
       "Imagens": [
         {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_columnar_epithelium.png",
+          "url": "/assets/histologia/epitelial/Simple_columnar_epithelium.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Special:FilePath/Simple_columnar_epithelium.png",
             "observacao": "Consulte a página do arquivo no Wikimedia Commons para requisitos de atribuição/licença."
           },
           "indicação": "Estrutura epitelial em destaque"

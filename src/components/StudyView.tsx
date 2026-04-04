@@ -60,7 +60,6 @@ export function StudyView({ items }: { items: StudyItem[] }) {
                         <div>
                           <div style={{ fontWeight: 800, fontSize: 16 }}>{it.Resposta}</div>
                           <div className="small">{it.Pergunta}</div>
-                          <div className="small">Licença: {license} • Fonte: {source}</div>
                         </div>
                         <a className="btn" href={firstImage?.url} target="_blank" rel="noreferrer">Abrir</a>
                       </div>
@@ -69,15 +68,18 @@ export function StudyView({ items }: { items: StudyItem[] }) {
                       <div style={{ marginTop: 12, display: 'grid', gap: 10, gridTemplateColumns: `repeat(${Math.min((it.Imagens ?? []).length, 2)}, 1fr)` }}>
                         {(it.Imagens ?? []).map((img, idx) => (
                           <div key={`${img.url}-${idx}`}>
-                            <div className="imgWrap">
-                              <img loading="lazy" src={img.url} alt={`${it.Resposta} imagem ${idx + 1}`} />
-                            </div>
                             {img.indicação && (
                               <div className="small" style={{ marginTop: 6 }}>Indicação: {img.indicação}</div>
                             )}
+                            <div className="imgWrap">
+                              <img loading="lazy" src={img.url} alt={`${it.Resposta} imagem ${idx + 1}`} />
+                            </div>
                             {img.Copyright && (
                               <div className="small" style={{ marginTop: 4, opacity: 0.6 }}>
-                                {img.Copyright.licenca} • {img.Copyright.fonte}
+                                Licença: {img.Copyright.licenca} • Fonte: {img.Copyright.fonte}
+                                {img.Copyright.urlOriginal && (
+                                  <> • <a href={img.Copyright.urlOriginal} target="_blank" rel="noreferrer">fonte original</a></>
+                                )}
                               </div>
                             )}
                           </div>
