@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnaMed — Criando sinapses com a Turma 94 da EPM</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <header style="margin-bottom:18px">
+    <h1 class="title" id="site-title" style="cursor:pointer">
+      <span class="brandBlue">Ana</span><span class="brandRed">Med</span>
+      &nbsp;— Criando sinapses com a Turma 94 da EPM
+    </h1>
+  </header>
+
+  <!-- HOME: lista de disciplinas -->
+  <div id="view-home">
+    <p class="subtitle">Escolha uma disciplina para ver os estudos disponíveis.</p>
+    <div class="grid-auto" id="disciplinas-grid"></div>
+  </div>
+
+  <!-- DISCIPLINA: lista de estudos -->
+  <div id="view-disciplina">
+    <div class="breadcrumb">
+      <span id="bc-home">Início</span> &rsaquo; <span id="bc-disciplina"></span>
+    </div>
+    <div class="grid-auto" id="estudos-grid"></div>
+  </div>
+
+  <!-- ESTUDO: abas Estudo / Quiz -->
+  <div id="view-estudo">
+    <div class="breadcrumb">
+      <span id="bc2-home">Início</span> &rsaquo;
+      <span id="bc2-disciplina"></span> &rsaquo;
+      <span id="bc2-estudo"></span>
+    </div>
+
+    <div class="row" style="gap:8px;margin-bottom:18px">
+      <button class="btn btn-primary" id="tab-study" onclick="App.showTab('study')">Estudo</button>
+      <button class="btn" id="tab-quiz"  onclick="App.showTab('quiz')">Quiz</button>
+    </div>
+
+    <!-- MODO ESTUDO -->
+    <div id="panel-study">
+      <div id="study-content"></div>
+    </div>
+
+    <!-- MODO QUIZ -->
+    <div id="panel-quiz" style="display:none">
+      <!-- setup -->
+      <div id="quiz-setup">
+        <p class="subtitle">Selecione os grupos que deseja incluir no quiz.</p>
+        <fieldset style="margin-bottom:14px">
+          <legend>Grupos</legend>
+          <div id="quiz-groups"></div>
+        </fieldset>
+        <button class="btn btn-primary" onclick="App.startQuiz()">Iniciar Quiz</button>
+      </div>
+      <!-- pergunta -->
+      <div id="quiz-question" style="display:none">
+        <div class="small" id="quiz-progress" style="margin-bottom:10px"></div>
+        <div class="grid2" id="quiz-images" style="margin-bottom:14px"></div>
+        <p style="margin:0 0 6px;font-weight:700" id="quiz-pergunta"></p>
+        <form onsubmit="App.submitAnswer(event)">
+          <input class="input" id="quiz-input" autocomplete="off" placeholder="Digite a resposta…" style="margin-bottom:10px" />
+          <button class="btn btn-primary" type="submit">Confirmar</button>
+        </form>
+      </div>
+      <!-- reveal -->
+      <div id="quiz-reveal" style="display:none">
+        <div class="grid2" id="quiz-reveal-images" style="margin-bottom:14px"></div>
+        <p style="margin:0 0 4px;font-weight:700" id="quiz-reveal-pergunta"></p>
+        <p class="small" style="margin:0 0 10px">Sua resposta: <strong id="quiz-user-answer"></strong></p>
+        <p style="margin:0 0 14px">Resposta correta: <strong id="quiz-correct-answer"></strong></p>
+        <div id="quiz-reveal-verdict" style="margin-bottom:14px"></div>
+        <button class="btn btn-primary" onclick="App.nextQuestion()">Próxima</button>
+      </div>
+      <!-- done -->
+      <div id="quiz-done" style="display:none">
+        <h2 style="margin:0 0 10px">Quiz concluído!</h2>
+        <div id="quiz-score" style="margin-bottom:18px"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="App.showTab('quiz')">Novo Quiz</button>
+          <button class="btn btn-danger"  id="btn-retry-errors" onclick="App.retryErrors()" style="display:none">Refazer erros</button>
+        </div>
+        <div style="margin-top:28px">
+          <h3 style="margin:0 0 10px;font-size:15px">Histórico de sessões</h3>
+          <div id="history-table"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

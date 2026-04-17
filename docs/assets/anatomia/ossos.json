@@ -6,7 +6,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Frontal_bone_lateral3.png",
+          "url": "assets/anatomia/ossos/Frontal_bone_lateral3.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -16,7 +16,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Frontal_bone.png",
+          "url": "assets/anatomia/ossos/Frontal_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -33,7 +33,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Parietal_bone_lateral.png",
+          "url": "assets/anatomia/ossos/Parietal_bone_lateral.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -43,7 +43,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Parietal_bone_posterior2.png",
+          "url": "assets/anatomia/ossos/Parietal_bone_posterior2.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -60,7 +60,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Temporal_bone.png",
+          "url": "assets/anatomia/ossos/Temporal_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -70,7 +70,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Temporal_bone_-_animation_02.gif",
+          "url": "assets/anatomia/ossos/Temporal_bone_-_animation_02.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -87,7 +87,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Occipital_bone_090_000.png",
+          "url": "assets/anatomia/ossos/Occipital_bone_090_000.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -97,7 +97,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Occipital_bone_-_animation_02.gif",
+          "url": "assets/anatomia/ossos/Occipital_bone_-_animation_02.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -114,7 +114,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Sphenoid_bone_-_lateral_view.png",
+          "url": "assets/anatomia/ossos/Sphenoid_bone_-_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -124,7 +124,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Sphenoid_bone_-_superior_view_animation2.gif",
+          "url": "assets/anatomia/ossos/Sphenoid_bone_-_superior_view_animation2.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -141,7 +141,7 @@
       "Grupo": "Crânio > Neurocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Ethmoid.png",
+          "url": "assets/anatomia/ossos/Ethmoid.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -151,7 +151,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Rotation_ethmoid.gif",
+          "url": "assets/anatomia/ossos/Rotation_ethmoid.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -168,7 +168,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Nasal_bone_anterior.png",
+          "url": "assets/anatomia/ossos/Nasal_bone_anterior.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -178,7 +178,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Nasal_bone_lateral.png",
+          "url": "assets/anatomia/ossos/Nasal_bone_lateral.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -195,7 +195,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Lacrimal_bone_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Lacrimal_bone_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -205,7 +205,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Lacrimal_bone_-_lateral_view6.png",
+          "url": "assets/anatomia/ossos/Lacrimal_bone_-_lateral_view6.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -222,7 +222,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Zygomatic_bone_anterior.png",
+          "url": "assets/anatomia/ossos/Zygomatic_bone_anterior.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -232,7 +232,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Zygomatic_bone.png",
+          "url": "assets/anatomia/ossos/Zygomatic_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -249,7 +249,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Maxilla_anterior.png",
+          "url": "assets/anatomia/ossos/Maxilla_anterior.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -259,7 +259,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Maxilla_anterior2.png",
+          "url": "assets/anatomia/ossos/Maxilla_anterior2.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -276,7 +276,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Inferior_nasal_concha_-_animation_01.gif",
+          "url": "assets/anatomia/ossos/Inferior_nasal_concha_-_animation_01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -286,7 +286,7 @@
           "indicação": "Osso em branco"
         },
         {
-          "url": "/assets/anatomia/ossos/Inferior_nasal_concha_-_animation_02.gif",
+          "url": "assets/anatomia/ossos/Inferior_nasal_concha_-_animation_02.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -303,7 +303,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Palatine_bone.png",
+          "url": "assets/anatomia/ossos/Palatine_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -313,7 +313,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Palatine_bone_-_animation_01.gif",
+          "url": "assets/anatomia/ossos/Palatine_bone_-_animation_01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -330,7 +330,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Vomer_bone.png",
+          "url": "assets/anatomia/ossos/Vomer_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -340,7 +340,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Vomer_-_animation_01.gif",
+          "url": "assets/anatomia/ossos/Vomer_-_animation_01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -357,7 +357,7 @@
       "Grupo": "Crânio > Viscerocrânio",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Mandible_anterior.png",
+          "url": "assets/anatomia/ossos/Mandible_anterior.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -367,7 +367,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Mandible_bone.png",
+          "url": "assets/anatomia/ossos/Mandible_bone.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -384,7 +384,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Hyoid_bone_-_animation.gif",
+          "url": "assets/anatomia/ossos/Hyoid_bone_-_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -394,7 +394,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Hyoid_bone_-_close-up_-_animation.gif",
+          "url": "assets/anatomia/ossos/Hyoid_bone_-_close-up_-_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -411,7 +411,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Cervical_vertebrae_lateral2.png",
+          "url": "assets/anatomia/ossos/Cervical_vertebrae_lateral2.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -421,7 +421,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Cervical_vertebrae_animation.gif",
+          "url": "assets/anatomia/ossos/Cervical_vertebrae_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -438,7 +438,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Atlas_(C1)_lateral.png",
+          "url": "assets/anatomia/ossos/Atlas_(C1)_lateral.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -448,7 +448,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Atlas_(C1)_animation.gif",
+          "url": "assets/anatomia/ossos/Atlas_(C1)_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -465,7 +465,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/C2_lateral.png",
+          "url": "assets/anatomia/ossos/C2_lateral.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -475,7 +475,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/C2_animation.gif",
+          "url": "assets/anatomia/ossos/C2_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -492,7 +492,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/C7_lateral.png",
+          "url": "assets/anatomia/ossos/C7_lateral.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -502,7 +502,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/C7_animation.gif",
+          "url": "assets/anatomia/ossos/C7_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -519,7 +519,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Thoracic_vertebrae_lateral7.png",
+          "url": "assets/anatomia/ossos/Thoracic_vertebrae_lateral7.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -529,7 +529,7 @@
           "indicação": "Osso em azul e amarelo"
         },
         {
-          "url": "/assets/anatomia/ossos/Thoracic_vertebrae_-_close-up_-_animation.gif",
+          "url": "assets/anatomia/ossos/Thoracic_vertebrae_-_close-up_-_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -546,7 +546,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Lumbar_vertebrae_anterior.png",
+          "url": "assets/anatomia/ossos/Lumbar_vertebrae_anterior.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -556,7 +556,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Lumbar_vertebrae_animation.gif",
+          "url": "assets/anatomia/ossos/Lumbar_vertebrae_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -573,7 +573,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Sacrum_-_anterior_view04.png",
+          "url": "assets/anatomia/ossos/Sacrum_-_anterior_view04.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -583,7 +583,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Sacrum_-_animation01.gif",
+          "url": "assets/anatomia/ossos/Sacrum_-_animation01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -600,7 +600,7 @@
       "Grupo": "Coluna vertebral",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Coccyx_-_anterior_view02.png",
+          "url": "assets/anatomia/ossos/Coccyx_-_anterior_view02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -610,7 +610,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Coccyx_-_animation01.gif",
+          "url": "assets/anatomia/ossos/Coccyx_-_animation01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -627,7 +627,7 @@
       "Grupo": "Tórax",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/True_ribs_frontal.png",
+          "url": "assets/anatomia/ossos/True_ribs_frontal.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -637,7 +637,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/False_ribs_frontal.png",
+          "url": "assets/anatomia/ossos/False_ribs_frontal.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -654,7 +654,7 @@
       "Grupo": "Tórax",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/True_ribs_frontal.png",
+          "url": "assets/anatomia/ossos/True_ribs_frontal.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -664,7 +664,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/True_ribs_animation.gif",
+          "url": "assets/anatomia/ossos/True_ribs_animation.gif",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -681,7 +681,7 @@
       "Grupo": "Tórax",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/False_ribs_frontal.png",
+          "url": "assets/anatomia/ossos/False_ribs_frontal.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -691,7 +691,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/False_ribs_animation.gif",
+          "url": "assets/anatomia/ossos/False_ribs_animation.gif",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -708,7 +708,7 @@
       "Grupo": "Tórax",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Floating_ribs_frontal.png",
+          "url": "assets/anatomia/ossos/Floating_ribs_frontal.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -718,7 +718,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Floating_ribs_animation.gif",
+          "url": "assets/anatomia/ossos/Floating_ribs_animation.gif",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -735,7 +735,7 @@
       "Grupo": "Tórax",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Sternum_front.png",
+          "url": "assets/anatomia/ossos/Sternum_front.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -745,7 +745,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Sternum_animation.gif",
+          "url": "assets/anatomia/ossos/Sternum_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D/Anatomography (DBCLS)",
@@ -762,7 +762,7 @@
       "Grupo": "Membro superior > Cíngulo",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Scapula_-_posterior_view.png",
+          "url": "assets/anatomia/ossos/Scapula_-_posterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -771,7 +771,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Scapula_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Scapula_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -787,7 +787,7 @@
       "Grupo": "Membro superior > Cíngulo",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Clavicle_-_superior_view.png",
+          "url": "assets/anatomia/ossos/Clavicle_-_superior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -796,7 +796,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Clavicle_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Clavicle_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -812,7 +812,7 @@
       "Grupo": "Membro superior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Humerus_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Humerus_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -821,7 +821,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Humerus_-_posterior_view.png",
+          "url": "assets/anatomia/ossos/Humerus_-_posterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -837,7 +837,7 @@
       "Grupo": "Membro superior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Radius_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Radius_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -846,7 +846,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Radius_-_posterior_view.png",
+          "url": "assets/anatomia/ossos/Radius_-_posterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -862,7 +862,7 @@
       "Grupo": "Membro superior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Ulna_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Ulna_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -871,7 +871,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Ulna_-_animation.gif",
+          "url": "assets/anatomia/ossos/Ulna_-_animation.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -887,7 +887,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Scaphoid_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Scaphoid_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -896,7 +896,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Scaphoid_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Scaphoid_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -912,7 +912,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Lunate_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Lunate_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -921,7 +921,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Lunate_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Lunate_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -937,7 +937,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Triangular_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Triangular_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -946,7 +946,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Triangular_bone_(left_hand)_03_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Triangular_bone_(left_hand)_03_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -962,7 +962,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Pisiform_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Pisiform_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -971,7 +971,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Pisiform_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Pisiform_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -987,7 +987,7 @@
       "Grupo": "Membro superior > Ossos metacarpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/First_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/First_metacarpal_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -996,7 +996,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/First_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/First_metacarpal_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1012,7 +1012,7 @@
       "Grupo": "Membro superior > Ossos metacarpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Second_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Second_metacarpal_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1021,7 +1021,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Second_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Second_metacarpal_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1037,7 +1037,7 @@
       "Grupo": "Membro superior > Ossos metacarpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Third_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Third_metacarpal_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1046,7 +1046,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Third_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Third_metacarpal_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1062,7 +1062,7 @@
       "Grupo": "Membro superior > Ossos metacarpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Fourth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Fourth_metacarpal_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1071,7 +1071,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Fourth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Fourth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1087,7 +1087,7 @@
       "Grupo": "Membro superior > Ossos metacarpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Fifth_metacarpal_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Fifth_metacarpal_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1096,7 +1096,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Fifth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Fifth_metacarpal_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1112,7 +1112,7 @@
       "Grupo": "Membro superior > Falanges da mão",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Proximal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Proximal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1121,7 +1121,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Proximal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Proximal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1137,7 +1137,7 @@
       "Grupo": "Membro superior > Falanges da mão",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Intermediate_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Intermediate_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1146,7 +1146,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Intermediate_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Intermediate_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1162,7 +1162,7 @@
       "Grupo": "Membro superior > Falanges da mão",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Distal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Distal_phalanges_of_the_hand_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1171,7 +1171,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Distal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Distal_phalanges_of_the_hand_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1187,7 +1187,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Trapezium_bone_(left)01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Trapezium_bone_(left)01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1196,7 +1196,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Trapezium_bone_(left)_-_animation01.gif",
+          "url": "assets/anatomia/ossos/Trapezium_bone_(left)_-_animation01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1212,7 +1212,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Trapezoid_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Trapezoid_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1221,7 +1221,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Trapezoid_bone_(left_hand)_-_animation01.gif",
+          "url": "assets/anatomia/ossos/Trapezoid_bone_(left_hand)_-_animation01.gif",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1237,7 +1237,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Capitate_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Capitate_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1246,7 +1246,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Capitate_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Capitate_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1262,7 +1262,7 @@
       "Grupo": "Membro superior > Ossos carpais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Hamate_bone_(left_hand)_01_palmar_view.png",
+          "url": "assets/anatomia/ossos/Hamate_bone_(left_hand)_01_palmar_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1271,7 +1271,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Hamate_bone_(left_hand)_02_dorsal_view.png",
+          "url": "assets/anatomia/ossos/Hamate_bone_(left_hand)_02_dorsal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1287,7 +1287,7 @@
       "Grupo": "Membro inferior > Cíngulo",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Hip_bone_anterior2.png",
+          "url": "assets/anatomia/ossos/Hip_bone_anterior2.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -1297,7 +1297,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Hip_bone_posterior2.png",
+          "url": "assets/anatomia/ossos/Hip_bone_posterior2.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -1314,7 +1314,7 @@
       "Grupo": "Membro inferior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Femur_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Femur_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1323,7 +1323,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Femur_-_posterior_view.png",
+          "url": "assets/anatomia/ossos/Femur_-_posterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1339,7 +1339,7 @@
       "Grupo": "Membro inferior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Patella_ant.jpg",
+          "url": "assets/anatomia/ossos/Patella_ant.jpg",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -1349,7 +1349,7 @@
           "indicação": "Face anterior do osso"
         },
         {
-          "url": "/assets/anatomia/ossos/Patella_post.jpg",
+          "url": "assets/anatomia/ossos/Patella_post.jpg",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -1366,7 +1366,7 @@
       "Grupo": "Membro inferior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Tibia_-_frontal_view.png",
+          "url": "assets/anatomia/ossos/Tibia_-_frontal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1375,7 +1375,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Tibia_-_frontal_view.png",
+          "url": "assets/anatomia/ossos/Tibia_-_frontal_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1391,7 +1391,7 @@
       "Grupo": "Membro inferior > Parte livre",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Fibula_-_anterior_view.png",
+          "url": "assets/anatomia/ossos/Fibula_-_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1400,7 +1400,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Fibula_-_posterior_view.png",
+          "url": "assets/anatomia/ossos/Fibula_-_posterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1416,7 +1416,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Left_Talus_bone_01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Left_Talus_bone_01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1425,7 +1425,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Left_Talus_bone_03_lateral_view.png",
+          "url": "assets/anatomia/ossos/Left_Talus_bone_03_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1441,7 +1441,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Navicular_bone01.png",
+          "url": "assets/anatomia/ossos/Navicular_bone01.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1450,7 +1450,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Navicular_bone02.png",
+          "url": "assets/anatomia/ossos/Navicular_bone02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1466,7 +1466,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone01.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone01.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1475,7 +1475,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone02.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1491,7 +1491,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone01.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone01.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1500,7 +1500,7 @@
           "indicação": "Osso em amarelo"
         },
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone02.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1516,7 +1516,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone01.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone01.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1525,7 +1525,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Cuneiform_bone02.png",
+          "url": "assets/anatomia/ossos/Cuneiform_bone02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1541,7 +1541,7 @@
       "Grupo": "Membro inferior > Ossos tarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Cuboid_bone_01.png",
+          "url": "assets/anatomia/ossos/Cuboid_bone_01.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1550,7 +1550,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Cuboid_bone_02.png",
+          "url": "assets/anatomia/ossos/Cuboid_bone_02.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1566,7 +1566,7 @@
       "Grupo": "Membro inferior > Ossos metatarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/First_metatarsal_bone01_superior_view.png",
+          "url": "assets/anatomia/ossos/First_metatarsal_bone01_superior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1575,7 +1575,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/First_metatarsal_bone02_inferior_view.png",
+          "url": "assets/anatomia/ossos/First_metatarsal_bone02_inferior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1591,7 +1591,7 @@
       "Grupo": "Membro inferior > Ossos metatarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Left_Second_metatarsal_bone01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Left_Second_metatarsal_bone01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1600,7 +1600,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Left_Second_metatarsal_bone02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Left_Second_metatarsal_bone02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1616,7 +1616,7 @@
       "Grupo": "Membro inferior > Ossos metatarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Left_Third_metatarsal_bone01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Left_Third_metatarsal_bone01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1625,7 +1625,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Left_Third_metatarsal_bone02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Left_Third_metatarsal_bone02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1641,7 +1641,7 @@
       "Grupo": "Membro inferior > Ossos metatarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Left_Fourth_metatarsal_bone01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Left_Fourth_metatarsal_bone01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1650,7 +1650,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Left_Fourth_metatarsal_bone02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Left_Fourth_metatarsal_bone02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1666,7 +1666,7 @@
       "Grupo": "Membro inferior > Ossos metatarsais",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Left_Fifth_metatarsal_bone01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Left_Fifth_metatarsal_bone01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1675,7 +1675,7 @@
           "indicação": "Osso em verde"
         },
         {
-          "url": "/assets/anatomia/ossos/Left_Fifth_metatarsal_bone02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Left_Fifth_metatarsal_bone02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1691,7 +1691,7 @@
       "Grupo": "Membro inferior > Falanges do pé",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Proximal_phalanges_of_foot01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Proximal_phalanges_of_foot01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1700,7 +1700,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Proximal_phalanges_of_foot02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Proximal_phalanges_of_foot02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1716,7 +1716,7 @@
       "Grupo": "Membro inferior > Falanges do pé",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Middle_phalanges_of_foot01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Middle_phalanges_of_foot01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1725,7 +1725,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Middle_phalanges_of_foot02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Middle_phalanges_of_foot02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1741,7 +1741,7 @@
       "Grupo": "Membro inferior > Falanges do pé",
       "Imagens": [
         {
-          "url": "/assets/anatomia/ossos/Distal_phalanges_of_foot01_anterior_view.png",
+          "url": "assets/anatomia/ossos/Distal_phalanges_of_foot01_anterior_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",
@@ -1750,7 +1750,7 @@
           "indicação": "Osso em vermelho"
         },
         {
-          "url": "/assets/anatomia/ossos/Distal_phalanges_of_foot02_lateral_view.png",
+          "url": "assets/anatomia/ossos/Distal_phalanges_of_foot02_lateral_view.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "BodyParts3D / Anatomography (DBCLS)",

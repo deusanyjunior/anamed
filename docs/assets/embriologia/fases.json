@@ -6,7 +6,7 @@
       "Grupo": "Primeira semana",
       "Imagens": [
         {
-          "url": "/assets/embriologia/fases/Blastocyst.png",
+          "url": "assets/embriologia/fases/Blastocyst.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -23,7 +23,7 @@
       "Grupo": "Terceira semana",
       "Imagens": [
         {
-          "url": "/assets/embriologia/fases/Gastrulation.png",
+          "url": "assets/embriologia/fases/Gastrulation.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",
@@ -40,7 +40,7 @@
       "Grupo": "Terceira a quarta semana",
       "Imagens": [
         {
-          "url": "/assets/embriologia/fases/Gray18.png",
+          "url": "assets/embriologia/fases/Gray18.png",
           "Copyright": {
             "licenca": "desconhecida",
             "fonte": "Wikimedia Commons",

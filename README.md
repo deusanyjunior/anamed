@@ -1,71 +1,102 @@
 # AnaMed — Estudo & Quiz de Anatomia
 
-Aplicação web para estudo e memorização dos ossos do esqueleto humano, desenvolvida com Next.js 14 e TypeScript.
+Aplicação web estática para estudo e memorização de conteúdos de Anatomia, Histologia e Embriologia, publicada via GitHub Pages.
 
 ## Funcionalidades
 
-- **Modo Estudo** — navega pelos ossos organizados por grupo, com duas imagens por osso (Wikimedia Commons / Anatomography)
+- **Modo Estudo** — navega pelos itens organizados por grupo, com acordeão e imagens
 - **Modo Quiz** — resposta livre com correção automática (normalização de acentos e maiúsculas)
-- **Erros primeiro** — respostas erradas entram numa fila e são reapresentadas automaticamente (até 2 vezes por item)
+- **Erros primeiro** — respostas erradas são reapresentadas automaticamente (até 2 vezes por item)
 - **Refazer apenas erros** — ao final, botão para criar um novo quiz só com os itens errados
-- **Filtro por grupo** — selecione quais grupos de ossos incluir no quiz (Crânio, Coluna, Tórax, Membros…)
+- **Filtro por grupo** — selecione quais grupos incluir no quiz
 - **Histórico de sessões** — últimas 50 sessões salvas no `localStorage` com data, acurácia e grupos utilizados
 - **Persistência de configurações** — grupos selecionados são lembrados entre sessões
 
 ## Estrutura do projeto
 
 ```
-src/
-├── app/
-│   ├── layout.tsx       # Layout raiz (Next.js App Router)
-│   ├── page.tsx         # Página principal — orquestra abas e views
-│   └── globals.css      # Estilos globais
-├── components/
-│   ├── StudyView.tsx    # Modo estudo (acordeão por grupo, lazy render)
-│   ├── QuizView.tsx     # Modo quiz (setup → pergunta → reveal → done)
-│   ├── Tabs.tsx         # Componente de abas (Estudo / Quiz)
-│   └── utils.ts         # normalizeAnswer, shuffle, groupBy, uid, formatDateTime
-├── data/
-│   └── bones.json       # Dataset de ossos
-└── types.ts             # Tipos TypeScript (BoneItem, BonesDataset, QuizSession)
+docs/
+├── index.html
+├── app.js
+├── style.css
+├── _config.yml
+└── assets/
+    ├── estudos.json              # catálogo de disciplinas e estudos
+    ├── anatomia/
+    │   ├── ossos.json            # dataset de perguntas/respostas
+    │   └── ossos/                # imagens
+    ├── histologia/
+    │   ├── epitelial.json
+    │   ├── conjuntivo.json
+    │   ├── epitelial/
+    │   └── conjuntivo/
+    └── embriologia/
+        ├── fases.json
+        └── fases/
 ```
 
-## Rodando localmente
+## Testando localmente
 
 ```bash
-npm install
-npm run dev
+cd docs
+python -m http.server 8000
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000).
+Acesse [http://localhost:8000](http://localhost:8000).
 
-## Dataset
+## Adicionando conteúdo
 
-`src/data/bones.json` — lista de ossos com grupos, imagens e informações de copyright.
+Para adicionar uma nova disciplina ou estudo:
+
+1. Crie a pasta `docs/assets/<disciplina>/<estudo>/` e coloque as imagens lá
+2. Crie o dataset `docs/assets/<disciplina>/<estudo>.json` seguindo o schema:
 
 ```json
 {
   "itens": [
     {
-      "Grupo": "Crânio > Neurocrânio",
-      "Osso": "Frontal",
-      "Imagens": ["url_anterior", "url_lateral"],
-      "Copyright": { "licenca": "CC BY-SA 2.1 JP", "fonte": "BodyParts3D / Anatomography (DBCLS)" }
+      "Grupo": "Nome do grupo",
+      "Pergunta": "Texto da pergunta",
+      "Resposta": "Texto da resposta",
+      "Imagens": [
+        {
+          "url": "assets/<disciplina>/<estudo>/imagem.png",
+          "indicação": "Descrição opcional"
+        }
+      ]
     }
   ]
 }
 ```
 
-Imagens hospedadas no [Wikimedia Commons](https://commons.wikimedia.org) via `Special:FilePath/`.
+3. Registre o novo estudo em `docs/assets/estudos.json`:
 
-## Tecnologias
+```json
+{
+  "Disciplina": "Nome da Disciplina",
+  "Estudos": [
+    {
+      "Titulo": "Nome do estudo",
+      "Exercicios": "<disciplina>/<estudo>.json",
+      "Imagem": "assets/<disciplina>/<estudo>/capa.png"
+    }
+  ]
+}
+```
 
-| Tecnologia | Versão |
-|---|---|
-| Next.js | 14 |
-| React | 18 |
-| TypeScript | 5 |
+## Publicando no GitHub Pages
+
+1. Faça push do repositório para o GitHub
+2. Vá em **Settings → Pages**
+3. Source: **Deploy from a branch**, branch `main`, pasta `/docs`
+4. O site ficará disponível em `https://<usuario>.github.io/<repositorio>/`
 
 ## Licença das imagens
 
-Imagens do dataset provenientes do projeto [BodyParts3D / Anatomography](https://dbcls.rois.ac.jp/), licença **CC BY-SA 2.1 JP**. Consulte a página de cada arquivo no Wikimedia Commons para requisitos de atribuição específicos.
+Imagens provenientes do projeto [BodyParts3D / Anatomography](https://dbcls.rois.ac.jp/) e do [Wikimedia Commons](https://commons.wikimedia.org). Consulte o campo `Copyright` de cada item no dataset para requisitos de atribuição específicos.
+
+## Créditos
+
+- Agentes de IA: Microsoft Copilot, Cursor, Amazon Q
+- Idealizadores: Estudantes da Turma 94 da EPM
+- Inspiração: Ana e Med EPM

@@ -1,0 +1,48 @@
+{
+  "schema": "estudos_v1",
+  "itens": [
+    {
+      "Disciplina": "Anatomia",
+      "Estudos": [
+        {
+          "Titulo": "Nome dos ossos",
+          "Exercicios": "anatomia/ossos.json",
+          "Imagem": [
+            {
+              "url": "assets/anatomia/ossos/Frontal_bone_lateral3.png",
+              "Copyright": {
+                "licenca": "CC BY-SA 2.1 JP",
+                "fonte": "BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Disciplina": "Histologia",
+      "Estudos": [
+        {
+          "Titulo": "Tecido epitelial",
+          "Exercicios": "histologia/epitelial.json",
+          "Imagem": "https://commons.wikimedia.org/wiki/Special:FilePath/Tecidos_Epitelial_E_Conjuntivo_de_Esôfago_de_Mus_musculus.jpg"
+        },
+        {
+          "Titulo": "Tecido conjuntivo",
+          "Exercicios": "histologia/conjuntivo.json",
+          "Imagem": "https://commons.wikimedia.org/wiki/Special:FilePath/Yellow_adipose_tissue_in_paraffin_section_-_lipids_washed_out.jpg"
+        }
+      ]
+    },
+    {
+      "Disciplina": "Embriologia",
+      "Estudos": [
+        {
+          "Titulo": "Fases do desenvolvimento embrionario",
+          "Exercicios": "embriologia/fases.json",
+          "Imagem": "https://commons.wikimedia.org/wiki/Special:FilePath/Many_human_blastoids.jpg"
+        }
+      ]
+    }
+  ]
+}
