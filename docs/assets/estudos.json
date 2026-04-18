@@ -16,6 +16,21 @@
               }
             }
           ]
+        },
+        {
+          "Titulo": "Músculos",
+          "Exercicios": "anatomia/musculos.json",
+          "Imagem": [
+            {
+              "url": "assets/anatomia/musculos/960px-Sobo_1909_260.png",
+              "Copyright": {
+                "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Sobo_1909_260.png/960px-Sobo_1909_260.png",
+                "fonte": "Sobotta's Atlas and Text-book of Human Anatomy 1909",
+                "licenca": "Domínio público",
+                "observacao": "https://commons.wikimedia.org/wiki/File:Sobo_1909_260.png"
+              }
+            }
+          ]
         }
       ]
     },

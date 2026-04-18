@@ -170,15 +170,24 @@ function renderStudy() {
       const card = document.createElement('div');
       card.className = 'card';
       card.style.cssText = 'padding:14px;margin-bottom:10px';
-      const imgs = item.Imagens.map(img =>
-        `<div class="imgWrap"><img src="${img.url}" alt="${item.Resposta}" loading="lazy"/>
-         ${img.indicação ? `<div class="small" style="padding:6px 8px">${img.indicação}</div>` : ''}
-         </div>`
-      ).join('');
+      const imgs = item.Imagens.map(img => {
+        const copyright = img.Copyright;
+        const copyrightHtml = copyright ? `
+          <div class="small" style="padding:4px 8px 8px;color:rgba(168,178,209,.5)">
+            ${copyright.fonte ? `Fonte: ${copyright.urlOriginal ? `<a href="${copyright.urlOriginal}" target="_blank" style="color:rgba(168,178,209,.5)">${copyright.fonte}</a>` : copyright.fonte}` : ''}
+            ${copyright.fonte && copyright.licenca ? ' · ' : ''}
+            ${copyright.licenca ? `Licença: ${copyright.licenca}` : ''}
+          </div>` : '';
+        return `<div class="imgWrap">
+          ${img.indicação ? `<div class="small" style="padding:6px 8px">${img.indicação}</div>` : ''}
+          <img src="${img.url}" alt="${item.Resposta}" loading="lazy"/>
+          ${copyrightHtml}
+        </div>`;
+      }).join('');
       card.innerHTML = `
-        <div class="grid2" style="margin-bottom:10px">${imgs}</div>
-        <div class="small">${item.Pergunta}</div>
-        <div style="font-weight:700;margin-top:4px">${item.Resposta}</div>`;
+        <div class="small" style="margin-bottom:4px">${item.Pergunta}</div>
+        <div style="font-weight:700;margin-bottom:10px">${item.Resposta}</div>
+        <div class="grid2">${imgs}</div>`;
       body.appendChild(card);
     });
     header.onclick = () => {
@@ -237,11 +246,20 @@ function showQuizPanel(id) {
 
 function renderQuizImages(containerId, item) {
   const c = document.getElementById(containerId);
-  c.innerHTML = item.Imagens.map(img =>
-    `<div class="imgWrap"><img src="${img.url}" alt="" loading="lazy"/>
-     ${img.indicação ? `<div class="small" style="padding:6px 8px">${img.indicação}</div>` : ''}
-     </div>`
-  ).join('');
+  c.innerHTML = item.Imagens.map(img => {
+    const copyright = img.Copyright;
+    const copyrightHtml = copyright ? `
+          <div class="small" style="padding:4px 8px 8px;color:rgba(168,178,209,.5)">
+            ${copyright.fonte ? `Fonte: ${copyright.urlOriginal ? `<a href="${copyright.urlOriginal}" target="_blank" style="color:rgba(168,178,209,.5)">${copyright.fonte}</a>` : copyright.fonte}` : ''}
+            ${copyright.fonte && copyright.licenca ? ' · ' : ''}
+            ${copyright.licenca ? `Licença: ${copyright.licenca}` : ''}
+          </div>` : '';
+    return `<div class="imgWrap">
+      ${img.indicação ? `<div class="small" style="padding:6px 8px">${img.indicação}</div>` : ''}
+      <img src="${img.url}" alt="" loading="lazy"/>
+      ${copyrightHtml}
+    </div>`;
+  }).join('');
 }
 
 const App = {

@@ -1,0 +1,31 @@
+{
+  "itens": [
+    {
+      "Grupo": "Músculo da face",
+      "Pergunta": "Nome do músculo",
+      "Resposta": "Músculo zigomático maior",
+      "Imagens": [
+        {
+          "url": "assets/anatomia/musculos/Zygomaticus_major_muscle_animation_small.gif",
+          "indicação": "músculo em vermelho",
+          "Copyright": {
+            "urlOriginal": "https://commons.wikimedia.org/wiki/Category:Zygomaticus_major_muscles#/media/File:Zygomaticus_major_muscle_animation_small.gif",
+            "licenca": "CC BY-SA 2.1 jp",
+            "fonte": "BodyParts3D/Anatomography",
+            "observacao": "Wikimedia Commons"
+          }
+        },
+        {
+          "url": "assets/anatomia/musculos/Zygomaticus.png",
+          "indicação": "Músculo em vermelho",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Zygomaticus.png",
+            "licenca": "CC BY-SA 2.1 jp",
+            "fonte": "BodyParts3D/Anatomography",
+            "observacao": "Wikimedia Commons"
+          }
+        }
+      ]
+    }
+  ]
+}
