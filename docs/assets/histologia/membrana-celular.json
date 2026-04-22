@@ -1,0 +1,269 @@
+{
+  "itens": [
+    {
+      "Grupo": "Estrutura da membrana",
+      "Pergunta": "Nome da principal estrutura",
+      "Resposta": "Bicamada lipoprotéica",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Cell_membrane_drawing_virgin.svg",
+          "indicação": "Estrutura principal representada",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Cell_membrane_drawing_virgin.svg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Estrutura da membrana",
+      "Pergunta": "Nome da molécula orgânica mais comum na membrana",
+      "Resposta": "Lipídio",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Lipid_bilayer_section.gif",
+          "indicação": "Item com cabeça vermela e cauda cinza",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Lipid_bilayer_section.gif",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Estrutura da membrana",
+      "Pergunta": "Nome da molécula orgânica que pode definir a curvatura da membrana",
+      "Resposta": "Proteína",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Cell_membrane_detailed_diagram_pt.svg",
+          "indicação": "Molécula em azul",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/8/81/Cell_membrane_detailed_diagram_pt.svg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Estrutura da membrana",
+      "Pergunta": "Molécula que formam os GAGs (glicosaminoglicanos) e colesteróis",
+      "Resposta": "Carboidratos",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Cell_membrane_scheme.png",
+          "indicação": "Moléculas em vermelho",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/8/82/Cell_membrane_scheme.png",
+            "licenca": "Licença de Documentação Livre GNU",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações apicais",
+      "Pergunta": "Estruturas da parede do intestino para aumentar a absorção",
+      "Resposta": "Microvilosidades",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Intestin_gr_le_tissus_et_cellules.jpg",
+          "indicação": "",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Intestin_gr%C3%A8le_tissus_et_cellules.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "BallenaBlanca - Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações apicais",
+      "Pergunta": "Estrutura \"imóvel\" do ouvido interno para percepção ",
+      "Resposta": "Estereocílios",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Stereocilia_inner_ear.jpg",
+          "indicação": "Estrutura clara",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Stereocilia_inner_ear.jpg",
+            "licenca": "Domínio público",
+            "fonte": "National Institutes of Health, part of the United States Department of Health and Human Services,"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações apicais",
+      "Pergunta": "Estruturas que auxiliam no movimento de líquidos e no deslocamento",
+      "Resposta": "Cílios flagelos",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Cillia1.png",
+          "indicação": "Estrutura em laranja",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cillia1.png",
+            "licenca": "Creative Commons Genérica de Atribución/Compartir-Igual 3.0.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações laterais e basais",
+      "Pergunta": "Sela espaços entre células",
+      "Resposta": "Jução de oclusão",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Cellular_tight_junction-nl.svg",
+          "indicação": "Em verde",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cellular_tight_junction-nl.svg",
+            "licenca": "Domínio público",
+            "fonte": "WIkimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações laterais e basais",
+      "Pergunta": "Conecta filamentos de actina",
+      "Resposta": "Junção de adesão",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Adherens_Junctions_structural_proteins.svg",
+          "indicação": "Em verde",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/2/27/Adherens_Junctions_structural_proteins.svg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações laterais e basais",
+      "Pergunta": "Conecta filamentos intermediários",
+      "Resposta": "Desmossomo",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Desmosome_Cell_Junction.png",
+          "indicação": "Linhas conectoras entre c[elulas",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Desmosome_Cell_Junction.png",
+            "licenca": "Creative Commons Attribution 3.0 Unported license",
+            "fonte": "Wikimedia Commons"
+          }
+        },
+        {
+          "url": "assets/histologia/membrana-celular/Desmosome_cell_junction_en.svg",
+          "indicação": "Placa vermelha e seus anexos",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Desmosome_cell_junction_en.svg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações laterais e basais",
+      "Pergunta": "Permite passagem de íons e moléculas pequenas",
+      "Resposta": "Junção comunicante",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Gap_cell_junction-en.svg",
+          "indicação": "Item em laranja",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Gap_cell_junction-en.svg",
+            "licenca": "Domínio público",
+            "fonte": "WIkimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Especializações laterais e basais",
+      "Pergunta": "Ancoram à membrana basal",
+      "Resposta": "Hemidesmossomos",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Schematic_illustration_of_the_basement_membrane_zones_of_epithelium.png",
+          "indicação": "Estrutura em azul escuro",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Schematic_illustration_of_the_basement_membrane_zones_of_epithelium.png",
+            "licenca": "Creative Commons Attribution 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Transporte através da membrana",
+      "Pergunta": "Quando água busca o local com maior concentração de soluto",
+      "Resposta": "Osmose",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Osmose_en.svg",
+          "indicação": "Representado na imagem",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Osmose_en.svg",
+            "licenca": "Creative Commons Attribution-Share Alike 3.0 Unported license.",
+            "fonte": "Hans Hillewaert - Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Transporte através da membrana",
+      "Pergunta": "Quando há movimento de soluto de meio hipertónico para um meio hipotónico sem auxílio",
+      "Resposta": "Difusão simples",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/difusaosimples.jpg",
+          "indicação": "Representação na imagem",
+          "Copyright": {
+            "urlOriginal": "https://wikiciencias.casadasciencias.org/wiki/images/6/6f/difusaosimples.jpg",
+            "licenca": "Creative Commons - Atribuição - Uso Não Comercial - Partilha nos Mesmos Termos.",
+            "fonte": "Casa das Ciências:"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Transporte através da membrana",
+      "Pergunta": "Quando há movimento de soluto de meio hipertónico para um meio hipotónico com auxílio de proteína",
+      "Resposta": "Difusão facilitada",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Blausen_0394_Facilitated_Diffusion.png",
+          "indicação": "Representação na imagem",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Blausen_0394_Facilitated_Diffusion.png",
+            "licenca": "Creative Commons Attribution 3.0 Unported license.",
+            "fonte": "Blausen.com staff "
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Transporte através da membrana",
+      "Pergunta": "Transporte contra gradiente de concentração",
+      "Resposta": "Transporte ativo",
+      "Imagens": [
+        {
+          "url": "assets/histologia/membrana-celular/Sekundaer_aktiver_Transport_eW.svg",
+          "indicação": "Representado na figura",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Sekundaer_aktiver_Transport_eW.svg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Andi schmitt"
+          }
+        }
+      ]
+    }
+  ]
+}

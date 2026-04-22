@@ -46,6 +46,35 @@
           "Titulo": "Tecido conjuntivo",
           "Exercicios": "histologia/conjuntivo.json",
           "Imagem": "https://commons.wikimedia.org/wiki/Special:FilePath/Yellow_adipose_tissue_in_paraffin_section_-_lipids_washed_out.jpg"
+        },
+        {
+          "Titulo": "Técnicas de microscopia",
+          "Exercicios": "histologia/tecnicas-de-microscopia.json",
+          "Imagem": [
+            {
+              "url": "assets/histologia/tecnicas-de-microscopia/Achromatic_microscope_by_Powell_and_Lealand__1849._Wellcome_M0018156.jpg",
+              "Copyright": {
+                "licenca": "CC BY 4.0",
+                "fonte": "Wellcome Library, London",
+                "observacao": "Wikimedia commons",
+                "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/1/18/Achromatic_microscope_by_Powell_and_Lealand%2C_1849._Wellcome_M0018156.jpg"
+              }
+            }
+          ]
+        },
+        {
+          "Titulo": "Membrana celular",
+          "Exercicios": "histologia/membrana-celular.json",
+          "Imagem": [
+            {
+              "url": "assets/histologia/membrana-celular/Cell_membrane_drawing_virgin.svg",
+              "Copyright": {
+                "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Cell_membrane_drawing_virgin.svg",
+                "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+                "fonte": " William Crochot"
+              }
+            }
+          ]
         }
       ]
     },

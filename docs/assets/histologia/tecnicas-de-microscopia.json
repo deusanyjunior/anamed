@@ -1,0 +1,221 @@
+{
+  "itens": [
+    {
+      "Grupo": "Microscópios",
+      "Pergunta": "Tipo de microscópio",
+      "Resposta": "Microscópio eletrônico de transmissão",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Elektronenmikroskop.jpg",
+          "indicação": "Item na imagem",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Elektronenmikroskop.jpg",
+            "licenca": "GNU Free Documentation License,",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Microscópios",
+      "Pergunta": "Tipo de microscópio",
+      "Resposta": "Microscópio de luz",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Microsc_pio__ptico.png",
+          "indicação": "",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Microsc%C3%B3pio_%C3%93ptico.png",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Microscópios",
+      "Pergunta": "Tipo de Microscópio",
+      "Resposta": "Microscópio eletrônico de varredura",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Scanning_electron_microscope_-_UFCH_JH__2020__02.jpg",
+          "indicação": "Item na imagem",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Scanning_electron_microscope_-_UFCH_JH_%282020%29_02.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Imagem de microscopia",
+      "Pergunta": "Tipo de microscopia",
+      "Resposta": "Microscopia da varredura",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/SEM_blood_cells.jpg",
+          "indicação": "Tipo de microscopia",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/8/82/SEM_blood_cells.jpg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Imagem de microscopia",
+      "Pergunta": "Tipo de microscopia utilizada",
+      "Resposta": "Microscopia eletrônica",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Bacillus_subtilis.jpg",
+          "indicação": "Microscopia utilizada",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/9/91/Bacillus_subtilis.jpg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Imagem de microscopia",
+      "Pergunta": "Tipo de microscopia utilizada",
+      "Resposta": "Microscopia de luz",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Onion_epidermis__microscopic_image__007533276M.jpg",
+          "indicação": "Tipo de microscopia utilizada",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Onion_epidermis_%28microscopic_image%29_007533276M.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Qual nome da substância utilizada na etapa de fixação",
+      "Resposta": "Formol",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Human_brain__sagittal_section_1.jpg",
+          "indicação": "Líquido utilizado para preservação",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Human_brain%2C_sagittal_section_1.jpg",
+            "licenca": "Creative Commons CC0 1.0 Universal Public Domain Dedication.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Líquido utilizado para remover o formol ",
+      "Resposta": "Água corrente",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/_gua_da_torneira.JPG",
+          "indicação": "Líquido",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/0/0b/%C3%81gua_da_torneira.JPG",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Líquido utilizado na etapa de desidratação para remover a água",
+      "Resposta": "Álcool",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Lukastest_etoh_tbutoh.JPG",
+          "indicação": "Líquido",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/9/97/Lukastest_etoh_tbutoh.JPG",
+            "licenca": "Creative Commons Attribution-Share Alike 3.0 Unported license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Líquido utilizado na diafanação para substituir o álcool, solvente miscível com a parafina, torna o tecido translúcido",
+      "Resposta": "Xilol",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Technique_of_diaphanization_applied_in_a_fish.jpg",
+          "indicação": "Líquido utilizado",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/2/24/Technique_of_diaphanization_applied_in_a_fish.jpg",
+            "licenca": "Creative Commons BY-SA 4.0",
+            "fonte": "Museu de Anatomia Veterinária da FMVZ USP.  Author: Wagner Souza e Silva."
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Substância utilizada na etapa de impregnação para dar suporte interno  ao tecido",
+      "Resposta": "Parafina",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Paraffin.jpg",
+          "indicação": "Na cor branca",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Paraffin.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 3.0 Unported license.",
+            "fonte": "Wikimedia Commons"
+          }
+        },
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Liquid_paraffin_in_bottle.jpg",
+          "indicação": "Líquido no vidro",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Liquid_paraffin_in_bottle.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 2.5 Generic license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Substância utilizada para coloração de basófilos",
+      "Resposta": "Hematoxilina",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/HEMATOXILINA.jpg",
+          "indicação": "Na cor roxa",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/b/b7/HEMATOXILINA.jpg",
+            "licenca": "Creative Commons Attribution-Share Alike 4.0 International license.",
+            "fonte": "Wikimedia Commons"
+          }
+        }
+      ]
+    },
+    {
+      "Grupo": "Preparo de amostras",
+      "Pergunta": "Substância utilizada para coloração de acidófilos",
+      "Resposta": "Eosina",
+      "Imagens": [
+        {
+          "url": "assets/histologia/tecnicas-de-microscopia/Eosin_solution.jpg",
+          "indicação": "Líquido em rosa",
+          "Copyright": {
+            "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/1/15/Eosin_solution.jpg",
+            "licenca": "Domínio público",
+            "fonte": "Wikimedia commons"
+          }
+        }
+      ]
+    }
+  ]
+}
