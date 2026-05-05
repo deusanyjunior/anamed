@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
-      <body className="min-h-screen bg-gray-950 text-gray-100">
+      <body className="min-h-screen bg-white text-slate-900">
         <div className="max-w-5xl mx-auto px-4 py-8">
           <header className="mb-8">
             <h1 className="text-2xl font-bold">
               <span className="text-blue-500">Ana</span>
               <span className="text-red-500">Med</span>
-              <span className="text-gray-400 font-normal"> — Editor</span>
+              <span className="text-slate-600 font-normal"> — Editor</span>
             </h1>
           </header>
           {children}

@@ -131,7 +131,7 @@ export default function EstudoEditor() {
     updateItem(itemIdx, { ...item, Imagens: item.Imagens.map((img, i) => i === imgIdx ? updated : img) });
   }
 
-  if (!dataset) return <p className="text-gray-400">Carregando...</p>;
+  if (!dataset) return <p className="text-slate-600">Carregando...</p>;
 
   const grupos = [...new Set(dataset.itens.map(i => i.Grupo).filter(Boolean))];
   const exemploPergunta = dataset.itens.find(i => i.Pergunta)?.Pergunta ?? 'Ex: Nome do osso';
@@ -149,17 +149,17 @@ export default function EstudoEditor() {
   return (
     <div>
       {/* Breadcrumb */}
-      <div className="text-sm text-gray-500 mb-4">
-        <Link href="/" className="hover:text-gray-300">Início</Link>
-        <span className="mx-2">›</span>
-        <span className="text-gray-300">{params.disciplina} / {params.estudo}</span>
+      <div className="text-sm text-slate-600 mb-4">
+        <Link href="/" className="hover:text-blue-700">Início</Link>
+        <span className="mx-2 text-slate-500">›</span>
+        <span className="text-slate-700">{params.disciplina} / {params.estudo}</span>
       </div>
 
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <h2 className="text-xl font-bold capitalize">{String(params.estudo).replace(/-/g, ' ')}</h2>
-          <p className="text-xs text-gray-500 mt-1">{datasetPath} — {dataset.itens.length} itens</p>
+          <p className="text-xs text-slate-600 mt-1">{datasetPath} — {dataset.itens.length} itens</p>
         </div>
         <button
           onClick={() => save(dataset)}
@@ -172,32 +172,32 @@ export default function EstudoEditor() {
       {/* Lista de itens */}
       <div className="space-y-2 mb-4">
         {dataset.itens.map((item, idx) => (
-          <div key={idx} className="border border-gray-800 rounded-xl overflow-hidden">
+          <div key={idx} className="border border-slate-300 rounded-xl overflow-hidden bg-white">
             {/* Cabeçalho do item */}
-            <div className="flex items-center gap-2 px-3 py-2 bg-gray-900">
+            <div className="flex items-center gap-2 px-3 py-2 bg-slate-100">
               <div className="flex flex-col gap-0.5">
                 <button onClick={() => moveItem(idx, -1)} disabled={idx === 0}
-                  className="text-gray-500 hover:text-gray-200 disabled:opacity-20 text-xs leading-none">▲</button>
+                  className="text-slate-600 hover:text-slate-800 disabled:opacity-20 text-xs leading-none">▲</button>
                 <button onClick={() => moveItem(idx, 1)} disabled={idx === dataset.itens.length - 1}
-                  className="text-gray-500 hover:text-gray-200 disabled:opacity-20 text-xs leading-none">▼</button>
+                  className="text-slate-600 hover:text-slate-800 disabled:opacity-20 text-xs leading-none">▼</button>
               </div>
-              <span className="text-xs text-gray-500 w-6 text-center">{idx + 1}</span>
+              <span className="text-xs text-slate-600 w-6 text-center">{idx + 1}</span>
               <button
-                className="flex-1 text-left text-sm truncate"
+                className="flex-1 text-left text-sm truncate text-slate-900"
                 onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}>
-                <span className="text-gray-400 text-xs mr-2">{item.Grupo || '(sem grupo)'}</span>
-                {item.Resposta || <span className="text-gray-600 italic">sem resposta</span>}
+                <span className="text-slate-500 text-xs mr-2">{item.Grupo || '(sem grupo)'}</span>
+                {item.Resposta || <span className="text-slate-500 italic">sem resposta</span>}
               </button>
               <button onClick={() => deleteItem(idx)} className="text-red-500 hover:text-red-400 text-xs px-2">✕</button>
             </div>
 
             {/* Corpo expandido */}
             {expandedIdx === idx && (
-              <div className="p-4 space-y-3 border-t border-gray-800">
+              <div className="p-4 space-y-3 border-t border-slate-200 bg-white">
                 <div>
-                  <label className="text-xs text-gray-400 block mb-1">Pergunta</label>
+                  <label className="text-xs text-slate-600 block mb-1">Pergunta</label>
                   <input
-                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-500"
+                    className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
                     placeholder={exemploPergunta}
                     value={item.Pergunta}
                     onChange={e => updateItem(idx, { ...item, Pergunta: e.target.value })}
@@ -205,9 +205,9 @@ export default function EstudoEditor() {
                 </div>
 
                 <div>
-                  <label className="text-xs text-gray-400 block mb-1">Resposta</label>
+                  <label className="text-xs text-slate-600 block mb-1">Resposta</label>
                   <input
-                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-500"
+                    className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
                     placeholder={exemploResposta}
                     value={item.Resposta}
                     onChange={e => updateItem(idx, { ...item, Resposta: e.target.value })}
@@ -216,10 +216,10 @@ export default function EstudoEditor() {
 
                 {/* Grupo com sugestões */}
                 <div>
-                  <label className="text-xs text-gray-400 block mb-1">Grupo</label>
+                  <label className="text-xs text-slate-600 block mb-1">Grupo</label>
                   <input
                     list={`grupos-${idx}`}
-                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-500"
+                    className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
                     placeholder={exemploGrupo}
                     value={item.Grupo}
                     onChange={e => updateItem(idx, { ...item, Grupo: e.target.value })}
@@ -231,12 +231,12 @@ export default function EstudoEditor() {
 
                 {/* Imagens */}
                 <div>
-                  <label className="text-xs text-gray-400 block mb-2">Imagens</label>
+                  <label className="text-xs text-slate-600 block mb-2">Imagens</label>
                   <div className="space-y-2">
                     {item.Imagens.map((img, imgIdx) => (
-                      <div key={imgIdx} className="flex gap-3 items-start bg-gray-900 rounded-lg p-2">
+                      <div key={imgIdx} className="flex gap-3 items-start bg-slate-50 rounded-lg p-2">
                         {/* Preview */}
-                        <div className="w-20 flex-shrink-0 rounded overflow-hidden bg-gray-800 border border-gray-700">
+                        <div className="w-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
                           <img
                             src={`${DOCS_BASE}/${img.url}`}
                             alt=""
@@ -246,17 +246,17 @@ export default function EstudoEditor() {
                         </div>
                         <div className="flex-1 space-y-1.5">
                           <div>
-                            <label className="text-xs text-gray-500 block mb-0.5">URL</label>
+                            <label className="text-xs text-slate-600 block mb-0.5">URL</label>
                             <div className="flex gap-1.5 items-center">
                               <input
                                 readOnly
-                                className="flex-1 bg-gray-800 border border-gray-700 rounded px-2 py-1 text-xs text-gray-400 cursor-default select-all outline-none"
+                                className="flex-1 bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 cursor-default select-all outline-none"
                                 value={img.url}
                               />
                               {img.url.startsWith('assets/') && (
                                 <button
                                   type="button"
-                                  className="text-xs bg-gray-700 hover:bg-gray-600 border border-gray-600 rounded px-2 py-1 whitespace-nowrap"
+                                  className="text-xs bg-slate-200 hover:bg-slate-300 border border-slate-300 rounded px-2 py-1 whitespace-nowrap text-slate-700"
                                   onClick={async () => {
                                     const current = img.url.split('/').pop() ?? '';
                                     const newName = window.prompt('Novo nome do arquivo:', current);
@@ -276,9 +276,9 @@ export default function EstudoEditor() {
                             </div>
                           </div>
                           <div>
-                            <label className="text-xs text-gray-500 block mb-0.5">Indicação</label>
+                            <label className="text-xs text-slate-600 block mb-0.5">Indicação</label>
                             <input
-                              className="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1 text-xs outline-none focus:border-blue-500"
+                              className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 outline-none focus:border-blue-500"
                               placeholder={dataset.itens.flatMap(i => i.Imagens).find(img => img.indicação)?.indicação ?? 'sem indicação'}
                               value={img.indicação ?? ''}
                               onChange={e => updateImage(idx, imgIdx, { ...img, indicação: e.target.value })}
@@ -291,16 +291,16 @@ export default function EstudoEditor() {
                               const key = `${idx}-${imgIdx}`;
                               setExpandedCopyright(expandedCopyright === key ? null : key);
                             }}
-                            className="text-xs text-gray-500 hover:text-gray-300">
+                            className="text-xs text-slate-600 hover:text-slate-800">
                             {expandedCopyright === `${idx}-${imgIdx}` ? '▾' : '▸'} Copyright
                           </button>
                           {expandedCopyright === `${idx}-${imgIdx}` && (
-                            <div className="space-y-1.5 pl-2 border-l border-gray-700">
+                            <div className="space-y-1.5 pl-2 border-l border-slate-200">
                               {([['Licença', 'licenca'], ['Fonte', 'fonte'], ['Observação', 'observacao'], ['URL original', 'urlOriginal']] as const).map(([label, field]) => (
                                 <div key={field}>
-                                  <label className="text-xs text-gray-500 block mb-0.5">{label}</label>
+                                  <label className="text-xs text-slate-600 block mb-0.5">{label}</label>
                                   <input
-                                    className="w-full bg-gray-800 border border-gray-700 rounded px-2 py-1 text-xs outline-none focus:border-blue-500"
+                                    className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 outline-none focus:border-blue-500"
                                     placeholder={copyrightPlaceholders[field]}
                                     value={(img.Copyright as Record<string,string> | undefined)?.[field] ?? ''}
                                     onChange={e => updateImage(idx, imgIdx, { ...img, Copyright: { ...img.Copyright, [field]: e.target.value } })}
@@ -312,11 +312,11 @@ export default function EstudoEditor() {
                         </div>
                         <div className="flex flex-col gap-1">
                           <button onClick={() => moveImage(idx, imgIdx, -1)} disabled={imgIdx === 0}
-                            className="text-gray-500 hover:text-gray-200 disabled:opacity-20 text-xs">▲</button>
+                            className="text-slate-600 hover:text-slate-800 disabled:opacity-20 text-xs">▲</button>
                           <button onClick={() => moveImage(idx, imgIdx, 1)} disabled={imgIdx === item.Imagens.length - 1}
-                            className="text-gray-500 hover:text-gray-200 disabled:opacity-20 text-xs">▼</button>
+                            className="text-slate-600 hover:text-slate-800 disabled:opacity-20 text-xs">▼</button>
                           <button onClick={() => removeImage(idx, imgIdx)}
-                            className="text-red-500 hover:text-red-400 text-xs">✕</button>
+                            className="text-red-600 hover:text-red-700 text-xs">✕</button>
                         </div>
                       </div>
                     ))}
@@ -338,13 +338,13 @@ export default function EstudoEditor() {
                     />
                     <button
                       onClick={() => { setUploadingFor(idx); setTimeout(() => fileInputRef.current?.click(), 50); }}
-                      className="text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg px-3 py-1.5">
+                      className="text-xs bg-slate-200 hover:bg-slate-300 border border-slate-300 rounded-lg px-3 py-1.5 text-slate-700">
                       ↑ Upload imagem
                     </button>
                     <div className="flex gap-2">
                       <input
                         id={`url-input-${idx}`}
-                        className="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-blue-500"
+                        className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none focus:border-blue-500"
                         placeholder="Adicionar por URL…"
                         onKeyDown={e => {
                           if (e.key === 'Enter') addByUrl(idx);
@@ -352,7 +352,7 @@ export default function EstudoEditor() {
                       />
                       <button
                         onClick={() => addByUrl(idx)}
-                        className="text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg px-3 py-1.5">
+                        className="text-xs bg-slate-200 hover:bg-slate-300 border border-slate-300 rounded-lg px-3 py-1.5 text-slate-700">
                         + Adicionar
                       </button>
                     </div>
@@ -367,7 +367,7 @@ export default function EstudoEditor() {
       {/* Adicionar item */}
       <button
         onClick={addItem}
-        className="w-full border border-dashed border-gray-700 hover:border-blue-500 text-gray-500 hover:text-blue-400 rounded-xl py-3 text-sm transition-colors">
+        className="w-full border border-dashed border-slate-300 hover:border-blue-500 text-slate-600 hover:text-blue-700 rounded-xl py-3 text-sm transition-colors">
         + Adicionar item
       </button>
 
@@ -376,7 +376,7 @@ export default function EstudoEditor() {
         <button
           onClick={() => save(dataset)}
           disabled={saving}
-          className="bg-green-700 hover:bg-green-600 disabled:opacity-50 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg text-sm">
+          className="bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg text-sm">
           {saving ? 'Salvando…' : saved ? '✓ Salvo' : 'Salvar'}
         </button>
       </div>
