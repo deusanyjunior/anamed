@@ -1,109 +1,124 @@
 # AnaMed — Estudo & Quiz de Anatomia
+Criado por estudantes de Biomedicina e Medicina
 
-Aplicação para estudo e memorização de conteúdos de Anatomia, Histologia e Embriologia, publicada via GitHub Pages.
+Aplicação React/Next.js para estudo e memorização de conteúdos de Anatomia.
 
 ## Estrutura do projeto
 
 ```
 anamed/
-├── docs/                         # site estático (GitHub Pages)
-│   ├── index.html
-│   ├── app.js
-│   ├── style.css
-│   ├── _config.yml
-│   └── assets/
-│       ├── estudos.json          # catálogo de temas e estudos
-│       ├── anatomia/
-│       │   ├── ossos.json        # dataset de perguntas/respostas
-│       │   └── ossos/            # imagens
-│       ├── histologia/
-│       │   ├── epitelial.json
-│       │   ├── conjuntivo.json
-│       │   ├── epitelial/
-│       │   └── conjuntivo/
-│       └── embriologia/
-│           ├── fases.json
-│           └── fases/
-└── editor/                       # editor local (Next.js)
-    └── app/
+├── docs/                         # site público (Next.js)
+│   ├── app/
+│   │   ├── [tema]/[estudo]/      # rota dinâmica de cada estudo
+│   │   ├── assets/[...path]/      # entrega segura de assets
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── globals.css
+│   ├── components/               # componentes React client-side
+│   ├── lib/                      # tipos e leitura dos JSONs
+│   ├── assets/                   # catálogo, datasets e imagens
+│   ├── package.json
+│   └── next.config.ts
+└── editor/                       # editor local independente (Next.js)
 ```
 
----
-
-## Site (docs/)
+## Site público (`docs/`)
 
 ### Funcionalidades
 
 - **Modo Estudo** — navega pelos itens organizados por grupo, com acordeão e imagens
-- **Modo Quiz** — resposta livre com correção automática (normalização de acentos e maiúsculas)
-- **Erros primeiro** — respostas erradas são reapresentadas automaticamente (até 2 vezes por item)
-- **Refazer apenas erros** — ao final, botão para criar um novo quiz só com os itens errados
-- **Filtro por grupo** — selecione quais grupos incluir no quiz
+- **Modo Quiz** — resposta livre com correção automática, normalização de acentos e maiúsculas
+- **Erros primeiro** — respostas erradas são reapresentadas automaticamente até duas vezes
+- **Refazer apenas erros** — cria um novo quiz somente com os itens errados
+- **Filtro por grupo** — seleciona quais grupos incluir no quiz
 - **Histórico de sessões** — últimas 50 sessões salvas no `localStorage`
-- **Persistência de configurações** — grupos selecionados são lembrados entre sessões
+- **Rotas por estudo** — cada valor de `Exercicios` gera uma rota removendo apenas `.json`
 
-### Testando localmente
+Exemplo:
+
+```json
+"Exercicios": "ossos/ossos-do-esqueleto.json"
+```
+
+gera:
+
+```text
+/ossos/ossos-do-esqueleto
+```
+
+### Executando localmente
 
 ```bash
 cd docs
-python -m http.server 8000
+npm install
+npm run dev -- -p 8000
 ```
 
 Acesse [http://localhost:8000](http://localhost:8000).
 
-### Publicando no GitHub Pages
+Para executar a versão de produção:
 
-1. Faça push do repositório para o GitHub
-2. Vá em **Settings → Pages**
-3. Source: **Deploy from a branch**, branch `main`, pasta `/docs`
-4. O site ficará disponível em `https://<usuario>.github.io/<repositorio>/`
+```bash
+cd docs
+npm run build
+npm run start -- -p 8000
+```
 
----
+### Publicando na Vercel
 
-## Editor (editor/)
+Configure `docs` como **Root Directory** do projeto na Vercel. Use os comandos padrão do Next.js:
 
-Interface local para gerenciar os conteúdos em `docs/assets/` sem editar JSON manualmente.
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output: padrão do Next.js
+
+Após o deploy, o estudo do exemplo estará disponível em:
+
+```text
+https://anamed.vercel.app/ossos/ossos-do-esqueleto
+```
+
+## Editor (`editor/`)
+
+O editor é uma aplicação Next.js independente para gerenciar os conteúdos em `docs/assets/` sem editar JSON manualmente.
 
 ### Funcionalidades
 
 - Criar e excluir temas e estudos
-- Renomear estudos (renomeia o arquivo JSON e a pasta de imagens automaticamente)
+- Renomear estudos, arquivos JSON e pastas de imagens
 - Adicionar, editar, reordenar e excluir itens (Pergunta, Resposta, Grupo)
-- Adicionar imagens por **upload de arquivo** ou por **URL** (baixa e salva localmente)
-- Reordenar e remover imagens de cada item
-- Renomear arquivos de imagem em disco diretamente pelo editor
-- Editar **indicação** e dados de **copyright** (licença, fonte, URL original, observação) por imagem
-- Editar imagem de capa de cada estudo, com upload, adição por URL, renomear e copyright
-- Preview das imagens ao editar
-- Salvar tudo de volta nos JSONs em `docs/assets/`
+- Adicionar imagens por upload ou URL
+- Reordenar e remover imagens
+- Renomear arquivos de imagem em disco
+- Editar indicação e dados de copyright por imagem
+- Editar capas dos estudos
+- Salvar tudo nos JSONs em `docs/assets/`
 
 ### Como usar
 
-**1. Inicie o servidor de assets** (para preview das imagens):
-```bash
-cd docs
-python -m http.server 8000
-```
+**1. Inicie o servidor do editor:**
 
-**2. Em outro terminal, inicie o editor:**
 ```bash
 cd editor
+npm install
 npm run dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
----
+O editor continua separado do site público. As duas aplicações compartilham os dados em `docs/assets/`.
 
 ## Adicionando conteúdo manualmente
 
 Para adicionar um novo tema ou estudo diretamente nos arquivos:
 
-1. Crie a pasta `docs/assets/<tema>/<estudo>/` e coloque as imagens lá
+1. Crie a pasta `docs/assets/<tema>/<estudo>/` e coloque as imagens lá.
 2. Crie o dataset `docs/assets/<tema>/<estudo>.json` seguindo o schema:
 
 ```json
 {
+  "schema": "estudos_v1",
+  "geradoEm": "2026-05-19",
   "itens": [
     {
       "Grupo": "Nome do grupo",
@@ -126,7 +141,7 @@ Para adicionar um novo tema ou estudo diretamente nos arquivos:
 }
 ```
 
-3. Registre o novo estudo em `docs/assets/estudos.json`:
+3. Registre o estudo em `docs/assets/estudos.json`:
 
 ```json
 {
@@ -151,12 +166,12 @@ Para adicionar um novo tema ou estudo diretamente nos arquivos:
 }
 ```
 
----
+O Next.js usará automaticamente o caminho de `Exercicios`, removendo somente a extensão `.json`, para gerar a rota do estudo.
 
 ## Licença das imagens
 
 Imagens provenientes do projeto [BodyParts3D / Anatomography](https://dbcls.rois.ac.jp/) e do [Wikimedia Commons](https://commons.wikimedia.org). Consulte o campo `Copyright` de cada item no dataset para requisitos de atribuição específicos.
 
-# Créditos
+## Créditos
 
-Turma 94 da EPM - Unifesp
+Anatomia Inclusiva - Unifesp

@@ -1,0 +1,772 @@
+{
+  "schema": "bones_v1",
+  "geradoEm": "2026-05-19",
+  "itens": [
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso frontal",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-frontal01.png",
+          "indicação": "Osso em amarelo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-frontal02.png",
+          "indicação": "Osso em amarelo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-frontal03.png",
+          "indicação": "Osso em amarelo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-frontal04.png",
+          "indicação": "Osso em amarelo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-frontal05.png",
+          "indicação": "Osso em amarelo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso occipital",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital01.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital02.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital03.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital04.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital05.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital06.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital07.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital08.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-occipital09.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso esfenoide",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide01.png",
+          "indicação": "Osso em vista anterior",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide02.png",
+          "indicação": "Osso em vista posterior",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide03.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide04.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide05.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide06.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-esfenoide07.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso etmoide",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide01.png",
+          "indicação": "Osso em vista anterior",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide02.png",
+          "indicação": "Osso em vista lateral esquerda",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide03.png",
+          "indicação": "Osso em vista posterior",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide04.png",
+          "indicação": "Osso cinza no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide05.png",
+          "indicação": "Osso cinza no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-etmoide06.png",
+          "indicação": "Osso cinza no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso parietal",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-parietal01.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-parietal02.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-parietal03.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-parietal04.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-parietal05.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso temporal",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-temporal01.png",
+          "indicação": "Osso em rosa",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-temporal02.png",
+          "indicação": "Osso em rosa",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-temporal03.png",
+          "indicação": "Osso em rosa",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-temporal04.png",
+          "indicação": "Osso em rosa",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso nasal",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-nasal01.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-nasal02.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-nasal03.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-nasal04.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-nasal05.png",
+          "indicação": "Osso em amarelo no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso lacrimal",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-lacrimal01.png",
+          "indicação": "Osso verde escuro no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-lacrimal02.png",
+          "indicação": "Osso verde escuro no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-lacrimal03.png",
+          "indicação": "Osso verde escuro no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso zigomático",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-zigomatico01.png",
+          "indicação": "Osso em roxo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-zigomatico02.png",
+          "indicação": "Osso em roxo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-zigomatico03.png",
+          "indicação": "Osso em roxo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-zigomatico04.png",
+          "indicação": "Osso em roxo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-zigomatico05.png",
+          "indicação": "Osso em roxo",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso maxila",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-maxila01.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-maxila02.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-maxila03.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-maxila04.png",
+          "indicação": "Osso em verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso concha nasal inferior",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-conchanasalinferior01.png",
+          "indicação": "Osso em bege no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-conchanasalinferior02.png",
+          "indicação": "Osso em bege no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-conchanasalinferior03.png",
+          "indicação": "Osso em bege no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso palatino",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-palatino01.png",
+          "indicação": "Osso destacado em vermelho e verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-palatino02.png",
+          "indicação": "Osso destacado em vermelho e verde",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-palatino03.png",
+          "indicação": "Osso em vermelho",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso vômer",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer01.png",
+          "indicação": "Osso em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer02.png",
+          "indicação": "Osso em rosa em destaque vista anterior",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer03.png",
+          "indicação": "Osso em rosa em destaque vista lateral",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer04.png",
+          "indicação": "Osso em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer05.png",
+          "indicação": "Osso em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer06.png",
+          "indicação": "Osso em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-vomer07.png",
+          "indicação": "Osso em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso mandíbula",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-mandibula01.png",
+          "indicação": "Osso em bege no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-mandibula02.png",
+          "indicação": "Osso em bege no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-mandibula03.png",
+          "indicação": "Osso em bege no centro vista lateral",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-mandibula04.png",
+          "indicação": "Osso em bege no centro vista lateral",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do ossículo",
+      "Resposta": "Ossículo martelo",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-martelo01.png",
+          "indicação": "Ossículo em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-martelo02.png",
+          "indicação": "Ossículo em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do ossículo",
+      "Resposta": "Ossículo bigorna",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-bigorna01.png",
+          "indicação": "Ossículo rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-bigorna02.png",
+          "indicação": "Ossículo rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Neurocrânio",
+      "Pergunta": "Nome do ossículo",
+      "Resposta": "Ossículo estribo",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-estribo01.png",
+          "indicação": "Ossículo em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-estribo02.png",
+          "indicação": "Ossículo em rosa em destaque",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    },
+    {
+      "Grupo": "Viscerocrânio",
+      "Pergunta": "Nome do osso",
+      "Resposta": "Osso hioide",
+      "Imagens": [
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-hioide01.png",
+          "indicação": "Osso em bege em destaque no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-hioide02.png",
+          "indicação": "Osso em bege em destaque no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-hioide03.png",
+          "indicação": "Osso em bege em destaque no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        },
+        {
+          "url": "assets/ossos/ossos-do-esqueleto/za-hioide04.png",
+          "indicação": "Osso em bege em destaque no centro",
+          "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+        }
+      ]
+    }
+  ]
+}

@@ -6,10 +6,10 @@
       "Estudos": [
         {
           "Titulo": "Ossos do esqueleto",
-          "Exercicios": "anatomia/ossos-do-esqueleto.json",
+          "Exercicios": "ossos/ossos-do-esqueleto.json",
           "Imagem": [
             {
-              "url": "assets/anatomia/ossos-do-esqueleto/za-anatomia.png",
+              "url": "assets/ossos/ossos-do-esqueleto/za-anatomia.png",
               "Copyright": {
                 "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
                 "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
