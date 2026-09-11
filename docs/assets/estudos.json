@@ -5,29 +5,14 @@
       "Disciplina": "Anatomia",
       "Estudos": [
         {
-          "Titulo": "Nome dos ossos",
+          "Titulo": "Ossos",
           "Exercicios": "anatomia/ossos.json",
           "Imagem": [
             {
-              "url": "assets/anatomia/ossos/Frontal_bone_lateral3.png",
+              "url": "assets/anatomia/ossos/za-anatomia.png",
               "Copyright": {
-                "licenca": "CC BY-SA 2.1 JP",
-                "fonte": "BodyParts3D/Anatomography (DBCLS)"
-              }
-            }
-          ]
-        },
-        {
-          "Titulo": "Músculos",
-          "Exercicios": "anatomia/musculos.json",
-          "Imagem": [
-            {
-              "url": "assets/anatomia/musculos/960px-Sobo_1909_260.png",
-              "Copyright": {
-                "urlOriginal": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Sobo_1909_260.png/960px-Sobo_1909_260.png",
-                "fonte": "Sobotta's Atlas and Text-book of Human Anatomy 1909",
-                "licenca": "Domínio público",
-                "observacao": "https://commons.wikimedia.org/wiki/File:Sobo_1909_260.png"
+                "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
               }
             }
           ]
