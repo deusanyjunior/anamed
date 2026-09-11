@@ -1,5 +1,5 @@
 // POST /api/rename-estudo
-// body: { disciplina: "Anatomia", tituloAntigo: "Nome dos ossos", tituloNovo: "Ossos do corpo" }
+// body: { tema: "Anatomia", tituloAntigo: "Nome dos ossos", tituloNovo: "Ossos do corpo" }
 // renomeia o arquivo JSON, a pasta de imagens e atualiza estudos.json
 import { NextRequest, NextResponse } from 'next/server';
 import { rename, access } from 'fs/promises';
@@ -11,21 +11,21 @@ function slugify(s: string) {
 }
 
 export async function POST(req: NextRequest) {
-  const { disciplina, tituloAntigo, tituloNovo } = await req.json();
-  if (!disciplina || !tituloAntigo || !tituloNovo) {
+  const { tema: temaNome, tituloAntigo, tituloNovo } = await req.json();
+  if (!temaNome || !tituloAntigo || !tituloNovo) {
     return NextResponse.json({ error: 'missing params' }, { status: 400 });
   }
 
   const catalog = readCatalog();
-  const disc = catalog.itens.find(d => d.Disciplina === disciplina);
-  if (!disc) return NextResponse.json({ error: 'disciplina não encontrada' }, { status: 404 });
+  const tema = catalog.itens.find(d => d.Tema === temaNome);
+  if (!tema) return NextResponse.json({ error: 'tema não encontrado' }, { status: 404 });
 
-  const estudo = disc.Estudos.find(e => e.Titulo === tituloAntigo);
+  const estudo = tema.Estudos.find(e => e.Titulo === tituloAntigo);
   if (!estudo) return NextResponse.json({ error: 'estudo não encontrado' }, { status: 404 });
 
-  const discSlug = slugify(disciplina);
+  const temaSlug = slugify(temaNome);
   const novoSlug = slugify(tituloNovo);
-  const novoExercicios = `${discSlug}/${novoSlug}.json`;
+  const novoExercicios = `${temaSlug}/${novoSlug}.json`;
 
   // renomear arquivo JSON
   const oldJsonPath = path.join(DOCS_ASSETS, estudo.Exercicios);
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
   const updated = {
     ...catalog,
     itens: catalog.itens.map(d =>
-      d.Disciplina !== disciplina ? d : {
+      d.Tema !== temaNome ? d : {
         ...d,
         Estudos: d.Estudos.map(e =>
           e.Titulo !== tituloAntigo ? e : { ...e, Titulo: tituloNovo, Exercicios: novoExercicios }

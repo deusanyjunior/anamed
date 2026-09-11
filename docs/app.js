@@ -35,7 +35,7 @@ function formatDate(iso) {
 const State = {
   catalog: null,          // estudos.json
   datasets: {},           // path -> dataset json
-  currentDisciplina: null,
+  currentTema: null,
   currentEstudo: null,    // EstudoRef
   currentDataset: null,   // StudyDataset
   quiz: {
@@ -69,7 +69,7 @@ function saveSelectedGroups(estudoKey, groups) {
 
 // ── Views ──────────────────────────────────────────────────────────────────
 function showView(id) {
-  ['view-home','view-disciplina','view-estudo'].forEach(v => {
+  ['view-home','view-tema','view-estudo'].forEach(v => {
     document.getElementById(v).style.display = v === id ? 'block' : 'none';
   });
 }
@@ -77,7 +77,7 @@ function showView(id) {
 // ── HOME ───────────────────────────────────────────────────────────────────
 function renderHome() {
   showView('view-home');
-  const grid = document.getElementById('disciplinas-grid');
+  const grid = document.getElementById('temas-grid');
   grid.innerHTML = '';
   State.catalog.itens.forEach(d => {
     const firstStudy = d.Estudos[0];
@@ -92,23 +92,23 @@ function renderHome() {
     card.style.cssText = 'overflow:hidden;cursor:pointer';
     card.innerHTML = `
       <div style="width:100%;aspect-ratio:16/9;background:rgba(255,255,255,.04);overflow:hidden">
-        ${imgUrl ? `<img src="${imgUrl}" alt="${d.Disciplina}" style="width:100%;height:100%;object-fit:cover" loading="lazy"/>` : '<div class="small" style="padding:12px">Sem imagem</div>'}
+        ${imgUrl ? `<img src="${imgUrl}" alt="${d.Tema}" style="width:100%;height:100%;object-fit:cover" loading="lazy"/>` : '<div class="small" style="padding:12px">Sem imagem</div>'}
       </div>
       <div style="padding:14px">
-        <div class="pill">Disciplina</div>
-        <div style="font-weight:800;font-size:18px;margin-top:10px">${d.Disciplina}</div>
+        <div class="pill">Tema</div>
+        <div style="font-weight:800;font-size:18px;margin-top:10px">${d.Tema}</div>
         <div class="small" style="margin-top:8px">${d.Estudos.length} estudo(s)</div>
       </div>`;
-    card.onclick = () => openDisciplina(d);
+    card.onclick = () => openTema(d);
     grid.appendChild(card);
   });
 }
 
-// ── DISCIPLINA ─────────────────────────────────────────────────────────────
-function openDisciplina(d) {
-  State.currentDisciplina = d;
-  document.getElementById('bc-disciplina').textContent = d.Disciplina;
-  showView('view-disciplina');
+// ── TEMA ─────────────────────────────────────────────────────────────
+function openTema(d) {
+  State.currentTema = d;
+  document.getElementById('bc-tema').textContent = d.Tema;
+  showView('view-tema');
   const grid = document.getElementById('estudos-grid');
   grid.innerHTML = '';
   d.Estudos.forEach(e => {
@@ -135,7 +135,7 @@ function openDisciplina(d) {
 // ── ESTUDO ─────────────────────────────────────────────────────────────────
 async function openEstudo(e) {
   State.currentEstudo = e;
-  document.getElementById('bc2-disciplina').textContent = State.currentDisciplina.Disciplina;
+  document.getElementById('bc2-tema').textContent = State.currentTema.Tema;
   document.getElementById('bc2-estudo').textContent = e.Titulo;
   showView('view-estudo');
   App.showTab('study');
@@ -207,7 +207,7 @@ function renderStudy() {
 
 // ── QUIZ SETUP ─────────────────────────────────────────────────────────────
 function estudoKey() {
-  return slugify(State.currentDisciplina.Disciplina) + '_' + slugify(State.currentEstudo.Titulo);
+  return slugify(State.currentTema.Tema) + '_' + slugify(State.currentEstudo.Titulo);
 }
 
 function setupQuizGroups() {
@@ -386,7 +386,7 @@ const App = {
 document.getElementById('site-title').onclick = () => renderHome();
 document.getElementById('bc-home').onclick     = () => renderHome();
 document.getElementById('bc2-home').onclick    = () => renderHome();
-document.getElementById('bc2-disciplina').onclick = () => openDisciplina(State.currentDisciplina);
+document.getElementById('bc2-tema').onclick = () => openTema(State.currentTema);
 
 // ── Boot ───────────────────────────────────────────────────────────────────
 fetchJSON('assets/estudos.json').then(data => {

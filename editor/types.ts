@@ -36,12 +36,12 @@ export type EstudoRef = {
   Copyright?: CopyrightInfo;
 };
 
-export type Disciplina = {
-  Disciplina: string;
+export type Tema = {
+  Tema: string;
   Estudos: EstudoRef[];
 };
 
 export type EstudosCatalog = {
   schema?: string;
-  itens: Disciplina[];
+  itens: Tema[];
 };

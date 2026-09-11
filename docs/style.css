@@ -65,4 +65,4 @@ legend   { padding: 0 6px; color: var(--muted); font-size: 12px; }
   padding: 12px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
 }
 .accordion-body { padding-bottom: 12px; }
-#view-home, #view-disciplina, #view-estudo { display: none; }
+#view-home, #view-tema, #view-estudo { display: none; }

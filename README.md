@@ -12,7 +12,7 @@ anamed/
 │   ├── style.css
 │   ├── _config.yml
 │   └── assets/
-│       ├── estudos.json          # catálogo de disciplinas e estudos
+│       ├── estudos.json          # catálogo de temas e estudos
 │       ├── anatomia/
 │       │   ├── ossos.json        # dataset de perguntas/respostas
 │       │   └── ossos/            # imagens
@@ -66,7 +66,7 @@ Interface local para gerenciar os conteúdos em `docs/assets/` sem editar JSON m
 
 ### Funcionalidades
 
-- Criar e excluir disciplinas e estudos
+- Criar e excluir temas e estudos
 - Renomear estudos (renomeia o arquivo JSON e a pasta de imagens automaticamente)
 - Adicionar, editar, reordenar e excluir itens (Pergunta, Resposta, Grupo)
 - Adicionar imagens por **upload de arquivo** ou por **URL** (baixa e salva localmente)
@@ -97,10 +97,10 @@ Acesse [http://localhost:3000](http://localhost:3000).
 
 ## Adicionando conteúdo manualmente
 
-Para adicionar uma nova disciplina ou estudo diretamente nos arquivos:
+Para adicionar um novo tema ou estudo diretamente nos arquivos:
 
-1. Crie a pasta `docs/assets/<disciplina>/<estudo>/` e coloque as imagens lá
-2. Crie o dataset `docs/assets/<disciplina>/<estudo>.json` seguindo o schema:
+1. Crie a pasta `docs/assets/<tema>/<estudo>/` e coloque as imagens lá
+2. Crie o dataset `docs/assets/<tema>/<estudo>.json` seguindo o schema:
 
 ```json
 {
@@ -111,7 +111,7 @@ Para adicionar uma nova disciplina ou estudo diretamente nos arquivos:
       "Resposta": "Texto da resposta",
       "Imagens": [
         {
-          "url": "assets/<disciplina>/<estudo>/imagem.png",
+          "url": "assets/<tema>/<estudo>/imagem.png",
           "indicação": "Descrição opcional",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
@@ -130,14 +130,14 @@ Para adicionar uma nova disciplina ou estudo diretamente nos arquivos:
 
 ```json
 {
-  "Disciplina": "Nome da Disciplina",
+  "Tema": "Nome do Tema",
   "Estudos": [
     {
       "Titulo": "Nome do estudo",
-      "Exercicios": "<disciplina>/<estudo>.json",
+      "Exercicios": "<tema>/<estudo>.json",
       "Imagem": [
         {
-          "url": "assets/<disciplina>/<estudo>/capa.png",
+          "url": "assets/<tema>/<estudo>/capa.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "Wikimedia Commons",

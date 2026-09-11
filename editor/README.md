@@ -20,9 +20,9 @@ Acesse [http://localhost:3000](http://localhost:3000).
 
 ## Funcionalidades
 
-- Criar e excluir disciplinas e estudos
+- Criar e excluir temas e estudos
 - Adicionar, editar, reordenar e excluir itens (Grupo, Pergunta, Resposta)
-- Upload de imagens diretamente para `docs/assets/<disciplina>/<estudo>/`
+- Upload de imagens diretamente para `docs/assets/<tema>/<estudo>/`
 - Reordenar e remover imagens de cada item
 - Preview das imagens ao editar
 - Salvar tudo de volta nos JSONs em `docs/assets/`

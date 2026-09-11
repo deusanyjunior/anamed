@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import type { EstudosCatalog, Disciplina, EstudoRef } from '@/types';
+import type { EstudosCatalog, Tema, EstudoRef } from '@/types';
 
 const DOCS_BASE = 'http://localhost:8000';
 
@@ -14,11 +14,11 @@ function getCapaUrl(e: EstudoRef): string {
 
 export default function Home() {
   const [catalog, setCatalog] = useState<EstudosCatalog | null>(null);
-  const [newDisciplina, setNewDisciplina] = useState('');
+  const [newTema, setNewTema] = useState('');
   const [newTitulo, setNewTitulo] = useState('');
-  const [newDisciplinaTarget, setNewDisciplinaTarget] = useState('');
+  const [newTemaTarget, setNewTemaTarget] = useState('');
   const [saving, setSaving] = useState(false);
-  const [expandedCapa, setExpandedCapa] = useState<string | null>(null); // "disciplina::titulo"
+  const [expandedCapa, setExpandedCapa] = useState<string | null>(null); // "tema::titulo"
   const [capaUrl, setCapaUrl] = useState('');
   const [capaIndicacao, setCapaIndicacao] = useState('');
   const [capaCopyright, setCapaCopyright] = useState<{ licenca?: string; fonte?: string; urlOriginal?: string; observacao?: string }>({});
@@ -39,8 +39,8 @@ export default function Home() {
     setSaving(false);
   }
 
-  function openCapa(disciplina: string, e: EstudoRef) {
-    const key = `${disciplina}::${e.Titulo}`;
+  function openCapa(tema: string, e: EstudoRef) {
+    const key = `${tema}::${e.Titulo}`;
     if (expandedCapa === key) { setExpandedCapa(null); return; }
     setExpandedCapa(key);
     setCapaUrl(getCapaUrl(e));
@@ -50,7 +50,7 @@ export default function Home() {
     setCapaExpandedCopyright(false);
   }
 
-  async function saveCapa(disciplina: string, titulo: string) {
+  async function saveCapa(tema: string, titulo: string) {
     if (!catalog) return;
     const imagem = capaUrl
       ? [{ url: capaUrl, ...(Object.keys(capaCopyright).some(k => (capaCopyright as Record<string,string>)[k]) ? { Copyright: capaCopyright } : {}) }]
@@ -58,7 +58,7 @@ export default function Home() {
     const updated: EstudosCatalog = {
       ...catalog,
       itens: catalog.itens.map(d =>
-        d.Disciplina !== disciplina ? d : {
+        d.Tema !== tema ? d : {
           ...d,
           Estudos: d.Estudos.map(e =>
             e.Titulo !== titulo ? e : { ...e, Imagem: imagem }
@@ -70,8 +70,8 @@ export default function Home() {
     setExpandedCapa(null);
   }
 
-  async function uploadCapa(disciplina: string, titulo: string, file: File) {
-    const dir = `${slugify(disciplina)}/${slugify(titulo)}`;
+  async function uploadCapa(tema: string, titulo: string, file: File) {
+    const dir = `${slugify(tema)}/${slugify(titulo)}`;
     const form = new FormData();
     form.append('file', file);
     const res = await fetch(`/api/upload?dir=${dir}`, { method: 'POST', body: form });
@@ -79,13 +79,13 @@ export default function Home() {
     setCapaUrl(url);
   }
 
-  async function downloadCapa(disciplina: string, titulo: string) {
+  async function downloadCapa(tema: string, titulo: string) {
     const urlInput = document.getElementById('capa-url-input') as HTMLInputElement;
     const originalUrl = urlInput?.value.trim();
     if (!originalUrl) return;
     setCapaDownloading(true);
     try {
-      const dir = `${slugify(disciplina)}/${slugify(titulo)}`;
+      const dir = `${slugify(tema)}/${slugify(titulo)}`;
       const res = await fetch('/api/download-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -101,23 +101,23 @@ export default function Home() {
     }
   }
 
-  async function addDisciplina() {
-    if (!newDisciplina.trim() || !catalog) return;
-    const updated = { ...catalog, itens: [...catalog.itens, { Disciplina: newDisciplina.trim(), Estudos: [] }] };
+  async function addTema() {
+    if (!newTema.trim() || !catalog) return;
+    const updated = { ...catalog, itens: [...catalog.itens, { Tema: newTema.trim(), Estudos: [] }] };
     await saveCatalog(updated);
-    setNewDisciplina('');
+    setNewTema('');
   }
 
-  async function deleteDisciplina(nome: string) {
-    if (!catalog || !confirm(`Excluir disciplina "${nome}"?`)) return;
-    await saveCatalog({ ...catalog, itens: catalog.itens.filter(d => d.Disciplina !== nome) });
+  async function deleteTema(nome: string) {
+    if (!catalog || !confirm(`Excluir tema "${nome}"?`)) return;
+    await saveCatalog({ ...catalog, itens: catalog.itens.filter(d => d.Tema !== nome) });
   }
 
   async function addEstudo() {
-    if (!newTitulo.trim() || !newDisciplinaTarget || !catalog) return;
-    const disc = slugify(newDisciplinaTarget);
+    if (!newTitulo.trim() || !newTemaTarget || !catalog) return;
+    const temaSlug = slugify(newTemaTarget);
     const est = slugify(newTitulo.trim());
-    const exercicios = `${disc}/${est}.json`;
+    const exercicios = `${temaSlug}/${est}.json`;
     await fetch(`/api/dataset?path=${exercicios}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -126,7 +126,7 @@ export default function Home() {
     const updated: EstudosCatalog = {
       ...catalog,
       itens: catalog.itens.map(d =>
-        d.Disciplina === newDisciplinaTarget
+        d.Tema === newTemaTarget
           ? { ...d, Estudos: [...d.Estudos, { Titulo: newTitulo.trim(), Exercicios: exercicios }] }
           : d
       ),
@@ -135,13 +135,13 @@ export default function Home() {
     setNewTitulo('');
   }
 
-  async function renameEstudo(disciplina: string, tituloAntigo: string) {
+  async function renameEstudo(tema: string, tituloAntigo: string) {
     const tituloNovo = window.prompt('Novo nome do estudo:', tituloAntigo);
     if (!tituloNovo || tituloNovo === tituloAntigo) return;
     const res = await fetch('/api/rename-estudo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ disciplina, tituloAntigo, tituloNovo }),
+      body: JSON.stringify({ tema, tituloAntigo, tituloNovo }),
     });
     const { error } = await res.json();
     if (error) { alert('Erro: ' + error); return; }
@@ -150,12 +150,12 @@ export default function Home() {
     setExpandedCapa(null);
   }
 
-  async function deleteEstudo(disciplina: string, titulo: string) {
+  async function deleteEstudo(tema: string, titulo: string) {
     if (!catalog || !confirm(`Excluir estudo "${titulo}"?`)) return;
     const updated: EstudosCatalog = {
       ...catalog,
       itens: catalog.itens.map(d =>
-        d.Disciplina === disciplina
+        d.Tema === tema
           ? { ...d, Estudos: d.Estudos.filter(e => e.Titulo !== titulo) }
           : d
       ),
@@ -167,20 +167,20 @@ export default function Home() {
 
   return (
     <div>
-      <p className="text-slate-700 mb-6">Gerencie disciplinas e estudos do site.</p>
+      <p className="text-slate-700 mb-6">Gerencie temas e estudos do site.</p>
 
-      {catalog.itens.map((d: Disciplina) => (
-        <div key={d.Disciplina} className="mb-6 border border-slate-300 rounded-xl bg-slate-50 p-4">
+      {catalog.itens.map((d: Tema) => (
+        <div key={d.Tema} className="mb-6 border border-slate-300 rounded-xl bg-slate-50 p-4">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="text-lg font-bold text-slate-900">{d.Disciplina}</h2>
-            <button onClick={() => deleteDisciplina(d.Disciplina)} className="text-xs text-red-600 hover:text-red-700">
-              Excluir disciplina
+            <h2 className="text-lg font-bold text-slate-900">{d.Tema}</h2>
+            <button onClick={() => deleteTema(d.Tema)} className="text-xs text-red-600 hover:text-red-700">
+              Excluir tema
             </button>
           </div>
 
           <div className="space-y-2 mb-4">
             {d.Estudos.map(e => {
-              const key = `${d.Disciplina}::${e.Titulo}`;
+              const key = `${d.Tema}::${e.Titulo}`;
               const capaAtual = getCapaUrl(e);
               return (
                 <div key={e.Titulo} className="border border-slate-300 rounded-lg overflow-hidden bg-white">
@@ -199,13 +199,13 @@ export default function Home() {
                       <span className="text-sm text-slate-900">{e.Titulo}</span>
                     </div>
                     <div className="flex gap-3">
-                      <Link href={`/estudo/${slugify(d.Disciplina)}/${slugify(e.Titulo)}?path=${e.Exercicios}`}
+                      <Link href={`/estudo/${slugify(d.Tema)}/${slugify(e.Titulo)}?path=${e.Exercicios}`}
                         className="text-xs text-blue-600 hover:text-blue-700">Editar</Link>
-                      <button onClick={() => openCapa(d.Disciplina, e)}
+                      <button onClick={() => openCapa(d.Tema, e)}
                         className="text-xs text-purple-600 hover:text-purple-700">Capa</button>
-                      <button onClick={() => renameEstudo(d.Disciplina, e.Titulo)}
+                      <button onClick={() => renameEstudo(d.Tema, e.Titulo)}
                         className="text-xs text-amber-600 hover:text-amber-700">Renomear</button>
-                      <button onClick={() => deleteEstudo(d.Disciplina, e.Titulo)}
+                      <button onClick={() => deleteEstudo(d.Tema, e.Titulo)}
                         className="text-xs text-red-600 hover:text-red-700">Excluir</button>
                     </div>
                   </div>
@@ -281,7 +281,7 @@ export default function Home() {
                         <input ref={fileInputRef} type="file" accept="image/*" className="hidden"
                           onChange={async ev => {
                             const f = ev.target.files?.[0];
-                            if (f) await uploadCapa(d.Disciplina, e.Titulo, f);
+                            if (f) await uploadCapa(d.Tema, e.Titulo, f);
                             ev.target.value = '';
                           }} />
                         <button onClick={() => fileInputRef.current?.click()}
@@ -292,9 +292,9 @@ export default function Home() {
                           <input id="capa-url-input"
                             className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-blue-500"
                             placeholder="Adicionar por URL…"
-                            onKeyDown={ev => { if (ev.key === 'Enter') downloadCapa(d.Disciplina, e.Titulo); }}
+                            onKeyDown={ev => { if (ev.key === 'Enter') downloadCapa(d.Tema, e.Titulo); }}
                           />
-                          <button onClick={() => downloadCapa(d.Disciplina, e.Titulo)}
+                          <button onClick={() => downloadCapa(d.Tema, e.Titulo)}
                             disabled={capaDownloading}
                             className="text-xs bg-slate-200 hover:bg-slate-300 disabled:opacity-50 border border-slate-300 rounded-lg px-3 py-1.5">
                             {capaDownloading ? 'Baixando…' : '+ Adicionar'}
@@ -303,7 +303,7 @@ export default function Home() {
                       </div>
                       {/* Salvar / Cancelar */}
                       <div className="flex gap-2">
-                        <button onClick={() => saveCapa(d.Disciplina, e.Titulo)} disabled={saving}
+                        <button onClick={() => saveCapa(d.Tema, e.Titulo)} disabled={saving}
                           className="text-xs bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white rounded-lg px-3 py-1.5">
                           Salvar
                         </button>
@@ -325,14 +325,14 @@ export default function Home() {
             <input
               className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-500"
               placeholder="Título do novo estudo"
-              value={newDisciplinaTarget === d.Disciplina ? newTitulo : ''}
-              onFocus={() => setNewDisciplinaTarget(d.Disciplina)}
-              onChange={e => { setNewDisciplinaTarget(d.Disciplina); setNewTitulo(e.target.value); }}
+              value={newTemaTarget === d.Tema ? newTitulo : ''}
+              onFocus={() => setNewTemaTarget(d.Tema)}
+              onChange={e => { setNewTemaTarget(d.Tema); setNewTitulo(e.target.value); }}
               onKeyDown={e => e.key === 'Enter' && addEstudo()}
             />
             <button
               onClick={addEstudo}
-              disabled={saving || newDisciplinaTarget !== d.Disciplina || !newTitulo.trim()}
+              disabled={saving || newTemaTarget !== d.Tema || !newTitulo.trim()}
               className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-sm px-3 py-1.5 rounded-lg">
               + Estudo
             </button>
@@ -340,22 +340,22 @@ export default function Home() {
         </div>
       ))}
 
-      {/* Adicionar disciplina */}
+      {/* Adicionar tema */}
       <div className="border border-dashed border-slate-300 rounded-xl p-4 bg-white">
-        <h3 className="text-sm font-semibold text-slate-700 mb-3">Nova disciplina</h3>
+        <h3 className="text-sm font-semibold text-slate-700 mb-3">Novo tema</h3>
         <div className="flex gap-2">
           <input
             className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm outline-none focus:border-blue-500"
-            placeholder="Nome da disciplina"
-            value={newDisciplina}
-            onChange={e => setNewDisciplina(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && addDisciplina()}
+            placeholder="Nome do tema"
+            value={newTema}
+            onChange={e => setNewTema(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && addTema()}
           />
           <button
-            onClick={addDisciplina}
-            disabled={saving || !newDisciplina.trim()}
+            onClick={addTema}
+            disabled={saving || !newTema.trim()}
             className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-sm px-3 py-1.5 rounded-lg">
-            + Disciplina
+            + Tema
           </button>
         </div>
       </div>
