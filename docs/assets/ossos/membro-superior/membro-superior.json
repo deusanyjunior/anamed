@@ -1,0 +1,469 @@
+{
+  "schema": "bones_audio_v1",
+  "itens": [
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-1",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-1.mp3",
+          "Titulo": "Mão — áudio 1",
+          "Transcricao": "Você está analisando a filera proximal de ossos carpais. Essa filera contém o oso escafóide em seguida o semilunar, o piramidal e o piziforme.",
+          "id": "mao-1-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-1"
+    },
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-2.mp3",
+          "Titulo": "Mão — áudio 2",
+          "Transcricao": "Você está analisando a fileradistau de ossos carpais. Essa filera contém o oso trapésio em seguida o trapezoide, o capitato e o amato.",
+          "id": "mao-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-2"
+    },
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-3.mp3",
+          "Titulo": "Mão — áudio 3",
+          "Transcricao": "Você está analisando um dos cinco ossos metacarpais. Esse oso contém uma base proximal aos ossos do carpo, uma região média correspondente ao corpo do oso e uma região distal aos ossos do carpo e proximal as falanges correspondente à cabeça do oso.",
+          "id": "mao-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-3"
+    },
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-4",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-4.mp3",
+          "Titulo": "Mão — áudio 4",
+          "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa a falange proximal.",
+          "id": "mao-4-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-4"
+    },
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-5",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-5.mp3",
+          "Titulo": "Mão — áudio 5",
+          "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa a falange média.",
+          "id": "mao-5-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-5"
+    },
+    {
+      "Grupo": "Mão",
+      "Pergunta": "mao-6",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/mao-6.mp3",
+          "Titulo": "Mão — áudio 6",
+          "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa, a falange distal.",
+          "id": "mao-6-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "mao-6"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-1",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-1.mp3",
+          "Titulo": "Rádio — áudio 1",
+          "Transcricao": "Você está analisando a cabeça do rádio.",
+          "id": "radio-1-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-1"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-2.mp3",
+          "Titulo": "Rádio — áudio 2",
+          "Transcricao": "Você está analisando o colo do rádio.",
+          "id": "radio-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-2"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-3.mp3",
+          "Titulo": "Rádio — áudio 3",
+          "Transcricao": "Você está analisando o corpo do rádio.",
+          "id": "radio-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-3"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-4",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-4.mp3",
+          "Titulo": "Rádio — áudio 4",
+          "Transcricao": "Você está analisando o processo Estiloide do Rádio.",
+          "id": "radio-4-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-4"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-5",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-5.mp3",
+          "Titulo": "Rádio — áudio 5",
+          "Transcricao": "Você está analisando a tuberosidade do rádio.",
+          "id": "radio-5-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-5"
+    },
+    {
+      "Grupo": "Rádio",
+      "Pergunta": "radio-6",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/radio-6.mp3",
+          "Titulo": "Rádio — áudio 6",
+          "Transcricao": "Você está analisando a incisura ou nar do rádio.",
+          "id": "radio-6-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "radio-6"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-1",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-1.mp3",
+          "Titulo": "Ulna — áudio 1",
+          "Transcricao": "Você está analisando o ólecrano.",
+          "id": "ulna-1-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-1"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-2.mp3",
+          "Titulo": "Ulna — áudio 2",
+          "Transcricao": "Você está analisando a incisura troclear.",
+          "id": "ulna-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-2"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-3.mp3",
+          "Titulo": "Ulna — áudio 3",
+          "Transcricao": "Você está analisando o corpo da una.",
+          "id": "ulna-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-3"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-4",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-4.mp3",
+          "Titulo": "Ulna — áudio 4",
+          "Transcricao": "Você está analisando a cabeça da una.",
+          "id": "ulna-4-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-4"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-5",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-5.mp3",
+          "Titulo": "Ulna — áudio 5",
+          "Transcricao": "Você está analisando o processo Estiloide da Una.",
+          "id": "ulna-5-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-5"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-6",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-6.mp3",
+          "Titulo": "Ulna — áudio 6",
+          "Transcricao": "Você está analisando o processo coronóide da UNA?",
+          "id": "ulna-6-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-6"
+    },
+    {
+      "Grupo": "Ulna",
+      "Pergunta": "ulna-7",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/ulna-7.mp3",
+          "Titulo": "Ulna — áudio 7",
+          "Transcricao": "Você está analisando a tuberosidade da urna.",
+          "id": "ulna-7-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "ulna-7"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-1",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-1.mp3",
+          "Titulo": "Úmero — áudio 1",
+          "Transcricao": "Você está analisando a cabeça do húmero.",
+          "id": "umero-1-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-1"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-2.mp3",
+          "Titulo": "Úmero — áudio 2",
+          "Transcricao": "Você está analisando o tubérculo maior do úmero.",
+          "id": "umero-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-2"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-3.mp3",
+          "Titulo": "Úmero — áudio 3",
+          "Transcricao": "Você está analisando o tubérculo menor do úmero.",
+          "id": "umero-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-3"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-4",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-4.mp3",
+          "Titulo": "Úmero — áudio 4",
+          "Transcricao": "Você está analisando o corpo do húmero.",
+          "id": "umero-4-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-4"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-5",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-5.mp3",
+          "Titulo": "Úmero — áudio 5",
+          "Transcricao": "Você está analisando o epicóndilo medial.",
+          "id": "umero-5-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-5"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-6",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-6.mp3",
+          "Titulo": "Úmero — áudio 6",
+          "Transcricao": "Você está analisando o capítulo do húmero.",
+          "id": "umero-6-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-6"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-7",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-7.mp3",
+          "Titulo": "Úmero — áudio 7",
+          "Transcricao": "Você está analisando a trocleta do úmero.",
+          "id": "umero-7-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-7"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-8",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-8.mp3",
+          "Titulo": "Úmero — áudio 8",
+          "Transcricao": "Você está analisando o Epicóndil lateral.",
+          "id": "umero-8-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-8"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-9",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-9.mp3",
+          "Titulo": "Úmero — áudio 9",
+          "Transcricao": "Você está analisando a força do alécrano.",
+          "id": "umero-9-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-9"
+    },
+    {
+      "Grupo": "Úmero",
+      "Pergunta": "umero-10",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/membro-superior/audios/umero-10.mp3",
+          "Titulo": "Úmero — áudio 10",
+          "Transcricao": "Você está analisando o sulco do nervonar.",
+          "id": "umero-10-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "umero-10"
+    }
+  ]
+}

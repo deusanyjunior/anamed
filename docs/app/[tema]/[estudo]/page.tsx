@@ -4,7 +4,10 @@ import { notFound } from 'next/navigation';
 import StudyExperience from '../../../components/StudyExperience';
 import { allStudies, findStudy, readCatalog, readDataset, routePartsFromExercises, routeFromExercises } from '../../../lib/catalog';
 
-type PageProps = { params: Promise<{ tema: string; estudo: string }> };
+type PageProps = {
+  params: Promise<{ tema: string; estudo: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+};
 
 export function generateStaticParams() {
   return allStudies().map(({ estudo }) => routePartsFromExercises(estudo.Exercicios));
@@ -16,8 +19,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return { title: found ? `${found.estudo.Titulo} — AnaMed` : 'Estudo — AnaMed' };
 }
 
-export default async function StudyPage({ params }: PageProps) {
+export default async function StudyPage({ params, searchParams }: PageProps) {
   const { tema, estudo } = await params;
+  const query = await searchParams;
+  const first = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] : value;
+  const itemId = first(query.item);
+  const audioId = first(query.audio);
+  const autoplayValue = first(query.autoplay);
+  const autoplay = autoplayValue === '' || autoplayValue === '1' || autoplayValue === 'true';
   const found = findStudy(tema, estudo, readCatalog());
   if (!found) notFound();
 
@@ -39,7 +48,12 @@ export default async function StudyPage({ params }: PageProps) {
         <h2 style={{ margin: 0, fontSize: 26 }}>{found.estudo.Titulo}</h2>
         <p className="small" style={{ marginTop: 6 }}>{dataset.itens.length} itens</p>
       </div>
-      <StudyExperience dataset={dataset} studyTitle={found.estudo.Titulo} studyKey={routeFromExercises(found.estudo.Exercicios)} />
+      <StudyExperience
+        dataset={dataset}
+        studyTitle={found.estudo.Titulo}
+        studyKey={routeFromExercises(found.estudo.Exercicios)}
+        deepLink={{ itemId, audioId, autoplay }}
+      />
     </main>
   );
 }

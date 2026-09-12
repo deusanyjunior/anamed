@@ -22,7 +22,7 @@ Acesse [http://localhost:3000](http://localhost:3000).
 
 - Criar e excluir temas e estudos
 - Adicionar, editar, reordenar e excluir itens (Grupo, Pergunta, Resposta)
-- Upload de imagens diretamente para `docs/assets/<tema>/<estudo>/`
-- Reordenar e remover imagens de cada item
-- Preview das imagens ao editar
+- Upload de imagens, áudios e vídeos diretamente para `docs/assets/<tema>/<estudo>/`
+- Reordenar, remover e editar títulos de imagens, áudios e vídeos
+- Preview e reprodução das mídias ao editar cada item
 - Salvar tudo de volta nos JSONs em `docs/assets/`

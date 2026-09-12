@@ -32,18 +32,19 @@ anamed/
 - **Refazer apenas erros** — cria um novo quiz somente com os itens errados
 - **Filtro por grupo** — seleciona quais grupos incluir no quiz
 - **Histórico de sessões** — últimas 50 sessões salvas no `localStorage`
+- **Áudios e vídeos** — players de mídia no mesmo nível das imagens
 - **Rotas por estudo** — cada valor de `Exercicios` gera uma rota removendo apenas `.json`
 
 Exemplo:
 
 ```json
-"Exercicios": "ossos/ossos-do-esqueleto.json"
+"Exercicios": "ossos/esqueleto-axial/esqueleto-axial.json"
 ```
 
 gera:
 
 ```text
-/ossos/ossos-do-esqueleto
+/ossos/esqueleto-axial-axial
 ```
 
 ### Executando localmente
@@ -75,7 +76,7 @@ Configure `docs` como **Root Directory** do projeto na Vercel. Use os comandos p
 Após o deploy, o estudo do exemplo estará disponível em:
 
 ```text
-https://anamed.vercel.app/ossos/ossos-do-esqueleto
+https://anamed.vercel.app/ossos/esqueleto-axial-axial
 ```
 
 ## Editor (`editor/`)
@@ -87,8 +88,9 @@ O editor é uma aplicação Next.js independente para gerenciar os conteúdos em
 - Criar e excluir temas e estudos
 - Renomear estudos, arquivos JSON e pastas de imagens
 - Adicionar, editar, reordenar e excluir itens (Pergunta, Resposta, Grupo)
-- Adicionar imagens por upload ou URL
-- Reordenar e remover imagens
+- Adicionar imagens, áudios e vídeos por upload ou URL
+- Reordenar e remover imagens, áudios e vídeos
+- Editar títulos e referências de mídia
 - Renomear arquivos de imagem em disco
 - Editar indicação e dados de copyright por imagem
 - Editar capas dos estudos
@@ -135,13 +137,32 @@ Para adicionar um novo tema ou estudo diretamente nos arquivos:
             "observacao": "Observação opcional"
           }
         }
+      ],
+      "Audios": [
+        {
+          "url": "assets/<tema>/<estudo>/audio.mp3",
+          "Titulo": "Título do áudio"
+        }
+      ],
+      "Videos": [
+        {
+          "url": "assets/<tema>/<estudo>/video.mp4",
+          "Titulo": "Título do vídeo",
+          "Tipo": "arquivo"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=VIDEO_ID",
+          "Titulo": "Vídeo do YouTube",
+          "Tipo": "youtube"
+        }
       ]
     }
   ]
 }
 ```
 
-3. Registre o estudo em `docs/assets/estudos.json`:
+O estudo de áudio foi dividido em dois datasets: `docs/assets/ossos/cingulo/cingulo.json`, com os grupos Clavícula e Escápula, e `docs/assets/ossos/membro-superior/membro-superior.json`, com os grupos Mão, Rádio, Ulna e Úmero. Os arquivos de áudio ficam nas respectivas subpastas `audios/`, e a transcrição opcional deve ser colocada em `Transcricao`, dentro do objeto correspondente em `Audios`.
+
 
 ```json
 {

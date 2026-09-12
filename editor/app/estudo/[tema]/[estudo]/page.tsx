@@ -2,12 +2,52 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import type { StudyDataset, StudyItem, StudyImage } from '@/types';
+import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '@/types';
 
 const DOCS_BASE = 'http://localhost:8000';
 
+function youtubeEmbedUrl(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return null;
+    const hostname = url.hostname.toLowerCase().replace(/^www\./, '');
+    let videoId = '';
+    if (hostname === 'youtu.be') videoId = url.pathname.split('/').filter(Boolean)[0] ?? '';
+    else if (hostname === 'youtube.com' || hostname === 'youtube-nocookie.com') {
+      if (url.pathname === '/watch') videoId = url.searchParams.get('v') ?? '';
+      else if (/^\/(shorts|embed)\/[^/]+/.test(url.pathname)) videoId = url.pathname.split('/')[2] ?? '';
+    }
+    return /^[A-Za-z0-9_-]{11}$/.test(videoId) ? `https://www.youtube-nocookie.com/embed/${videoId}` : null;
+  } catch {
+    return null;
+  }
+}
+
+function videoFileUrl(url: string) {
+  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : `${DOCS_BASE}/${url}`;
+}
+
+function newEntityId(prefix: string) {
+  const suffix = typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  return `${prefix}-${suffix}`;
+}
+
+function normalizeDataset(dataset: StudyDataset): StudyDataset {
+  return {
+    ...dataset,
+    itens: dataset.itens.map((item, itemIdx) => {
+      const id = item.id || `item-${itemIdx + 1}`;
+      return {
+        ...item,
+        id,
+        Audios: (item.Audios ?? []).map((audio, audioIdx) => ({ ...audio, id: audio.id || `${id}-audio-${audioIdx + 1}` })),
+      };
+    }),
+  };
+}
+
 function emptyItem(): StudyItem {
-  return { Grupo: '', Pergunta: '', Resposta: '', Imagens: [] };
+  return { id: newEntityId('item'), Grupo: '', Pergunta: '', Resposta: '', Imagens: [], Audios: [], Videos: [] };
 }
 
 export default function EstudoEditor() {
@@ -26,7 +66,7 @@ export default function EstudoEditor() {
 
   useEffect(() => {
     if (!datasetPath) return;
-    fetch(`/api/dataset?path=${datasetPath}`).then(r => r.json()).then(setDataset);
+    fetch(`/api/dataset?path=${datasetPath}`).then(r => r.json()).then(body => setDataset(normalizeDataset(body)));
   }, [datasetPath]);
 
   async function save(ds: StudyDataset) {
@@ -131,6 +171,90 @@ export default function EstudoEditor() {
     updateItem(itemIdx, { ...item, Imagens: item.Imagens.map((img, i) => i === imgIdx ? updated : img) });
   }
 
+  function updateAudio(itemIdx: number, audioIdx: number, updated: StudyAudio) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    const audios = item.Audios ?? [];
+    updateItem(itemIdx, { ...item, Audios: audios.map((audio, i) => i === audioIdx ? updated : audio) });
+  }
+
+  function removeAudio(itemIdx: number, audioIdx: number) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Audios: (item.Audios ?? []).filter((_, i) => i !== audioIdx) });
+  }
+
+  function moveAudio(itemIdx: number, audioIdx: number, dir: -1 | 1) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    const audios = [...(item.Audios ?? [])];
+    const target = audioIdx + dir;
+    if (target < 0 || target >= audios.length) return;
+    [audios[audioIdx], audios[target]] = [audios[target], audios[audioIdx]];
+    updateItem(itemIdx, { ...item, Audios: audios });
+  }
+
+  function updateVideo(itemIdx: number, videoIdx: number, updated: StudyVideo) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    const videos = item.Videos ?? [];
+    updateItem(itemIdx, { ...item, Videos: videos.map((video, i) => i === videoIdx ? updated : video) });
+  }
+
+  function removeVideo(itemIdx: number, videoIdx: number) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Videos: (item.Videos ?? []).filter((_, i) => i !== videoIdx) });
+  }
+
+  function moveVideo(itemIdx: number, videoIdx: number, dir: -1 | 1) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    const videos = [...(item.Videos ?? [])];
+    const target = videoIdx + dir;
+    if (target < 0 || target >= videos.length) return;
+    [videos[videoIdx], videos[target]] = [videos[target], videos[videoIdx]];
+    updateItem(itemIdx, { ...item, Videos: videos });
+  }
+
+  async function uploadAudio(itemIdx: number, file: File) {
+    const form = new FormData();
+    form.append('file', file);
+    const res = await fetch(`/api/upload?dir=${imageDir}`, { method: 'POST', body: form });
+    const { url } = await res.json();
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Audios: [...(item.Audios ?? []), { id: newEntityId('audio'), url, Titulo: file.name.replace(/\.[^.]+$/, '') }] });
+  }
+
+  async function uploadVideo(itemIdx: number, file: File) {
+    const form = new FormData();
+    form.append('file', file);
+    const res = await fetch(`/api/upload?dir=${imageDir}`, { method: 'POST', body: form });
+    const { url } = await res.json();
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Videos: [...(item.Videos ?? []), { url, Titulo: file.name.replace(/\.[^.]+$/, ''), Tipo: 'arquivo' }] });
+  }
+
+  function addAudioByUrl(itemIdx: number) {
+    if (!dataset) return;
+    const url = window.prompt('URL do áudio:')?.trim();
+    if (!url) return;
+    const titulo = window.prompt('Título do áudio:', url.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '')?.trim() ?? '';
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Audios: [...(item.Audios ?? []), { id: newEntityId('audio'), url, Titulo: titulo || undefined }] });
+  }
+
+  function addVideoByUrl(itemIdx: number) {
+    if (!dataset) return;
+    const url = window.prompt('URL do vídeo:')?.trim();
+    if (!url) return;
+    const titulo = window.prompt('Título do vídeo:', url.split('/').pop()?.replace(/\.[^.]+$/, '') ?? '')?.trim() ?? '';
+    const item = dataset.itens[itemIdx];
+    updateItem(itemIdx, { ...item, Videos: [...(item.Videos ?? []), { url, Titulo: titulo || undefined, Tipo: 'arquivo' }] });
+  }
+
   if (!dataset) return <p className="text-slate-600">Carregando...</p>;
 
   const grupos = [...new Set(dataset.itens.map(i => i.Grupo).filter(Boolean))];
@@ -194,6 +318,16 @@ export default function EstudoEditor() {
             {/* Corpo expandido */}
             {expandedIdx === idx && (
               <div className="p-4 space-y-3 border-t border-slate-200 bg-white">
+                <div>
+                  <label className="text-xs text-slate-600 block mb-1">ID do item</label>
+                  <input
+                    className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
+                    value={item.id ?? ''}
+                    placeholder="Identificador estável do item"
+                    onChange={e => updateItem(idx, { ...item, id: e.target.value || undefined })}
+                  />
+                </div>
+
                 <div>
                   <label className="text-xs text-slate-600 block mb-1">Pergunta</label>
                   <input
@@ -356,6 +490,64 @@ export default function EstudoEditor() {
                         + Adicionar
                       </button>
                     </div>
+                  </div>
+                </div>
+
+                {/* Áudios */}
+                <div>
+                  <label className="text-xs text-slate-600 block mb-2">Áudios</label>
+                  <div className="space-y-2">
+                    {(item.Audios ?? []).map((audio, audioIdx) => (
+                      <div key={audioIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
+                        <audio controls preload="metadata" src={`${DOCS_BASE}/${audio.url}`} className="max-w-full" />
+                        <div className="flex-1 space-y-1">
+                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.id ?? ''} placeholder="ID do áudio" onChange={e => updateAudio(idx, audioIdx, { ...audio, id: e.target.value || undefined })} />
+                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.Titulo ?? ''} placeholder="Título do áudio" onChange={e => updateAudio(idx, audioIdx, { ...audio, Titulo: e.target.value })} />
+                          <textarea className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs min-h-16" value={audio.Transcricao ?? ''} placeholder="Transcrição (opcional)" onChange={e => updateAudio(idx, audioIdx, { ...audio, Transcricao: e.target.value || undefined })} />
+                          <div className="small break-all">{audio.url}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <button onClick={() => moveAudio(idx, audioIdx, -1)} disabled={audioIdx === 0} className="text-xs disabled:opacity-20">▲</button>
+                          <button onClick={() => moveAudio(idx, audioIdx, 1)} disabled={audioIdx === (item.Audios ?? []).length - 1} className="text-xs disabled:opacity-20">▼</button>
+                          <button onClick={() => removeAudio(idx, audioIdx)} className="text-red-600 text-xs">✕</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex gap-2 mt-2">
+                    <input id={`audio-upload-${idx}`} type="file" accept="audio/*" className="hidden" onChange={async e => { const file = e.target.files?.[0]; if (file) await uploadAudio(idx, file); e.target.value = ''; }} />
+                    <button onClick={() => document.getElementById(`audio-upload-${idx}`)?.click()} className="text-xs bg-slate-200 border border-slate-300 rounded-lg px-3 py-1.5">↑ Upload áudio</button>
+                    <button onClick={() => addAudioByUrl(idx)} className="text-xs bg-slate-200 border border-slate-300 rounded-lg px-3 py-1.5">+ Áudio por URL</button>
+                  </div>
+                </div>
+
+                {/* Vídeos */}
+                <div>
+                  <label className="text-xs text-slate-600 block mb-2">Vídeos</label>
+                  <div className="space-y-2">
+                    {(item.Videos ?? []).map((video, videoIdx) => (
+                      <div key={videoIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
+                        {video.Tipo === 'youtube' ? (youtubeEmbedUrl(video.url) ? <iframe src={youtubeEmbedUrl(video.url) ?? undefined} title={video.Titulo || 'Prévia do YouTube'} className="w-40 aspect-video rounded max-w-full" /> : <div className="w-40 text-xs text-red-600">URL do YouTube inválida</div>) : <video controls preload="metadata" src={videoFileUrl(video.url)} className="w-40 max-w-full" />}
+                        <div className="flex-1 space-y-1">
+                          <select className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Tipo ?? 'arquivo'} onChange={e => updateVideo(idx, videoIdx, { ...video, Tipo: e.target.value as StudyVideo['Tipo'] })}>
+                            <option value="arquivo">Arquivo de vídeo</option>
+                            <option value="youtube">YouTube</option>
+                          </select>
+                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Titulo ?? ''} placeholder="Título do vídeo" onChange={e => updateVideo(idx, videoIdx, { ...video, Titulo: e.target.value })} />
+                          <div className="small break-all">{video.url}</div>
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <button onClick={() => moveVideo(idx, videoIdx, -1)} disabled={videoIdx === 0} className="text-xs disabled:opacity-20">▲</button>
+                          <button onClick={() => moveVideo(idx, videoIdx, 1)} disabled={videoIdx === (item.Videos ?? []).length - 1} className="text-xs disabled:opacity-20">▼</button>
+                          <button onClick={() => removeVideo(idx, videoIdx)} className="text-red-600 text-xs">✕</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex gap-2 mt-2">
+                    <input id={`video-upload-${idx}`} type="file" accept="video/*" className="hidden" onChange={async e => { const file = e.target.files?.[0]; if (file) await uploadVideo(idx, file); e.target.value = ''; }} />
+                    <button onClick={() => document.getElementById(`video-upload-${idx}`)?.click()} className="text-xs bg-slate-200 border border-slate-300 rounded-lg px-3 py-1.5">↑ Upload vídeo</button>
+                    <button onClick={() => addVideoByUrl(idx)} className="text-xs bg-slate-200 border border-slate-300 rounded-lg px-3 py-1.5">+ Vídeo por URL</button>
                   </div>
                 </div>
               </div>

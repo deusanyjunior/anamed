@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import type { StudyDataset, StudyImage, StudyItem } from '../lib/types';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '../lib/types';
 
-type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string };
+type DeepLink = { itemId?: string; audioId?: string; autoplay?: boolean };
+type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string; deepLink?: DeepLink };
 type Entry = { item: StudyItem; retries: number };
 type Session = { id: string; finishedAt: string; grupos: string[]; total: number; corretas: number; acuracia: number };
 
@@ -52,7 +53,159 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
   );
 }
 
-export default function StudyExperience({ dataset, studyTitle, studyKey }: Props) {
+function AudioWithTranscript({
+  audio,
+  registerAudio,
+  autoplayBlocked,
+  onAutoplaySuccess,
+  onAutoplayFailure,
+}: {
+  audio: StudyAudio;
+  registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
+  autoplayBlocked: boolean;
+  onAutoplaySuccess: () => void;
+  onAutoplayFailure: () => void;
+}) {
+  const hasTranscript = Boolean(audio.Transcricao?.trim());
+  const [showTranscript, setShowTranscript] = useState(false);
+  const audioElement = useRef<HTMLAudioElement | null>(null);
+  const fallbackButton = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (autoplayBlocked) fallbackButton.current?.focus();
+  }, [autoplayBlocked]);
+
+  const setAudioElement = useCallback((element: HTMLAudioElement | null) => {
+    audioElement.current = element;
+    registerAudio(audio.id, element);
+  }, [audio.id, registerAudio]);
+
+  async function playAudio() {
+    if (!audioElement.current) return;
+    try {
+      await audioElement.current.play();
+      onAutoplaySuccess();
+    } catch {
+      onAutoplayFailure();
+    }
+  }
+
+  return (
+    <div>
+      {audio.Titulo && <div className="small" style={{ marginBottom: 4 }}>{audio.Titulo}</div>}
+      <audio
+        ref={setAudioElement}
+        controls
+        preload="metadata"
+        src={imageUrl(audio.url)}
+        style={{ width: '100%' }}
+      />
+      {autoplayBlocked && (
+        <button
+          ref={fallbackButton}
+          type="button"
+          className="btn btn-primary"
+          aria-label={`Reproduzir ${audio.Titulo || 'áudio'}`}
+          onClick={playAudio}
+          style={{ marginTop: 6 }}
+        >
+          ▶ Reproduzir áudio
+        </button>
+      )}
+      {hasTranscript && (
+        <div style={{ marginTop: 6 }}>
+          <button
+            type="button"
+            className="btn"
+            aria-expanded={showTranscript}
+            onClick={() => setShowTranscript(previous => !previous)}
+            style={{ fontSize: 12, padding: '5px 9px' }}
+          >
+            {showTranscript ? 'Ocultar transcrição' : 'Exibir transcrição'}
+          </button>
+          {showTranscript && (
+            <p style={{ margin: '8px 0 0', whiteSpace: 'pre-wrap' }}>{audio.Transcricao}</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function youtubeEmbedUrl(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return null;
+    const hostname = url.hostname.toLowerCase().replace(/^www\./, '');
+    let videoId = '';
+
+    if (hostname === 'youtu.be') {
+      videoId = url.pathname.split('/').filter(Boolean)[0] ?? '';
+    } else if (hostname === 'youtube.com' || hostname === 'youtube-nocookie.com') {
+      if (url.pathname === '/watch') videoId = url.searchParams.get('v') ?? '';
+      else if (/^\/(shorts|embed)\/[^/]+/.test(url.pathname)) videoId = url.pathname.split('/')[2] ?? '';
+    }
+
+    return /^[A-Za-z0-9_-]{11}$/.test(videoId) ? `https://www.youtube-nocookie.com/embed/${videoId}` : null;
+  } catch {
+    return null;
+  }
+}
+
+function VideoMedia({ video }: { video: StudyVideo }) {
+  if (video.Tipo === 'youtube') {
+    const embedUrl = youtubeEmbedUrl(video.url);
+    if (!embedUrl) return <div className="small">URL do YouTube inválida.</div>;
+    return <iframe
+      src={embedUrl}
+      title={video.Titulo || 'Vídeo do YouTube'}
+      style={{ width: '100%', aspectRatio: '16 / 9', border: 0, borderRadius: 12 }}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />;
+  }
+
+  return <video controls preload="metadata" src={imageUrl(video.url)} style={{ width: '100%', borderRadius: 12 }} />;
+}
+
+function Media({
+  audios = [],
+  videos = [],
+  registerAudio,
+  autoplayAudioId,
+  autoplayBlockedAudioId,
+  onAutoplaySuccess,
+  onAutoplayFailure,
+}: {
+  audios?: StudyAudio[];
+  videos?: StudyVideo[];
+  registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
+  autoplayAudioId?: string;
+  autoplayBlockedAudioId?: string;
+  onAutoplaySuccess: () => void;
+  onAutoplayFailure: () => void;
+}) {
+  if (!audios.length && !videos.length) return null;
+  return (
+    <div style={{ display: 'grid', gap: 10, marginTop: 12 }}>
+      {audios.map((audio, index) => <AudioWithTranscript
+        key={audio.id ?? `audio-${audio.url}-${index}`}
+        audio={audio}
+        registerAudio={registerAudio}
+        autoplayBlocked={audio.id === autoplayBlockedAudioId && audio.id === autoplayAudioId}
+        onAutoplaySuccess={onAutoplaySuccess}
+        onAutoplayFailure={onAutoplayFailure}
+      />)}
+      {videos.map((video, index) => <div key={`video-${video.url}-${index}`}>
+        {video.Titulo && <div className="small" style={{ marginBottom: 4 }}>{video.Titulo}</div>}
+        <VideoMedia video={video} />
+      </div>)}
+    </div>
+  );
+}
+
+export default function StudyExperience({ dataset, studyTitle, studyKey, deepLink }: Props) {
   const groups = useMemo(() => [...new Set(dataset.itens.map(item => item.Grupo))], [dataset.itens]);
   const [phase, setPhase] = useState<Phase>('study');
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
@@ -68,6 +221,11 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
   const [answered, setAnswered] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [history, setHistory] = useState<Session[]>([]);
+  const audioElements = useRef(new Map<string, HTMLAudioElement>());
+  const autoplayAttempt = useRef<string | null>(null);
+  const [audioRegistryVersion, setAudioRegistryVersion] = useState(0);
+  const [autoplayBlockedAudioId, setAutoplayBlockedAudioId] = useState<string>();
+  const [autoplayMessage, setAutoplayMessage] = useState('');
 
   useEffect(() => {
     try {
@@ -78,6 +236,62 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
       if (Array.isArray(savedHistory)) setHistory(savedHistory);
     } catch { /* localStorage indisponível */ }
   }, [studyKey]);
+
+  useEffect(() => {
+    if (!deepLink?.itemId) return;
+    const target = dataset.itens.find(item => item.id === deepLink.itemId);
+    if (!target) return;
+    const frame = requestAnimationFrame(() => {
+      setExpandedGroups(previous => previous.has(target.Grupo) ? previous : new Set(previous).add(target.Grupo));
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [dataset.itens, deepLink?.itemId]);
+
+  useEffect(() => {
+    if (!deepLink?.itemId || phase !== 'study') return;
+    const target = dataset.itens.find(item => item.id === deepLink.itemId);
+    if (!target || !expandedGroups.has(target.Grupo)) return;
+
+    const itemElement = document.getElementById(`study-item-${target.id}`);
+    if (!itemElement) return;
+    const frame = requestAnimationFrame(() => {
+      if (!itemElement.isConnected) return;
+      itemElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      itemElement.focus({ preventScroll: true });
+    });
+
+    if (deepLink.autoplay && deepLink.audioId) {
+      const audio = audioElements.current.get(deepLink.audioId);
+      const attemptKey = `${deepLink.itemId}:${deepLink.audioId}`;
+      if (audio && autoplayAttempt.current !== attemptKey) {
+        autoplayAttempt.current = attemptKey;
+        audio.play().then(() => {
+          setAutoplayBlockedAudioId(undefined);
+          setAutoplayMessage('Áudio reproduzido.');
+        }).catch(() => {
+          setAutoplayBlockedAudioId(deepLink.audioId);
+          setAutoplayMessage('O navegador bloqueou a reprodução automática. Pressione o botão Reproduzir áudio.');
+        });
+      }
+    }
+
+    return () => cancelAnimationFrame(frame);
+  }, [audioRegistryVersion, dataset.itens, deepLink?.audioId, deepLink?.autoplay, deepLink?.itemId, expandedGroups, phase]);
+
+  const registerAudio = useCallback((id: string | undefined, element: HTMLAudioElement | null) => {
+    if (!id) return;
+    if (element) audioElements.current.set(id, element); else audioElements.current.delete(id);
+    setAudioRegistryVersion(previous => previous + 1);
+  }, []);
+
+  function handleAutoplaySuccess() {
+    setAutoplayBlockedAudioId(undefined);
+    setAutoplayMessage('Áudio reproduzido.');
+  }
+
+  function handleAutoplayFailure() {
+    setAutoplayMessage('Não foi possível reproduzir o áudio. Tente novamente.');
+  }
 
   function toggleGroup(group: string) {
     setExpandedGroups(previous => {
@@ -156,6 +370,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
         <button className={`btn ${phase === 'study' ? 'btn-primary' : ''}`} onClick={() => setPhase('study')}>Estudo</button>
         <button className={`btn ${phase !== 'study' ? 'btn-primary' : ''}`} onClick={() => setPhase('setup')}>Quiz</button>
       </div>
+      {autoplayMessage && <div role="status" aria-live="polite" className="small" style={{ marginTop: 10 }}>{autoplayMessage}</div>}
 
       {phase === 'study' && (
         <div>
@@ -165,10 +380,26 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
             return <div key={group}>
               <button className="accordion-header" onClick={() => toggleGroup(group)}><span>{group}</span><span style={{ transform: open ? 'rotate(180deg)' : undefined }}>▾</span></button>
               <div className="divider" style={{ margin: 0 }} />
-              {open && <div className="accordion-body">{items.map((item, index) => <article className="card" style={{ padding: 14, marginBottom: 10 }} key={`${item.Resposta}-${index}`}>
+              {open && <div className="accordion-body">{items.map((item, index) => <article
+                className="card"
+                style={{ padding: 14, marginBottom: 10 }}
+                key={item.id ?? `${item.Resposta}-${index}`}
+                id={item.id ? `study-item-${item.id}` : undefined}
+                tabIndex={item.id ? -1 : undefined}
+                aria-label={item.id ? `Item ${item.Pergunta}` : undefined}
+              >
                 <div className="small" style={{ marginBottom: 4 }}>{item.Pergunta}</div>
                 <div style={{ fontWeight: 700, marginBottom: 10 }}>{item.Resposta}</div>
-                <Images images={item.Imagens} alt={item.Resposta} />
+                <Images images={item.Imagens ?? []} alt={item.Resposta} />
+                <Media
+                  audios={item.Audios}
+                  videos={item.Videos}
+                  registerAudio={registerAudio}
+                  autoplayAudioId={deepLink?.audioId}
+                  autoplayBlockedAudioId={autoplayBlockedAudioId}
+                  onAutoplaySuccess={handleAutoplaySuccess}
+                  onAutoplayFailure={handleAutoplayFailure}
+                />
               </article>)}</div>}
             </div>;
           })}
@@ -189,7 +420,16 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
 
       {phase === 'question' && current && <div className="quiz-panel">
         <div className="small" style={{ marginBottom: 10 }}>Pergunta {answered + 1} de {total} | Corretas: {correctCount}</div>
-        <Images images={current.item.Imagens} />
+        <Images images={current.item.Imagens ?? []} />
+        <Media
+          audios={current.item.Audios}
+          videos={current.item.Videos}
+          registerAudio={registerAudio}
+          autoplayAudioId={deepLink?.audioId}
+          autoplayBlockedAudioId={autoplayBlockedAudioId}
+          onAutoplaySuccess={handleAutoplaySuccess}
+          onAutoplayFailure={handleAutoplayFailure}
+        />
         <p style={{ margin: '14px 0 6px', fontWeight: 700 }}>{current.item.Pergunta}</p>
         <form onSubmit={submitAnswer}>
           <input className="input" value={answer} onChange={event => setAnswer(event.target.value)} autoFocus autoComplete="off" placeholder="Digite a resposta…" style={{ marginBottom: 10 }} />
@@ -198,7 +438,16 @@ export default function StudyExperience({ dataset, studyTitle, studyKey }: Props
       </div>}
 
       {phase === 'reveal' && current && <div className="quiz-panel">
-        <Images images={current.item.Imagens} />
+        <Images images={current.item.Imagens ?? []} />
+        <Media
+          audios={current.item.Audios}
+          videos={current.item.Videos}
+          registerAudio={registerAudio}
+          autoplayAudioId={deepLink?.audioId}
+          autoplayBlockedAudioId={autoplayBlockedAudioId}
+          onAutoplaySuccess={handleAutoplaySuccess}
+          onAutoplayFailure={handleAutoplayFailure}
+        />
         <p style={{ margin: '14px 0 4px', fontWeight: 700 }}>{current.item.Pergunta}</p>
         <p className="small quiz-answer">Sua resposta: <strong>{userAnswer || '(em branco)'}</strong></p>
         <p className="quiz-answer">Resposta correta: <strong>{current.item.Resposta}</strong></p>

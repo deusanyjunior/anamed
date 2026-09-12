@@ -11,6 +11,9 @@ const contentTypes: Record<string, string> = {
   '.svg': 'image/svg+xml',
   '.json': 'application/json',
   '.mp3': 'audio/mpeg',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.mov': 'video/quicktime',
 };
 
 export async function GET(_request: Request, context: { params: Promise<{ path: string[] }> }) {

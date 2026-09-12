@@ -1,0 +1,187 @@
+{
+  "schema": "bones_audio_v1",
+  "itens": [
+    {
+      "Grupo": "Clavícula",
+      "Pergunta": "Parte da clavícula",
+      "Resposta": "Extremidade external da clavícula",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/clavicula-1.mp3",
+          "Titulo": "Clavícula — áudio 1",
+          "Transcricao": "Você está analisando a extremidade external da clavícula.",
+          "id": "clavicula-1-audio-1"
+        }
+      ],
+      "Videos": [
+        {
+          "url": "https://youtu.be/LUai2wbBdHU?si=5UBANyiYA8vWkwuV",
+          "Titulo": "Diferença entre a EXTREMIDADE ACROMIAL X EXTREMIDADE ESTERNAL da clavícula ",
+          "Tipo": "youtube"
+        }
+      ],
+      "id": "clavicula-1"
+    },
+    {
+      "Grupo": "Clavícula",
+      "Pergunta": "clavicula-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/clavicula-2.mp3",
+          "Titulo": "Clavícula — áudio 2",
+          "Transcricao": "Você está analisando o corpo da clavícula.",
+          "id": "clavicula-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "clavicula-2"
+    },
+    {
+      "Grupo": "Clavícula",
+      "Pergunta": "clavicula-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/clavicula-3.mp3",
+          "Titulo": "Clavícula — áudio 3",
+          "Transcricao": "Você está analisando a extremidade acromial da clavícula.",
+          "id": "clavicula-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "clavicula-3"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-1",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-1.mp3",
+          "Titulo": "Escápula — áudio 1",
+          "Transcricao": "Você está analisando a espinha da scapula.",
+          "id": "escapula-1-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-1"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-2",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-2.mp3",
+          "Titulo": "Escápula — áudio 2",
+          "Transcricao": "Você está analisando o acrômio.",
+          "id": "escapula-2-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-2"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-3",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-3.mp3",
+          "Titulo": "Escápula — áudio 3",
+          "Transcricao": "Você está analisando a cavidade glenoidal.",
+          "id": "escapula-3-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-3"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-4",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-4.mp3",
+          "Titulo": "Escápula — áudio 4",
+          "Transcricao": "Você está analisando o processo coracoide.",
+          "id": "escapula-4-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-4"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-5",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-5.mp3",
+          "Titulo": "Escápula — áudio 5",
+          "Transcricao": "Você está analisando o ângulo inferior.",
+          "id": "escapula-5-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-5"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-6",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-6.mp3",
+          "Titulo": "Escápula — áudio 6",
+          "Transcricao": "Você está analisando a força super espinal.",
+          "id": "escapula-6-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-6"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-7",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-7.mp3",
+          "Titulo": "Escápula — áudio 7",
+          "Transcricao": "Você está analisando a força infra-espinal.",
+          "id": "escapula-7-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-7"
+    },
+    {
+      "Grupo": "Escápula",
+      "Pergunta": "escapula-8",
+      "Resposta": "",
+      "Imagens": [],
+      "Audios": [
+        {
+          "url": "assets/ossos/cingulo/audios/escapula-8.mp3",
+          "Titulo": "Escápula — áudio 8",
+          "Transcricao": "Você está analisando a força subescapular.",
+          "id": "escapula-8-audio-1"
+        }
+      ],
+      "Videos": [],
+      "id": "escapula-8"
+    }
+  ]
+}

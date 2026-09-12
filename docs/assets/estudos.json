@@ -5,17 +5,25 @@
       "Tema": "Ossos",
       "Estudos": [
         {
-          "Titulo": "Ossos do esqueleto",
-          "Exercicios": "ossos/ossos-do-esqueleto.json",
+          "Titulo": "Ossos do esqueleto axial",
+          "Exercicios": "ossos/esqueleto-axial/esqueleto-axial.json",
           "Imagem": [
             {
-              "url": "assets/ossos/ossos-do-esqueleto/za-anatomia.png",
+              "url": "assets/ossos/esqueleto-axial/imagens/za-anatomia.png",
               "Copyright": {
                 "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
                 "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
               }
             }
           ]
+        },
+        {
+          "Titulo": "Áudios do cíngulo",
+          "Exercicios": "ossos/cingulo/cingulo.json"
+        },
+        {
+          "Titulo": "Áudios do membro superior",
+          "Exercicios": "ossos/membro-superior/membro-superior.json"
         }
       ]
     }

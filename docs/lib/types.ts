@@ -11,11 +11,29 @@ export type StudyImage = {
   Copyright?: CopyrightInfo;
 };
 
+export type StudyAudio = {
+  id?: string;
+  url: string;
+  Titulo?: string;
+  Transcricao?: string;
+  Copyright?: CopyrightInfo;
+};
+
+export type StudyVideo = {
+  url: string;
+  Titulo?: string;
+  Tipo?: 'arquivo' | 'youtube';
+  Copyright?: CopyrightInfo;
+};
+
 export type StudyItem = {
+  id?: string;
   Grupo: string;
   Pergunta: string;
   Resposta: string;
   Imagens: StudyImage[];
+  Audios?: StudyAudio[];
+  Videos?: StudyVideo[];
 };
 
 export type StudyDataset = {
