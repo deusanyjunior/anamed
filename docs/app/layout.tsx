@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import AuthSessionProvider from '../components/SessionProvider';
+import AniahChat from '../components/AniahChat';
 
 export const metadata: Metadata = {
-  title: 'AnaMed — Estudo & Quiz de Anatomia',
-  description: 'Estudo e memorização de conteúdos de Anatomia.',
+  title: 'AnaMed — Anatomia para todos',
+  description: 'Ferramenta para estudo e memorização de conteúdos sobre anatomia humana.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -15,10 +17,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <header className="site-header">
             <Link className="title" href="/">
               <span className="brand-blue">Ana</span><span className="brand-red">Med</span>
-              <span> — Criando sinapses com a Turma 94 da EPM</span>
+              <span> — Anatomia para todos</span>
             </Link>
           </header>
-          {children}
+          <AuthSessionProvider>
+            {children}
+            <AniahChat />
+          </AuthSessionProvider>
         </div>
       </body>
     </html>

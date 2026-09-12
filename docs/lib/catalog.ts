@@ -19,7 +19,12 @@ export function readCatalog(): EstudosCatalog {
 
 export function routeFromExercises(exercicios: string): string {
   const safe = assertSafeRelativePath(exercicios);
-  return safe.replace(/\.json$/i, '');
+  const withoutExtension = safe.replace(/\.json$/i, '');
+  const parts = withoutExtension.split('/').filter(Boolean);
+  const filename = parts.at(-1);
+  const parent = parts.at(-2);
+  if (filename && filename === parent) return parts.slice(0, -1).join('/');
+  return withoutExtension;
 }
 
 export function routePartsFromExercises(exercicios: string) {

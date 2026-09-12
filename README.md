@@ -44,7 +44,7 @@ Exemplo:
 gera:
 
 ```text
-/ossos/esqueleto-axial-axial
+/ossos/esqueleto-axial
 ```
 
 ### Executando localmente
@@ -76,8 +76,23 @@ Configure `docs` como **Root Directory** do projeto na Vercel. Use os comandos p
 Após o deploy, o estudo do exemplo estará disponível em:
 
 ```text
-https://anamed.vercel.app/ossos/esqueleto-axial-axial
+https://anamed.vercel.app/ossos/esqueleto-axial
 ```
+
+### Aniah e variáveis de ambiente
+
+O site inclui a Aniah, uma tutora de anatomia acessível somente a usuários autenticados com uma conta Google verificada no domínio `@unifesp.br`. A chamada ao Gemini ocorre exclusivamente no servidor.
+
+Copie `docs/.env.example` para `docs/.env.local` durante o desenvolvimento e configure as mesmas variáveis em **Vercel → Settings → Environment Variables**. Nunca use `NEXT_PUBLIC_GEMINI_API_KEY`: a chave do Gemini deve permanecer server-side.
+
+No Google Cloud, cadastre estes URIs de redirecionamento:
+
+```text
+http://localhost:8000/api/auth/callback/google
+https://SEU-DOMINIO.vercel.app/api/auth/callback/google
+```
+
+Em produção, configure também `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`. Eles permitem aplicar o limite de 100 mensagens por dia e 10 por minuto por usuário mesmo quando a Vercel distribui as requisições entre várias instâncias. Os valores podem ser ajustados por `ANIAH_DAILY_LIMIT` e `ANIAH_MINUTE_LIMIT`.
 
 ## Editor (`editor/`)
 
