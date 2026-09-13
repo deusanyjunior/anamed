@@ -94,3 +94,203 @@ button, input { font: inherit; }
 .aniah-message a { color: var(--blue); text-decoration: underline; }
 .aniah-message > :first-child { margin-top: 0; }
 .aniah-message > :last-child { margin-bottom: 0; }
+
+/* Tema institucional verde inspirado na linguagem visual da UNIFESP. */
+:root {
+  --bg: #f6faf8;
+  --surface: #ffffff;
+  --surface-muted: #eef7f2;
+  --text: #17332a;
+  --muted: #527066;
+  --border: #c9ded5;
+  --blue: #087f5b;
+  --green-dark: #075e45;
+  --green: #087f5b;
+  --green-light: #dff2e9;
+  --green-pale: #f0faf5;
+  --focus: rgba(8, 127, 91, .22);
+}
+
+body {
+  background: linear-gradient(135deg, #f8fcfa 0%, var(--bg) 52%, #edf7f2 100%);
+}
+
+.container {
+  position: relative;
+}
+
+.site-header {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.site-header::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green-dark), var(--green), #8bc9ad);
+}
+
+.brand-blue,
+.brand-red {
+  color: var(--green-dark);
+}
+
+.title:hover {
+  color: var(--green);
+}
+
+.subtitle,
+.small,
+.breadcrumb {
+  color: var(--muted);
+}
+
+.breadcrumb a:hover,
+.link-button,
+.aniah-message a {
+  color: var(--green-dark);
+}
+
+.card {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 10px 30px rgba(7, 94, 69, .08);
+}
+
+.card-clickable:hover {
+  border-color: #8bc9ad;
+  box-shadow: 0 14px 34px rgba(7, 94, 69, .16);
+}
+
+.card-media {
+  background: var(--surface-muted);
+}
+
+.pill {
+  border-color: #b8d8c9;
+  background: var(--green-pale);
+  color: var(--green-dark);
+}
+
+.btn {
+  border-color: var(--border);
+  background: var(--surface-muted);
+}
+
+.btn:hover,
+.study-expansion-button:hover {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.btn-primary {
+  background: rgba(8, 127, 91, .14);
+  border-color: rgba(8, 127, 91, .34);
+  color: var(--green-dark);
+}
+
+.btn-primary:hover {
+  background: rgba(8, 127, 91, .23);
+}
+
+.input {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.input:focus {
+  border-color: rgba(8, 127, 91, .72);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+.img-wrap,
+.study-expansion-controls {
+  background: var(--surface-muted);
+}
+
+.accordion-header:hover,
+.item-accordion-header:hover {
+  color: var(--green-dark);
+}
+
+.divider {
+  background: #b8d8c9;
+}
+
+.study-expansion-controls {
+  border-color: var(--border);
+}
+
+.study-expansion-button:focus-visible {
+  outline-color: rgba(8, 127, 91, .72);
+}
+
+.history td,
+.history th {
+  border-bottom-color: #d7e8e0;
+}
+
+.aniah-launcher {
+  background: var(--green-dark);
+  box-shadow: 0 8px 24px rgba(7, 94, 69, .24);
+}
+
+.aniah-launcher:hover {
+  background: var(--green);
+}
+
+.aniah-message-user {
+  background: var(--green-light);
+}
+
+.aniah-message-assistant {
+  background: #f1f7f4;
+}
+
+.aniah-message pre,
+.aniah-message code {
+  background: rgba(7, 94, 69, .09);
+}
+
+/* Mantém o VLibras no canto direito, acima do botão flutuante da Aniah. */
+.vlibras-widget .vw-access-button,
+.vw-access-button {
+  right: 20px !important;
+  left: auto !important;
+  bottom: 92px !important;
+  z-index: 19 !important;
+}
+
+.vlibras-widget .vw-plugin-wrapper,
+.vw-plugin-wrapper {
+  right: 20px !important;
+  left: auto !important;
+  bottom: 92px !important;
+  z-index: 19 !important;
+}
+
+@media (max-width: 760px) {
+  .vlibras-widget .vw-access-button,
+  .vw-access-button,
+  .vlibras-widget .vw-plugin-wrapper,
+  .vw-plugin-wrapper {
+    right: 16px !important;
+    bottom: 88px !important;
+  }
+}
+
+/* Marca AnaMed em preto, preservando o verde no restante da interface. */
+.brand-gradient {
+  display: inline-block;
+  color: #000;
+}
+
+.brand-gradient .brand-blue,
+.brand-gradient .brand-red {
+  color: inherit;
+}
