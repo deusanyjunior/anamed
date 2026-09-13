@@ -4,8 +4,8 @@
   "itens": [
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso frontal",
+      "Descricao": "Osso anterior do neurocrânio",
+      "Item": "Osso frontal",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-frontal01.png",
@@ -51,8 +51,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso occipital",
+      "Descricao": "Osso posterior do crânio",
+      "Item": "Osso occipital",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-occipital01.png",
@@ -130,8 +130,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso esfenoide",
+      "Descricao": "Osso central da base do crânio",
+      "Item": "Osso esfenoide",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide01.png",
@@ -193,8 +193,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso etmoide",
+      "Descricao": "Osso entre as órbitas e a cavidade nasal",
+      "Item": "Osso etmoide",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide01.png",
@@ -248,8 +248,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso parietal",
+      "Descricao": "Osso superior e lateral do crânio",
+      "Item": "Osso parietal",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-parietal01.png",
@@ -295,8 +295,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso temporal",
+      "Descricao": "Osso lateral do crânio, próximo à orelha",
+      "Item": "Osso temporal",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-temporal01.png",
@@ -334,8 +334,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso nasal",
+      "Descricao": "Osso que forma o dorso do nariz",
+      "Item": "Osso nasal",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-nasal01.png",
@@ -381,8 +381,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso lacrimal",
+      "Descricao": "Pequeno osso na parede medial da órbita",
+      "Item": "Osso lacrimal",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-lacrimal01.png",
@@ -412,8 +412,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso zigomático",
+      "Descricao": "Osso da maçã do rosto e da órbita",
+      "Item": "Osso zigomático",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico01.png",
@@ -459,8 +459,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso maxila",
+      "Descricao": "Osso superior da face e do palato",
+      "Item": "Osso maxila",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-maxila01.png",
@@ -498,8 +498,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso concha nasal inferior",
+      "Descricao": "Osso da parede lateral da cavidade nasal",
+      "Item": "Osso concha nasal inferior",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-conchanasalinferior01.png",
@@ -529,8 +529,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso palatino",
+      "Descricao": "Osso posterior do palato duro",
+      "Item": "Osso palatino",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-palatino01.png",
@@ -560,8 +560,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso vômer",
+      "Descricao": "Osso que forma parte do septo nasal",
+      "Item": "Osso vômer",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-vomer01.png",
@@ -623,8 +623,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso mandíbula",
+      "Descricao": "Único osso móvel da face",
+      "Item": "Osso mandíbula",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-mandibula01.png",
@@ -662,8 +662,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do ossículo",
-      "Resposta": "Ossículo martelo",
+      "Descricao": "Ossículo da orelha média ligado ao tímpano",
+      "Item": "Ossículo martelo",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-martelo01.png",
@@ -685,8 +685,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do ossículo",
-      "Resposta": "Ossículo bigorna",
+      "Descricao": "Ossículo entre o martelo e o estribo",
+      "Item": "Ossículo bigorna",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-bigorna01.png",
@@ -708,8 +708,8 @@
     },
     {
       "Grupo": "Neurocrânio",
-      "Pergunta": "Nome do ossículo",
-      "Resposta": "Ossículo estribo",
+      "Descricao": "Ossículo ligado à janela oval",
+      "Item": "Ossículo estribo",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-estribo01.png",
@@ -731,8 +731,8 @@
     },
     {
       "Grupo": "Viscerocrânio",
-      "Pergunta": "Nome do osso",
-      "Resposta": "Osso hioide",
+      "Descricao": "Osso do pescoço que sustenta a língua",
+      "Item": "Osso hioide",
       "Imagens": [
         {
           "url": "assets/ossos/esqueleto-axial/imagens/za-hioide01.png",

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { coverUrl, readCatalog, routeFromExercises } from '../lib/catalog';
+import { coverUrl, readCatalog, routeFromStudy } from '../lib/catalog';
 
 export default function HomePage() {
   const catalog = readCatalog();
@@ -17,7 +17,7 @@ export default function HomePage() {
             </div>
             <div className="grid-auto" style={{ padding: '0 14px 14px' }}>
               {tema.Estudos.map(estudo => {
-                const href = `/${routeFromExercises(estudo.Exercicios)}`;
+                const href = `/${routeFromStudy(estudo)}`;
                 const capa = coverUrl(estudo);
                 return (
                   <Link className="card card-clickable" href={href} key={estudo.Exercicios}>

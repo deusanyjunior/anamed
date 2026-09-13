@@ -15,8 +15,9 @@ function getCapaUrl(e: EstudoRef): string {
 export default function Home() {
   const [catalog, setCatalog] = useState<EstudosCatalog | null>(null);
   const [newTema, setNewTema] = useState('');
-  const [newTitulo, setNewTitulo] = useState('');
   const [newTemaTarget, setNewTemaTarget] = useState('');
+  const [newTitulo, setNewTitulo] = useState('');
+  const [routeDrafts, setRouteDrafts] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
   const [expandedCapa, setExpandedCapa] = useState<string | null>(null); // "tema::titulo"
   const [capaUrl, setCapaUrl] = useState('');
@@ -30,6 +31,40 @@ export default function Home() {
 
   function slugify(s: string) {
     return s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+
+  function routeFromExercises(exercicios: string) {
+    const withoutExtension = exercicios.replace(/\.json$/i, '');
+    const parts = withoutExtension.split('/').filter(Boolean);
+    return parts.at(-1) === parts.at(-2) ? parts.slice(0, -1).join('/') : withoutExtension;
+  }
+
+  function routeFromStudy(estudo: EstudoRef) {
+    return estudo.Rota || routeFromExercises(estudo.Exercicios);
+  }
+
+  async function saveStudyRoute(temaNome: string, exercicios: string, value: string) {
+    if (!catalog) return;
+    const rota = value.trim().replaceAll('\\', '/');
+    const parts = rota.split('/').filter(Boolean);
+    if (!rota || rota.startsWith('/') || rota.endsWith('/') || rota.includes('..') || rota.toLowerCase().endsWith('.json') || parts.length < 2) {
+      alert('Rota inválida. Use o formato tema/estudo, sem .json.');
+      return;
+    }
+    const collision = catalog.itens.some(d => d.Estudos.some(e => e.Exercicios !== exercicios && routeFromStudy(e) === parts.join('/')));
+    if (collision) {
+      alert('Essa rota já está sendo usada por outro estudo.');
+      return;
+    }
+    const updated: EstudosCatalog = {
+      ...catalog,
+      itens: catalog.itens.map(d => d.Tema !== temaNome ? d : {
+        ...d,
+        Estudos: d.Estudos.map(e => e.Exercicios === exercicios ? { ...e, Rota: parts.join('/') } : e),
+      }),
+    };
+    setRouteDrafts(previous => ({ ...previous, [exercicios]: parts.join('/') }));
+    await saveCatalog(updated);
   }
 
   async function saveCatalog(updated: EstudosCatalog) {
@@ -70,8 +105,12 @@ export default function Home() {
     setExpandedCapa(null);
   }
 
-  async function uploadCapa(tema: string, titulo: string, file: File) {
-    const dir = `${slugify(tema)}/${slugify(titulo)}`;
+  function imageDirFromExercises(exercicios: string) {
+    return `${exercicios.replace(/\.json$/i, '')}/imagens`;
+  }
+
+  async function uploadCapa(exercicios: string, file: File) {
+    const dir = imageDirFromExercises(exercicios);
     const form = new FormData();
     form.append('file', file);
     const res = await fetch(`/api/upload?dir=${dir}`, { method: 'POST', body: form });
@@ -79,13 +118,13 @@ export default function Home() {
     setCapaUrl(url);
   }
 
-  async function downloadCapa(tema: string, titulo: string) {
+  async function downloadCapa(exercicios: string) {
     const urlInput = document.getElementById('capa-url-input') as HTMLInputElement;
     const originalUrl = urlInput?.value.trim();
     if (!originalUrl) return;
     setCapaDownloading(true);
     try {
-      const dir = `${slugify(tema)}/${slugify(titulo)}`;
+      const dir = imageDirFromExercises(exercicios);
       const res = await fetch('/api/download-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -127,7 +166,7 @@ export default function Home() {
       ...catalog,
       itens: catalog.itens.map(d =>
         d.Tema === newTemaTarget
-          ? { ...d, Estudos: [...d.Estudos, { Titulo: newTitulo.trim(), Exercicios: exercicios }] }
+          ? { ...d, Estudos: [...d.Estudos, { Titulo: newTitulo.trim(), Rota: `${temaSlug}/${est}`, Exercicios: exercicios }] }
           : d
       ),
     };
@@ -135,13 +174,13 @@ export default function Home() {
     setNewTitulo('');
   }
 
-  async function renameEstudo(tema: string, tituloAntigo: string) {
+  async function renameEstudo(tema: string, exercicios: string, tituloAntigo: string) {
     const tituloNovo = window.prompt('Novo nome do estudo:', tituloAntigo);
     if (!tituloNovo || tituloNovo === tituloAntigo) return;
     const res = await fetch('/api/rename-estudo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tema, tituloAntigo, tituloNovo }),
+      body: JSON.stringify({ tema, exercicios, tituloNovo }),
     });
     const { error } = await res.json();
     if (error) { alert('Erro: ' + error); return; }
@@ -203,11 +242,23 @@ export default function Home() {
                         className="text-xs text-blue-600 hover:text-blue-700">Editar</Link>
                       <button onClick={() => openCapa(d.Tema, e)}
                         className="text-xs text-purple-600 hover:text-purple-700">Capa</button>
-                      <button onClick={() => renameEstudo(d.Tema, e.Titulo)}
+                      <button onClick={() => renameEstudo(d.Tema, e.Exercicios, e.Titulo)}
                         className="text-xs text-amber-600 hover:text-amber-700">Renomear</button>
                       <button onClick={() => deleteEstudo(d.Tema, e.Titulo)}
                         className="text-xs text-red-600 hover:text-red-700">Excluir</button>
                     </div>
+                  </div>
+
+                  <div className="border-t border-slate-200 px-3 py-2 bg-white">
+                    <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`study-route-${encodeURIComponent(e.Exercicios)}`}>Rota pública</label>
+                    <input
+                      id={`study-route-${encodeURIComponent(e.Exercicios)}`}
+                      className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 outline-none focus:border-blue-500"
+                      value={routeDrafts[e.Exercicios] ?? routeFromStudy(e)}
+                      onChange={event => setRouteDrafts(previous => ({ ...previous, [e.Exercicios]: event.target.value }))}
+                      onBlur={event => saveStudyRoute(d.Tema, e.Exercicios, event.target.value)}
+                    />
+                    <div className="text-[11px] text-slate-500 mt-1">Altere a rota sem renomear o dataset ou mover seus arquivos.</div>
                   </div>
 
                   {/* painel de capa */}
@@ -281,7 +332,7 @@ export default function Home() {
                         <input ref={fileInputRef} type="file" accept="image/*" className="hidden"
                           onChange={async ev => {
                             const f = ev.target.files?.[0];
-                            if (f) await uploadCapa(d.Tema, e.Titulo, f);
+                            if (f) await uploadCapa(e.Exercicios, f);
                             ev.target.value = '';
                           }} />
                         <button onClick={() => fileInputRef.current?.click()}
@@ -292,9 +343,9 @@ export default function Home() {
                           <input id="capa-url-input"
                             className="flex-1 bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-xs outline-none focus:border-blue-500"
                             placeholder="Adicionar por URL…"
-                            onKeyDown={ev => { if (ev.key === 'Enter') downloadCapa(d.Tema, e.Titulo); }}
+                            onKeyDown={ev => { if (ev.key === 'Enter') downloadCapa(e.Exercicios); }}
                           />
-                          <button onClick={() => downloadCapa(d.Tema, e.Titulo)}
+                          <button onClick={() => downloadCapa(e.Exercicios)}
                             disabled={capaDownloading}
                             className="text-xs bg-slate-200 hover:bg-slate-300 disabled:opacity-50 border border-slate-300 rounded-lg px-3 py-1.5">
                             {capaDownloading ? 'Baixando…' : '+ Adicionar'}

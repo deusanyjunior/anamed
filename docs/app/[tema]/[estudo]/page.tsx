@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import StudyExperience from '../../../components/StudyExperience';
-import { allStudies, findStudy, readCatalog, readDataset, routePartsFromExercises, routeFromExercises } from '../../../lib/catalog';
+import { allStudies, findStudy, readCatalog, readDataset, routePartsFromStudy, routeFromStudy } from '../../../lib/catalog';
 
 type PageProps = {
   params: Promise<{ tema: string; estudo: string }>;
@@ -10,7 +10,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return allStudies().map(({ estudo }) => routePartsFromExercises(estudo.Exercicios));
+  return allStudies().map(({ estudo }) => routePartsFromStudy(estudo));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -51,7 +51,7 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
       <StudyExperience
         dataset={dataset}
         studyTitle={found.estudo.Titulo}
-        studyKey={routeFromExercises(found.estudo.Exercicios)}
+        studyKey={routeFromStudy(found.estudo)}
         deepLink={{ itemId, audioId, autoplay }}
       />
     </main>

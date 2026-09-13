@@ -1,18 +1,12 @@
 // POST /api/rename-estudo
-// body: { tema: "Anatomia", tituloAntigo: "Nome dos ossos", tituloNovo: "Ossos do corpo" }
-// renomeia o arquivo JSON, a pasta de imagens e atualiza estudos.json
+// body: { tema: "Anatomia", exercicios: "ossos/cingulo/cingulo.json", tituloNovo: "Cíngulo" }
+// altera somente o título exibido, preservando rota, dataset e arquivos físicos
 import { NextRequest, NextResponse } from 'next/server';
-import { rename, access } from 'fs/promises';
-import path from 'path';
-import { DOCS_ASSETS, readCatalog, writeCatalog } from '@/lib/fs';
-
-function slugify(s: string) {
-  return s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
+import { readCatalog, writeCatalog } from '@/lib/fs';
 
 export async function POST(req: NextRequest) {
-  const { tema: temaNome, tituloAntigo, tituloNovo } = await req.json();
-  if (!temaNome || !tituloAntigo || !tituloNovo) {
+  const { tema: temaNome, exercicios, tituloNovo } = await req.json();
+  if (!temaNome || !exercicios || !tituloNovo?.trim()) {
     return NextResponse.json({ error: 'missing params' }, { status: 400 });
   }
 
@@ -20,41 +14,18 @@ export async function POST(req: NextRequest) {
   const tema = catalog.itens.find(d => d.Tema === temaNome);
   if (!tema) return NextResponse.json({ error: 'tema não encontrado' }, { status: 404 });
 
-  const estudo = tema.Estudos.find(e => e.Titulo === tituloAntigo);
+  const estudo = tema.Estudos.find(e => e.Exercicios === exercicios);
   if (!estudo) return NextResponse.json({ error: 'estudo não encontrado' }, { status: 404 });
 
-  const temaSlug = slugify(temaNome);
-  const novoSlug = slugify(tituloNovo);
-  const novoExercicios = `${temaSlug}/${novoSlug}.json`;
-
-  // renomear arquivo JSON
-  const oldJsonPath = path.join(DOCS_ASSETS, estudo.Exercicios);
-  const newJsonPath = path.join(DOCS_ASSETS, novoExercicios);
-  await rename(oldJsonPath, newJsonPath);
-
-  // renomear pasta de imagens se existir
-  const oldDir = path.join(DOCS_ASSETS, estudo.Exercicios.replace(/\.json$/, ''));
-  const newDir = path.join(DOCS_ASSETS, novoExercicios.replace(/\.json$/, ''));
-  try {
-    await access(oldDir);
-    await rename(oldDir, newDir);
-  } catch {
-    // pasta não existe, tudo bem
-  }
-
-  // atualizar estudos.json
+  const titulo = tituloNovo.trim();
   const updated = {
     ...catalog,
-    itens: catalog.itens.map(d =>
-      d.Tema !== temaNome ? d : {
-        ...d,
-        Estudos: d.Estudos.map(e =>
-          e.Titulo !== tituloAntigo ? e : { ...e, Titulo: tituloNovo, Exercicios: novoExercicios }
-        ),
-      }
-    ),
+    itens: catalog.itens.map(d => d.Tema !== temaNome ? d : {
+      ...d,
+      Estudos: d.Estudos.map(e => e.Exercicios === exercicios ? { ...e, Titulo: titulo } : e),
+    }),
   };
   writeCatalog(updated);
 
-  return NextResponse.json({ ok: true, novoExercicios });
+  return NextResponse.json({ ok: true, titulo, exercicios, rota: estudo.Rota });
 }

@@ -47,14 +47,17 @@ function normalizeDataset(dataset: StudyDataset): StudyDataset {
 }
 
 function emptyItem(): StudyItem {
-  return { id: newEntityId('item'), Grupo: '', Pergunta: '', Resposta: '', Imagens: [], Audios: [], Videos: [] };
+  return { id: newEntityId('item'), Grupo: '', Descricao: '', Item: '', Imagens: [], Audios: [], Videos: [] };
 }
 
 export default function EstudoEditor() {
   const params = useParams();
   const searchParams = useSearchParams();
   const datasetPath = searchParams.get('path') ?? '';
-  const imageDir = datasetPath.replace(/\.json$/, '');
+  const studyDir = datasetPath.replace(/\.json$/, '');
+  const imageDir = `${studyDir}/imagens`;
+  const audioDir = `${studyDir}/audios`;
+  const videoDir = studyDir;
 
   const [dataset, setDataset] = useState<StudyDataset | null>(null);
   const [saving, setSaving] = useState(false);
@@ -220,7 +223,7 @@ export default function EstudoEditor() {
   async function uploadAudio(itemIdx: number, file: File) {
     const form = new FormData();
     form.append('file', file);
-    const res = await fetch(`/api/upload?dir=${imageDir}`, { method: 'POST', body: form });
+    const res = await fetch(`/api/upload?dir=${audioDir}`, { method: 'POST', body: form });
     const { url } = await res.json();
     if (!dataset) return;
     const item = dataset.itens[itemIdx];
@@ -230,7 +233,7 @@ export default function EstudoEditor() {
   async function uploadVideo(itemIdx: number, file: File) {
     const form = new FormData();
     form.append('file', file);
-    const res = await fetch(`/api/upload?dir=${imageDir}`, { method: 'POST', body: form });
+    const res = await fetch(`/api/upload?dir=${videoDir}`, { method: 'POST', body: form });
     const { url } = await res.json();
     if (!dataset) return;
     const item = dataset.itens[itemIdx];
@@ -258,8 +261,8 @@ export default function EstudoEditor() {
   if (!dataset) return <p className="text-slate-600">Carregando...</p>;
 
   const grupos = [...new Set(dataset.itens.map(i => i.Grupo).filter(Boolean))];
-  const exemploPergunta = dataset.itens.find(i => i.Pergunta)?.Pergunta ?? 'Ex: Nome do osso';
-  const exemploResposta = dataset.itens.find(i => i.Resposta)?.Resposta ?? 'Ex: Osso frontal';
+  const exemploDescricao = dataset.itens.find(i => i.Descricao)?.Descricao ?? 'Ex: Nome do osso';
+  const exemploItem = dataset.itens.find(i => i.Item)?.Item ?? 'Ex: Osso frontal';
   const exemploGrupo = grupos[0] ?? 'Ex: Crânio > Neurocrânio';
 
   // placeholders de copyright baseados no primeiro item que tiver imagem com copyright
@@ -310,7 +313,7 @@ export default function EstudoEditor() {
                 className="flex-1 text-left text-sm truncate text-slate-900"
                 onClick={() => setExpandedIdx(expandedIdx === idx ? null : idx)}>
                 <span className="text-slate-500 text-xs mr-2">{item.Grupo || '(sem grupo)'}</span>
-                {item.Resposta || <span className="text-slate-500 italic">sem resposta</span>}
+                {item.Item || <span className="text-slate-500 italic">sem item</span>}
               </button>
               <button onClick={() => deleteItem(idx)} className="text-red-500 hover:text-red-400 text-xs px-2">✕</button>
             </div>
@@ -329,22 +332,22 @@ export default function EstudoEditor() {
                 </div>
 
                 <div>
-                  <label className="text-xs text-slate-600 block mb-1">Pergunta</label>
+                  <label className="text-xs text-slate-600 block mb-1">Descrição</label>
                   <input
                     className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
-                    placeholder={exemploPergunta}
-                    value={item.Pergunta}
-                    onChange={e => updateItem(idx, { ...item, Pergunta: e.target.value })}
+                    placeholder={exemploDescricao}
+                    value={item.Descricao}
+                    onChange={e => updateItem(idx, { ...item, Descricao: e.target.value })}
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs text-slate-600 block mb-1">Resposta</label>
+                  <label className="text-xs text-slate-600 block mb-1">Item</label>
                   <input
                     className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
-                    placeholder={exemploResposta}
-                    value={item.Resposta}
-                    onChange={e => updateItem(idx, { ...item, Resposta: e.target.value })}
+                    placeholder={exemploItem}
+                    value={item.Item}
+                    onChange={e => updateItem(idx, { ...item, Item: e.target.value })}
                   />
                 </div>
 
@@ -500,11 +503,23 @@ export default function EstudoEditor() {
                     {(item.Audios ?? []).map((audio, audioIdx) => (
                       <div key={audioIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
                         <audio controls preload="metadata" src={`${DOCS_BASE}/${audio.url}`} className="max-w-full" />
-                        <div className="flex-1 space-y-1">
-                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.id ?? ''} placeholder="ID do áudio" onChange={e => updateAudio(idx, audioIdx, { ...audio, id: e.target.value || undefined })} />
-                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.Titulo ?? ''} placeholder="Título do áudio" onChange={e => updateAudio(idx, audioIdx, { ...audio, Titulo: e.target.value })} />
-                          <textarea className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs min-h-16" value={audio.Transcricao ?? ''} placeholder="Transcrição (opcional)" onChange={e => updateAudio(idx, audioIdx, { ...audio, Transcricao: e.target.value || undefined })} />
-                          <div className="small break-all">{audio.url}</div>
+                        <div className="flex-1 space-y-2">
+                          <div>
+                            <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`audio-id-${idx}-${audioIdx}`}>ID do áudio</label>
+                            <input id={`audio-id-${idx}-${audioIdx}`} className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.id ?? ''} placeholder="Informe um ID estável" onChange={e => updateAudio(idx, audioIdx, { ...audio, id: e.target.value || undefined })} />
+                          </div>
+                          <div>
+                            <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`audio-title-${idx}-${audioIdx}`}>Título do áudio</label>
+                            <input id={`audio-title-${idx}-${audioIdx}`} className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={audio.Titulo ?? ''} placeholder="Informe o título do áudio" onChange={e => updateAudio(idx, audioIdx, { ...audio, Titulo: e.target.value })} />
+                          </div>
+                          <div>
+                            <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`audio-transcript-${idx}-${audioIdx}`}>Transcrição</label>
+                            <textarea id={`audio-transcript-${idx}-${audioIdx}`} className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs min-h-16" value={audio.Transcricao ?? ''} placeholder="Transcrição opcional" onChange={e => updateAudio(idx, audioIdx, { ...audio, Transcricao: e.target.value || undefined })} />
+                          </div>
+                          <div>
+                            <span className="text-xs text-slate-600 block mb-0.5">Arquivo ou URL do áudio</span>
+                            <div className="small break-all">{audio.url}</div>
+                          </div>
                         </div>
                         <div className="flex flex-col gap-1">
                           <button onClick={() => moveAudio(idx, audioIdx, -1)} disabled={audioIdx === 0} className="text-xs disabled:opacity-20">▲</button>
@@ -528,13 +543,22 @@ export default function EstudoEditor() {
                     {(item.Videos ?? []).map((video, videoIdx) => (
                       <div key={videoIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
                         {video.Tipo === 'youtube' ? (youtubeEmbedUrl(video.url) ? <iframe src={youtubeEmbedUrl(video.url) ?? undefined} title={video.Titulo || 'Prévia do YouTube'} className="w-40 aspect-video rounded max-w-full" /> : <div className="w-40 text-xs text-red-600">URL do YouTube inválida</div>) : <video controls preload="metadata" src={videoFileUrl(video.url)} className="w-40 max-w-full" />}
-                        <div className="flex-1 space-y-1">
-                          <select className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Tipo ?? 'arquivo'} onChange={e => updateVideo(idx, videoIdx, { ...video, Tipo: e.target.value as StudyVideo['Tipo'] })}>
-                            <option value="arquivo">Arquivo de vídeo</option>
-                            <option value="youtube">YouTube</option>
-                          </select>
-                          <input className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Titulo ?? ''} placeholder="Título do vídeo" onChange={e => updateVideo(idx, videoIdx, { ...video, Titulo: e.target.value })} />
-                          <div className="small break-all">{video.url}</div>
+                        <div className="flex-1 space-y-2">
+                          <div>
+                            <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`video-type-${idx}-${videoIdx}`}>Tipo do vídeo</label>
+                            <select id={`video-type-${idx}-${videoIdx}`} className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Tipo ?? 'arquivo'} onChange={e => updateVideo(idx, videoIdx, { ...video, Tipo: e.target.value as StudyVideo['Tipo'] })}>
+                              <option value="arquivo">Arquivo de vídeo</option>
+                              <option value="youtube">YouTube</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`video-title-${idx}-${videoIdx}`}>Título do vídeo</label>
+                            <input id={`video-title-${idx}-${videoIdx}`} className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs" value={video.Titulo ?? ''} placeholder="Informe o título do vídeo" onChange={e => updateVideo(idx, videoIdx, { ...video, Titulo: e.target.value })} />
+                          </div>
+                          <div>
+                            <span className="text-xs text-slate-600 block mb-0.5">Arquivo ou URL do vídeo</span>
+                            <div className="small break-all">{video.url}</div>
+                          </div>
                         </div>
                         <div className="flex flex-col gap-1">
                           <button onClick={() => moveVideo(idx, videoIdx, -1)} disabled={videoIdx === 0} className="text-xs disabled:opacity-20">▲</button>

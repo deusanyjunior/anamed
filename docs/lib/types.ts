@@ -29,8 +29,8 @@ export type StudyVideo = {
 export type StudyItem = {
   id?: string;
   Grupo: string;
-  Pergunta: string;
-  Resposta: string;
+  Descricao: string;
+  Item: string;
   Imagens: StudyImage[];
   Audios?: StudyAudio[];
   Videos?: StudyVideo[];
@@ -49,6 +49,7 @@ export type EstudoImagemItem = {
 
 export type EstudoRef = {
   Titulo: string;
+  Rota?: string;
   Exercicios: string;
   Imagem?: string | EstudoImagemItem[];
   Copyright?: CopyrightInfo;

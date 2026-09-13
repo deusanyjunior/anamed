@@ -5,7 +5,8 @@
       "Tema": "Ossos",
       "Estudos": [
         {
-          "Titulo": "Ossos do esqueleto axial",
+          "Titulo": "Esqueleto axial",
+          "Rota": "ossos/esqueleto-axial",
           "Exercicios": "ossos/esqueleto-axial/esqueleto-axial.json",
           "Imagem": [
             {
@@ -18,12 +19,32 @@
           ]
         },
         {
-          "Titulo": "Áudios do cíngulo",
-          "Exercicios": "ossos/cingulo/cingulo.json"
+          "Titulo": "Detalhes do cíngulo peitoral",
+          "Rota": "ossos/cingulo",
+          "Exercicios": "ossos/cingulo/cingulo.json",
+          "Imagem": [
+            {
+              "url": "assets/ossos/cingulo/imagens/za-cingulo.png",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ]
         },
         {
-          "Titulo": "Áudios do membro superior",
-          "Exercicios": "ossos/membro-superior/membro-superior.json"
+          "Titulo": "Detalhes do membro superior",
+          "Rota": "ossos/membro-superior",
+          "Exercicios": "ossos/membro-superior/membro-superior.json",
+          "Imagem": [
+            {
+              "url": "assets/ossos/membro-superior/membro-superior/imagens/za-membrosuperior.png",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ]
         }
       ]
     }

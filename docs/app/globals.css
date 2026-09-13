@@ -39,10 +39,17 @@ button, input { font: inherit; }
 .img-wrap { border-radius: 16px; border: 1px solid var(--border); overflow: hidden; background: #f8fafc; }
 .img-wrap img { display: block; max-width: 100%; height: auto; width: 100%; }
 .accordion-header { width: 100%; text-align: left; background: none; border: none; color: var(--text); font-size: 15px; font-weight: 700; padding: 12px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-.accordion-body { padding-bottom: 12px; }
+.item-accordion-header { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 12px; text-align: left; border: 0; background: transparent; color: var(--text); padding: 0; cursor: pointer; }
+.item-accordion-labels { display: grid; gap: 3px; }
+.item-accordion-labels .small { margin-top: 3px; }
+.item-accordion-body { margin-top: 12px; }
+.accordion-body { padding: 14px 0 12px; }
 .divider { height: 1px; background: var(--border); margin: 14px 0; }
 .form-row { display: flex; gap: 8px; margin-bottom: 18px; }
-.form-row .btn { flex-shrink: 0; }
+.study-expansion-controls { display: inline-flex; align-items: center; gap: 2px; margin: 4px 0 14px; padding: 4px; border: 1px solid var(--border); border-radius: 10px; background: #f8fafc; }
+.study-expansion-button { appearance: none; display: inline-flex; align-items: center; gap: 5px; border: 0; border-radius: 7px; padding: 6px 9px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; font-weight: 600; }
+.study-expansion-button:hover { background: #e2e8f0; color: var(--text); }
+.study-expansion-button:focus-visible { outline: 2px solid rgba(37,99,235,.7); outline-offset: 1px; }
 .quiz-panel { margin-top: 8px; }
 .quiz-answer { margin: 0 0 14px; }
 .score-card { padding: 16px; display: inline-block; }

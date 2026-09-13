@@ -209,6 +209,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
   const groups = useMemo(() => [...new Set(dataset.itens.map(item => item.Grupo))], [dataset.itens]);
   const [phase, setPhase] = useState<Phase>('study');
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [selectedGroups, setSelectedGroups] = useState<string[]>(groups);
   const [queue, setQueue] = useState<Entry[]>([]);
   const [errorQueue, setErrorQueue] = useState<Entry[]>([]);
@@ -239,18 +240,23 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
 
   useEffect(() => {
     if (!deepLink?.itemId) return;
-    const target = dataset.itens.find(item => item.id === deepLink.itemId);
+    const targetIndex = dataset.itens.findIndex(item => item.id === deepLink.itemId);
+    const target = targetIndex >= 0 ? dataset.itens[targetIndex] : undefined;
     if (!target) return;
+    const targetKey = target.id ?? `item-${targetIndex}`;
     const frame = requestAnimationFrame(() => {
       setExpandedGroups(previous => previous.has(target.Grupo) ? previous : new Set(previous).add(target.Grupo));
+      setExpandedItems(previous => previous.has(targetKey) ? previous : new Set(previous).add(targetKey));
     });
     return () => cancelAnimationFrame(frame);
   }, [dataset.itens, deepLink?.itemId]);
 
   useEffect(() => {
     if (!deepLink?.itemId || phase !== 'study') return;
-    const target = dataset.itens.find(item => item.id === deepLink.itemId);
-    if (!target || !expandedGroups.has(target.Grupo)) return;
+    const targetIndex = dataset.itens.findIndex(item => item.id === deepLink.itemId);
+    const target = targetIndex >= 0 ? dataset.itens[targetIndex] : undefined;
+    const targetKey = target?.id ?? (targetIndex >= 0 ? `item-${targetIndex}` : '');
+    if (!target || !expandedGroups.has(target.Grupo) || !expandedItems.has(targetKey)) return;
 
     const itemElement = document.getElementById(`study-item-${target.id}`);
     if (!itemElement) return;
@@ -276,7 +282,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
     }
 
     return () => cancelAnimationFrame(frame);
-  }, [audioRegistryVersion, dataset.itens, deepLink?.audioId, deepLink?.autoplay, deepLink?.itemId, expandedGroups, phase]);
+  }, [audioRegistryVersion, dataset.itens, deepLink?.audioId, deepLink?.autoplay, deepLink?.itemId, expandedGroups, expandedItems, phase]);
 
   const registerAudio = useCallback((id: string | undefined, element: HTMLAudioElement | null) => {
     if (!id) return;
@@ -299,6 +305,23 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       if (next.has(group)) next.delete(group); else next.add(group);
       return next;
     });
+  }
+
+  function toggleItem(itemKey: string) {
+    setExpandedItems(previous => {
+      const next = new Set(previous);
+      if (next.has(itemKey)) next.delete(itemKey); else next.add(itemKey);
+      return next;
+    });
+  }
+  function expandAll() {
+    setExpandedGroups(new Set(groups));
+    setExpandedItems(new Set(dataset.itens.map((item, index) => item.id ?? `item-${index}`)));
+  }
+
+  function collapseAll() {
+    setExpandedGroups(new Set());
+    setExpandedItems(new Set());
   }
 
   function startQuiz(items = dataset.itens.filter(item => selectedGroups.includes(item.Grupo))) {
@@ -333,7 +356,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
   function submitAnswer(event: React.FormEvent) {
     event.preventDefault();
     if (!current) return;
-    const isCorrect = normalizeAnswer(answer) === normalizeAnswer(current.item.Resposta);
+    const isCorrect = normalizeAnswer(answer) === normalizeAnswer(current.item.Item);
     const nextAnswered = answered + 1;
     const nextCorrect = correctCount + (isCorrect ? 1 : 0);
     setAnswered(nextAnswered);
@@ -341,7 +364,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
     setUserAnswer(answer);
     setCorrect(isCorrect);
     if (!isCorrect && current.retries < 2) setErrorQueue(previous => [...previous, { item: current.item, retries: current.retries + 1 }]);
-    if (!isCorrect) setErrorItems(previous => previous.some(item => item.Resposta === current.item.Resposta) ? previous : [...previous, current.item]);
+    if (!isCorrect) setErrorItems(previous => previous.some(item => item.Item === current.item.Item) ? previous : [...previous, current.item]);
     setPhase('reveal');
   }
 
@@ -374,33 +397,58 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
 
       {phase === 'study' && (
         <div>
+          <div className="study-expansion-controls" role="group" aria-label="Controles de expansão">
+            <button type="button" className="study-expansion-button" onClick={expandAll}><span aria-hidden="true">＋</span> Expandir tudo</button>
+            <button type="button" className="study-expansion-button" onClick={collapseAll}><span aria-hidden="true">−</span> Recolher tudo</button>
+          </div>
           {groups.map(group => {
             const open = expandedGroups.has(group);
             const items = dataset.itens.filter(item => item.Grupo === group);
             return <div key={group}>
               <button className="accordion-header" onClick={() => toggleGroup(group)}><span>{group}</span><span style={{ transform: open ? 'rotate(180deg)' : undefined }}>▾</span></button>
               <div className="divider" style={{ margin: 0 }} />
-              {open && <div className="accordion-body">{items.map((item, index) => <article
-                className="card"
-                style={{ padding: 14, marginBottom: 10 }}
-                key={item.id ?? `${item.Resposta}-${index}`}
-                id={item.id ? `study-item-${item.id}` : undefined}
-                tabIndex={item.id ? -1 : undefined}
-                aria-label={item.id ? `Item ${item.Pergunta}` : undefined}
-              >
-                <div className="small" style={{ marginBottom: 4 }}>{item.Pergunta}</div>
-                <div style={{ fontWeight: 700, marginBottom: 10 }}>{item.Resposta}</div>
-                <Images images={item.Imagens ?? []} alt={item.Resposta} />
-                <Media
-                  audios={item.Audios}
-                  videos={item.Videos}
-                  registerAudio={registerAudio}
-                  autoplayAudioId={deepLink?.audioId}
-                  autoplayBlockedAudioId={autoplayBlockedAudioId}
-                  onAutoplaySuccess={handleAutoplaySuccess}
-                  onAutoplayFailure={handleAutoplayFailure}
-                />
-              </article>)}</div>}
+              {open && <div className="accordion-body">{items.map(item => {
+                const itemIndex = dataset.itens.indexOf(item);
+                const itemKey = item.id ?? `item-${itemIndex}`;
+                const contentId = `study-item-content-${encodeURIComponent(itemKey)}`;
+                const itemOpen = expandedItems.has(itemKey);
+                return <article
+                  className="card"
+                  style={{ padding: 14, marginBottom: 10 }}
+                  key={itemKey}
+                  id={item.id ? `study-item-${item.id}` : undefined}
+                  tabIndex={item.id ? -1 : undefined}
+                  aria-label={item.id ? `Item ${item.Item}` : undefined}
+                >
+                  <button
+                    type="button"
+                    className="item-accordion-header"
+                    aria-expanded={itemOpen}
+                    aria-controls={contentId}
+                    onClick={() => toggleItem(itemKey)}
+                  >
+                    <span className="item-accordion-labels">
+                      <span className="small">Item</span>
+                      <strong>{item.Item || 'Item sem nome'}</strong>
+                      <span className="small">Descrição</span>
+                      <span>{item.Descricao || 'Sem descrição'}</span>
+                    </span>
+                    <span aria-hidden="true" style={{ transform: itemOpen ? 'rotate(180deg)' : undefined }}>▾</span>
+                  </button>
+                  {itemOpen && <div id={contentId} className="item-accordion-body">
+                    <Images images={item.Imagens ?? []} alt={item.Item} />
+                    <Media
+                      audios={item.Audios}
+                      videos={item.Videos}
+                      registerAudio={registerAudio}
+                      autoplayAudioId={deepLink?.audioId}
+                      autoplayBlockedAudioId={autoplayBlockedAudioId}
+                      onAutoplaySuccess={handleAutoplaySuccess}
+                      onAutoplayFailure={handleAutoplayFailure}
+                    />
+                  </div>}
+                </article>;
+              })}</div>}
             </div>;
           })}
         </div>
@@ -419,7 +467,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       </div>}
 
       {phase === 'question' && current && <div className="quiz-panel">
-        <div className="small" style={{ marginBottom: 10 }}>Pergunta {answered + 1} de {total} | Corretas: {correctCount}</div>
+        <div className="small" style={{ marginBottom: 10 }}>Descrição de {total} | Corretas: {correctCount}</div>
         <Images images={current.item.Imagens ?? []} />
         <Media
           audios={current.item.Audios}
@@ -430,9 +478,9 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
           onAutoplaySuccess={handleAutoplaySuccess}
           onAutoplayFailure={handleAutoplayFailure}
         />
-        <p style={{ margin: '14px 0 6px', fontWeight: 700 }}>{current.item.Pergunta}</p>
+        <p style={{ margin: '14px 0 6px', fontWeight: 700 }}>{current.item.Descricao}</p>
         <form onSubmit={submitAnswer}>
-          <input className="input" value={answer} onChange={event => setAnswer(event.target.value)} autoFocus autoComplete="off" placeholder="Digite a resposta…" style={{ marginBottom: 10 }} />
+          <input className="input" value={answer} onChange={event => setAnswer(event.target.value)} autoFocus autoComplete="off" placeholder="Digite o item…" style={{ marginBottom: 10 }} />
           <button className="btn btn-primary" type="submit">Confirmar</button>
         </form>
       </div>}
@@ -448,9 +496,9 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
           onAutoplaySuccess={handleAutoplaySuccess}
           onAutoplayFailure={handleAutoplayFailure}
         />
-        <p style={{ margin: '14px 0 4px', fontWeight: 700 }}>{current.item.Pergunta}</p>
-        <p className="small quiz-answer">Sua resposta: <strong>{userAnswer || '(em branco)'}</strong></p>
-        <p className="quiz-answer">Resposta correta: <strong>{current.item.Resposta}</strong></p>
+        <p style={{ margin: '14px 0 4px', fontWeight: 700 }}>{current.item.Descricao}</p>
+        <p className="small quiz-answer">Seu item: <strong>{userAnswer || '(em branco)'}</strong></p>
+        <p className="quiz-answer">Item correto: <strong>{current.item.Item}</strong></p>
         <div style={{ marginBottom: 14, color: correct ? '#16a34a' : '#dc2626', fontWeight: 700 }}>{correct ? '✓ Correto!' : '✗ Incorreto'}</div>
         <button className="btn btn-primary" onClick={nextQuestion}>Próxima</button>
       </div>}

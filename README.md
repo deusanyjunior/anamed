@@ -3,6 +3,32 @@ Criado por estudantes de Biomedicina e Medicina
 
 Aplicação React/Next.js para estudo e memorização de conteúdos de Anatomia.
 
+## Stack de tecnologias
+
+### Aplicação web e editor
+
+- **Next.js** — framework principal do site público e do editor local, usando App Router e rotas dinâmicas.
+  - Site público: `16.3.5`
+  - Editor: `16.2.4`
+- **React** — construção dos componentes e das interfaces interativas (`19.2.4`).
+- **TypeScript** — tipagem do código do site, editor, catálogo e datasets.
+- **Node.js e npm** — execução dos projetos, instalação de dependências e scripts de desenvolvimento/build.
+- **Tailwind CSS** — estilização da interface do editor.
+- **CSS global** — estilos responsivos e componentes visuais do site público.
+
+### Recursos do site público
+
+- **NextAuth.js** — autenticação com Google OAuth e restrição de acesso por domínio institucional.
+- **Google Gemini (`@google/genai`)** — inteligência artificial da Aniah, executada exclusivamente no servidor.
+- **React Markdown (`react-markdown` + `remark-gfm`)** — renderização das respostas formatadas da Aniah.
+- **Upstash Redis** — armazenamento distribuído das quotas de mensagens da Aniah em produção.
+- **Vercel** — plataforma de publicação do site público.
+
+### Qualidade e desenvolvimento
+
+- **ESLint** — análise estática e padronização do código.
+- **TypeScript compiler** — verificação de tipos durante o build.
+
 ## Estrutura do projeto
 
 ```
@@ -102,7 +128,7 @@ O editor é uma aplicação Next.js independente para gerenciar os conteúdos em
 
 - Criar e excluir temas e estudos
 - Renomear estudos, arquivos JSON e pastas de imagens
-- Adicionar, editar, reordenar e excluir itens (Pergunta, Resposta, Grupo)
+- Adicionar, editar, reordenar e excluir itens (Descrição, Item, Grupo)
 - Adicionar imagens, áudios e vídeos por upload ou URL
 - Reordenar e remover imagens, áudios e vídeos
 - Editar títulos e referências de mídia
@@ -139,8 +165,8 @@ Para adicionar um novo tema ou estudo diretamente nos arquivos:
   "itens": [
     {
       "Grupo": "Nome do grupo",
-      "Pergunta": "Texto da pergunta",
-      "Resposta": "Texto da resposta",
+      "Descricao": "Texto descritivo",
+      "Item": "Nome ou identificação do item",
       "Imagens": [
         {
           "url": "assets/<tema>/<estudo>/imagem.png",
@@ -188,7 +214,7 @@ O estudo de áudio foi dividido em dois datasets: `docs/assets/ossos/cingulo/cin
       "Exercicios": "<tema>/<estudo>.json",
       "Imagem": [
         {
-          "url": "assets/<tema>/<estudo>/capa.png",
+          "url": "assets/<tema>/<estudo>/imagens/capa.png",
           "Copyright": {
             "licenca": "CC BY-SA 2.1 JP",
             "fonte": "Wikimedia Commons",

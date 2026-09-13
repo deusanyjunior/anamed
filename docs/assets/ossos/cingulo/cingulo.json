@@ -3,14 +3,31 @@
   "itens": [
     {
       "Grupo": "Clavícula",
-      "Pergunta": "Parte da clavícula",
-      "Resposta": "Extremidade external da clavícula",
-      "Imagens": [],
+      "Descricao": "Extremidade medial da clavícula, junto ao esterno",
+      "Item": "Extremidade esternal da clavícula",
+      "Imagens": [
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-extremidadeesternal.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        },
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-extremidadeesternal1.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        }
+      ],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/clavicula-1.mp3",
-          "Titulo": "Clavícula — áudio 1",
-          "Transcricao": "Você está analisando a extremidade external da clavícula.",
+          "Titulo": "Indicação em áudio",
+          "Transcricao": "Você está analisando a extremidade esternal da clavícula.",
           "id": "clavicula-1-audio-1"
         }
       ],
@@ -25,46 +42,92 @@
     },
     {
       "Grupo": "Clavícula",
-      "Pergunta": "clavicula-2",
-      "Resposta": "",
-      "Imagens": [],
+      "Descricao": "Porção alongada entre as extremidades da clavícula",
+      "Item": "Corpo",
+      "Imagens": [
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-corpo.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        },
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-corpo1.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        }
+      ],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/clavicula-2.mp3",
-          "Titulo": "Clavícula — áudio 2",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando o corpo da clavícula.",
           "id": "clavicula-2-audio-1"
         }
       ],
-      "Videos": [],
+      "Videos": [
+        {
+          "url": "https://youtube.com/shorts/NmeQsPlZCmU?si=WpXW5UhIanTVO1IQ",
+          "Titulo": "Detalhes da clavícula",
+          "Tipo": "youtube"
+        }
+      ],
       "id": "clavicula-2"
     },
     {
       "Grupo": "Clavícula",
-      "Pergunta": "clavicula-3",
-      "Resposta": "",
-      "Imagens": [],
+      "Descricao": "Extremidade lateral da clavícula, junto ao acrômio",
+      "Item": "Extremidade acromial",
+      "Imagens": [
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-extremidadeacromial.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        },
+        {
+          "url": "assets/ossos/cingulo/imagens/za-clavicula-extremidadeacromial1.png",
+          "indicação": "Área destacada em verde",
+          "Copyright": {
+            "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+            "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+          }
+        }
+      ],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/clavicula-3.mp3",
-          "Titulo": "Clavícula — áudio 3",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando a extremidade acromial da clavícula.",
           "id": "clavicula-3-audio-1"
         }
       ],
-      "Videos": [],
+      "Videos": [
+        {
+          "url": "https://youtu.be/LUai2wbBdHU?si=5UBANyiYA8vWkwuV",
+          "Titulo": "Diferença entre a EXTREMIDADE ACROMIAL X EXTREMIDADE ESTERNAL da clavícula",
+          "Tipo": "youtube"
+        }
+      ],
       "id": "clavicula-3"
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-1",
-      "Resposta": "",
+      "Descricao": "Crista posterior que divide as fossas supra e infraespinal",
+      "Item": "Espinha",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-1.mp3",
-          "Titulo": "Escápula — áudio 1",
-          "Transcricao": "Você está analisando a espinha da scapula.",
+          "Titulo": "Indicação em áudio",
+          "Transcricao": "Você está analisando a espinha da escápula.",
           "id": "escapula-1-audio-1"
         }
       ],
@@ -73,13 +136,13 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-2",
-      "Resposta": "",
+      "Descricao": "Prolongamento da espinha que se articula com a clavícula",
+      "Item": "Acrômio",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-2.mp3",
-          "Titulo": "Escápula — áudio 2",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando o acrômio.",
           "id": "escapula-2-audio-1"
         }
@@ -89,13 +152,13 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-3",
-      "Resposta": "",
+      "Descricao": "Superfície articular lateral para a cabeça do úmero",
+      "Item": "Cavidade glenoidal",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-3.mp3",
-          "Titulo": "Escápula — áudio 3",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando a cavidade glenoidal.",
           "id": "escapula-3-audio-1"
         }
@@ -105,13 +168,13 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-4",
-      "Resposta": "",
+      "Descricao": "Projeção anterior da escápula para inserção muscular",
+      "Item": "Processo coracoide",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-4.mp3",
-          "Titulo": "Escápula — áudio 4",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando o processo coracoide.",
           "id": "escapula-4-audio-1"
         }
@@ -121,13 +184,13 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-5",
-      "Resposta": "",
+      "Descricao": "Vértice inferior da escápula",
+      "Item": "Ângulo inferior",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-5.mp3",
-          "Titulo": "Escápula — áudio 5",
+          "Titulo": "Indicação em áudio",
           "Transcricao": "Você está analisando o ângulo inferior.",
           "id": "escapula-5-audio-1"
         }
@@ -137,14 +200,14 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-6",
-      "Resposta": "",
+      "Descricao": "Depressão posterior acima da espinha da escápula",
+      "Item": "Fossa supraespinal",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-6.mp3",
-          "Titulo": "Escápula — áudio 6",
-          "Transcricao": "Você está analisando a força super espinal.",
+          "Titulo": "Indicação em áudio",
+          "Transcricao": "Você está analisando a fossa supraespinal.",
           "id": "escapula-6-audio-1"
         }
       ],
@@ -153,14 +216,14 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-7",
-      "Resposta": "",
+      "Descricao": "Depressão posterior abaixo da espinha da escápula",
+      "Item": "Fossa infraespinal",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-7.mp3",
-          "Titulo": "Escápula — áudio 7",
-          "Transcricao": "Você está analisando a força infra-espinal.",
+          "Titulo": "Indicação em áudio",
+          "Transcricao": "Você está analisando a fossa infraespinal.",
           "id": "escapula-7-audio-1"
         }
       ],
@@ -169,14 +232,14 @@
     },
     {
       "Grupo": "Escápula",
-      "Pergunta": "escapula-8",
-      "Resposta": "",
+      "Descricao": "Depressão da face costal da escápula",
+      "Item": "Fossa subescapular",
       "Imagens": [],
       "Audios": [
         {
           "url": "assets/ossos/cingulo/audios/escapula-8.mp3",
-          "Titulo": "Escápula — áudio 8",
-          "Transcricao": "Você está analisando a força subescapular.",
+          "Titulo": "Indicação em áudio",
+          "Transcricao": "Você está analisando a fossa subescapular.",
           "id": "escapula-8-audio-1"
         }
       ],

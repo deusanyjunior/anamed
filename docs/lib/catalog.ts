@@ -27,6 +27,25 @@ export function routeFromExercises(exercicios: string): string {
   return withoutExtension;
 }
 
+export function routeFromStudy(estudo: EstudoRef): string {
+  return estudo.Rota ? assertSafeRoute(estudo.Rota) : routeFromExercises(estudo.Exercicios);
+}
+
+function assertSafeRoute(value: string) {
+  const normalized = value.replaceAll('\\', '/').trim();
+  const parts = normalized.split('/').filter(Boolean);
+  if (!normalized || normalized.startsWith('/') || normalized.endsWith('/') || normalized.includes('..') || normalized.toLowerCase().endsWith('.json') || parts.length < 2) {
+    throw new Error('Rota de estudo inválida');
+  }
+  return parts.join('/');
+}
+
+export function routePartsFromStudy(estudo: EstudoRef) {
+  const route = routeFromStudy(estudo);
+  const parts = route.split('/').filter(Boolean);
+  return { tema: parts[0], estudo: parts.slice(1).join('/') };
+}
+
 export function routePartsFromExercises(exercicios: string) {
   const route = routeFromExercises(exercicios);
   const parts = route.split('/').filter(Boolean);
@@ -40,7 +59,7 @@ export function allStudies(catalog = readCatalog()) {
 
 export function findStudy(temaSlug: string, estudoSlug: string, catalog = readCatalog()) {
   return allStudies(catalog).find(({ estudo }) => {
-    const route = routePartsFromExercises(estudo.Exercicios);
+    const route = routePartsFromStudy(estudo);
     return route.tema === temaSlug && route.estudo === estudoSlug;
   });
 }
