@@ -18,6 +18,38 @@ function normalizeAnswer(value: string) {
   return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
 }
 
+function studyLink(params: { itemId: string; audioId?: string; autoplay?: boolean }) {
+  if (typeof window === 'undefined') return '';
+  const url = new URL(window.location.href);
+  url.search = '';
+  url.searchParams.set('item', params.itemId);
+  if (params.audioId) url.searchParams.set('audio', params.audioId);
+  if (params.autoplay) url.searchParams.set('autoplay', '1');
+  return url.toString();
+}
+
+function CopyLinkButton({ itemId, audioId, autoplay = false }: { itemId: string; audioId?: string; autoplay?: boolean }) {
+  const [copied, setCopied] = useState(false);
+
+  async function copyLink() {
+    const link = studyLink({ itemId, audioId, autoplay });
+    if (!link) return;
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  return (
+    <button type="button" className="copy-link-button" onClick={copyLink}>
+      <span aria-hidden="true">⧉</span> {copied ? 'Link copiado' : 'Copiar link'}
+    </button>
+  );
+}
+
 function shuffle<T>(items: T[]) {
   const result = [...items];
   for (let i = result.length - 1; i > 0; i--) {
@@ -55,12 +87,14 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
 
 function AudioWithTranscript({
   audio,
+  itemId,
   registerAudio,
   autoplayBlocked,
   onAutoplaySuccess,
   onAutoplayFailure,
 }: {
   audio: StudyAudio;
+  itemId?: string;
   registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
   autoplayBlocked: boolean;
   onAutoplaySuccess: () => void;
@@ -92,7 +126,12 @@ function AudioWithTranscript({
 
   return (
     <div>
-      {audio.Titulo && <div className="small" style={{ marginBottom: 4 }}>{audio.Titulo}</div>}
+      <div className="media-heading">
+        <div>
+          {audio.Titulo && <div className="small">{audio.Titulo}</div>}
+          {audio.id && <div className="media-id">ID do áudio: <code>{audio.id}</code> {itemId && <CopyLinkButton itemId={itemId} audioId={audio.id} autoplay />}</div>}
+        </div>
+      </div>
       <audio
         ref={setAudioElement}
         controls
@@ -170,6 +209,7 @@ function VideoMedia({ video }: { video: StudyVideo }) {
 }
 
 function Media({
+  itemId,
   audios = [],
   videos = [],
   registerAudio,
@@ -178,6 +218,7 @@ function Media({
   onAutoplaySuccess,
   onAutoplayFailure,
 }: {
+  itemId?: string;
   audios?: StudyAudio[];
   videos?: StudyVideo[];
   registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
@@ -192,6 +233,7 @@ function Media({
       {audios.map((audio, index) => <AudioWithTranscript
         key={audio.id ?? `audio-${audio.url}-${index}`}
         audio={audio}
+        itemId={itemId}
         registerAudio={registerAudio}
         autoplayBlocked={audio.id === autoplayBlockedAudioId && audio.id === autoplayAudioId}
         onAutoplaySuccess={onAutoplaySuccess}
@@ -420,6 +462,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
                   tabIndex={item.id ? -1 : undefined}
                   aria-label={item.id ? `Item ${item.Item}` : undefined}
                 >
+                  {item.id && <div className="item-id">ID do item: <code>{item.id}</code> <CopyLinkButton itemId={item.id} /></div>}
                   <button
                     type="button"
                     className="item-accordion-header"
@@ -438,6 +481,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
                   {itemOpen && <div id={contentId} className="item-accordion-body">
                     <Images images={item.Imagens ?? []} alt={item.Item} />
                     <Media
+                      itemId={item.id}
                       audios={item.Audios}
                       videos={item.Videos}
                       registerAudio={registerAudio}
@@ -470,6 +514,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
         <div className="small" style={{ marginBottom: 10 }}>Descrição de {total} | Corretas: {correctCount}</div>
         <Images images={current.item.Imagens ?? []} />
         <Media
+          itemId={current.item.id}
           audios={current.item.Audios}
           videos={current.item.Videos}
           registerAudio={registerAudio}
@@ -488,6 +533,7 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       {phase === 'reveal' && current && <div className="quiz-panel">
         <Images images={current.item.Imagens ?? []} />
         <Media
+          itemId={current.item.id}
           audios={current.item.Audios}
           videos={current.item.Videos}
           registerAudio={registerAudio}
