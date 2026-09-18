@@ -19,7 +19,7 @@
           ]
         },
         {
-          "Titulo": "Detalhes do cíngulo peitoral",
+          "Titulo": "Detalhes do cíngulo superior",
           "Rota": "ossos/cingulo",
           "Exercicios": "ossos/cingulo/cingulo.json",
           "Imagem": [
