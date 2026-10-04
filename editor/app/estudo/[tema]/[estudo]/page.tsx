@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
@@ -75,6 +76,15 @@ export default function EstudoEditor() {
     if (!datasetPath) return;
     fetch(`/api/dataset?path=${datasetPath}`).then(r => r.json()).then(body => setDataset(normalizeDataset(body)));
   }, [datasetPath]);
+
+  useEffect(() => {
+    if (expandedIdx === null) return;
+    const frame = requestAnimationFrame(() => {
+      const itemElement = document.querySelector(`[data-editor-item-index="${expandedIdx}"]`);
+      itemElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [expandedIdx]);
 
   async function save(ds: StudyDataset) {
     setSaving(true);
@@ -342,7 +352,7 @@ export default function EstudoEditor() {
       {/* Lista de itens */}
       <div className="space-y-2 mb-4">
         {dataset.itens.map((item, idx) => (
-          <div key={idx} className="border border-slate-300 rounded-xl overflow-hidden bg-white">
+          <div key={idx} data-editor-item-index={idx} className="border border-slate-300 rounded-xl overflow-hidden bg-white">
             {/* Cabeçalho do item */}
             <div className="flex items-center gap-2 px-3 py-2 bg-slate-100">
               <div className="flex flex-col gap-0.5">
@@ -416,12 +426,14 @@ export default function EstudoEditor() {
                     {item.Imagens.map((img, imgIdx) => (
                       <div key={imgIdx} className="flex gap-3 items-start bg-slate-50 rounded-lg p-2">
                         {/* Preview */}
-                        <div className="w-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
-                          <img
+                        <div className="relative w-20 h-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
+                          <Image
                             src={`${DOCS_BASE}/${img.url}`}
                             alt=""
-                            className="w-full h-auto"
-                            onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                            fill
+                            unoptimized
+                            sizes="80px"
+                            className="object-contain"
                           />
                         </div>
                         <div className="flex-1 space-y-1.5">
@@ -558,8 +570,8 @@ export default function EstudoEditor() {
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-h-72 overflow-y-auto">
                         {availableImages.map(image => (
                           <div key={image.url} className="rounded border border-slate-200 bg-white p-1">
-                            <button type="button" onClick={() => reuseImage(idx, image.url)} className="w-full text-left hover:border-blue-500">
-                              <img src={`${DOCS_BASE}/${image.url}`} alt={image.name} className="w-full aspect-square object-contain rounded bg-slate-100" />
+                            <button type="button" onClick={() => reuseImage(idx, image.url)} className="relative w-full aspect-square text-left hover:border-blue-500">
+                              <Image src={`${DOCS_BASE}/${image.url}`} alt={image.name} fill unoptimized sizes="(max-width: 640px) 50vw, 120px" className="object-contain rounded bg-slate-100" />
                               <span className="block truncate text-[10px] text-slate-700 mt-1">{image.name}</span>
                             </button>
                             <button type="button" onClick={() => deleteAsset(image.url)} className="text-[10px] text-red-600 mt-1">Excluir arquivo</button>

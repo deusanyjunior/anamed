@@ -73,6 +73,7 @@ function copyrightText(image: StudyImage) {
 function OverlaySvg({ overlays = [] }: { overlays?: StudyOverlay[] }) {
   const svgPrefix = useId().replaceAll(':', '');
   if (!overlays.length) return null;
+  const orderedOverlays = [...overlays].sort((first, second) => Number(first.tipo === 'orientacao') - Number(second.tipo === 'orientacao'));
   return (
     <svg className="study-overlay" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
       <defs>
@@ -88,11 +89,26 @@ function OverlaySvg({ overlays = [] }: { overlays?: StudyOverlay[] }) {
           </mask>
         ))}
       </defs>
-      {overlays.map(overlay => {
+      {orderedOverlays.map(overlay => {
         const points = overlay.pontos.map(point => `${point.x},${point.y}`).join(' ');
         const color = overlay.cor ?? '#dc2626';
         const width = overlay.espessura ?? 0.006;
         const opacity = overlay.opacidade ?? 1;
+        if (overlay.tipo === 'orientacao' && (overlay.posicao || overlay.pontos[0])) {
+          const position = overlay.posicao ?? overlay.pontos[0];
+          const [horizontal = 'direita-esquerda', vertical = 'superior-inferior'] = (overlay.orientacao ?? '').split('__');
+          const [horizontalStart, horizontalEnd] = horizontal.split('-');
+          const [verticalStart, verticalEnd] = vertical.split('-');
+          return <g key={overlay.id} transform={`translate(${position.x} ${position.y})`} opacity={opacity}>
+            <line x1="-0.045" y1="0" x2="0.045" y2="0" stroke={color} strokeWidth="0.003" />
+            <line x1="0" y1="-0.045" x2="0" y2="0.045" stroke={color} strokeWidth="0.003" />
+            <circle cx="0" cy="0" r="0.006" fill={color} />
+            <text x="-0.052" y="0.008" textAnchor="end" fontSize="0.019" fontWeight="700" fill={color}>{horizontalStart}</text>
+            <text x="0.052" y="0.008" textAnchor="start" fontSize="0.019" fontWeight="700" fill={color}>{horizontalEnd}</text>
+            <text x="0" y="-0.055" textAnchor="middle" fontSize="0.019" fontWeight="700" fill={color}>{verticalStart}</text>
+            <text x="0" y="0.07" textAnchor="middle" fontSize="0.019" fontWeight="700" fill={color}>{verticalEnd}</text>
+          </g>;
+        }
         if (overlay.tipo === 'seta' && overlay.pontos.length >= 2) {
           const start = overlay.pontos[0];
           const end = overlay.pontos[overlay.pontos.length - 1];

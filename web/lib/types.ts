@@ -12,7 +12,9 @@ export type OverlayPoint = {
 
 export type StudyOverlay = {
   id: string;
-  tipo: 'seta' | 'linha' | 'area' | 'area-preenchida' | 'area-inversa';
+  tipo: 'seta' | 'linha' | 'area' | 'area-preenchida' | 'area-inversa' | 'orientacao';
+  orientacao?: string;
+  posicao?: OverlayPoint;
   pontos: OverlayPoint[];
   cor?: string;
   espessura?: number;

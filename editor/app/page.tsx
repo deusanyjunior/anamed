@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { EstudosCatalog, Tema, EstudoRef } from '@/types';
@@ -21,7 +22,6 @@ export default function Home() {
   const [saving, setSaving] = useState(false);
   const [expandedCapa, setExpandedCapa] = useState<string | null>(null); // "tema::titulo"
   const [capaUrl, setCapaUrl] = useState('');
-  const [capaIndicacao, setCapaIndicacao] = useState('');
   const [capaCopyright, setCapaCopyright] = useState<{ licenca?: string; fonte?: string; urlOriginal?: string; observacao?: string }>({});
   const [capaExpandedCopyright, setCapaExpandedCopyright] = useState(false);
   const [capaDownloading, setCapaDownloading] = useState(false);
@@ -80,7 +80,6 @@ export default function Home() {
     setExpandedCapa(key);
     setCapaUrl(getCapaUrl(e));
     const img = Array.isArray(e.Imagem) ? e.Imagem[0] : undefined;
-    setCapaIndicacao('');
     setCapaCopyright(img?.Copyright ?? {});
     setCapaExpandedCopyright(false);
   }
@@ -227,11 +226,10 @@ export default function Home() {
                   <div className="flex items-center justify-between bg-slate-100 px-3 py-2">
                     <div className="flex items-center gap-3">
                       {/* thumbnail */}
-                      <div className="w-10 h-10 rounded overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0">
+                      <div className="relative w-10 h-10 rounded overflow-hidden bg-slate-100 border border-slate-200 flex-shrink-0">
                         {capaAtual
-                          ? <img src={capaAtual.startsWith('assets/') ? `${DOCS_BASE}/${capaAtual}` : capaAtual}
-                              alt="" className="w-full h-full object-cover"
-                              onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                          ? <Image src={capaAtual.startsWith('assets/') ? `${DOCS_BASE}/${capaAtual}` : capaAtual}
+                              alt="" fill unoptimized sizes="40px" className="object-cover" />
                           : <div className="w-full h-full flex items-center justify-center text-slate-500 text-xs">?</div>
                         }
                       </div>
@@ -266,11 +264,10 @@ export default function Home() {
                     <div className="border-t border-slate-200 p-3 space-y-3 bg-white">
                       <div className="flex gap-3 items-start bg-slate-50 rounded-lg p-2">
                         {/* preview */}
-                        <div className="w-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
+                        <div className="relative w-20 h-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
                           {capaUrl
-                            ? <img src={capaUrl.startsWith('assets/') ? `${DOCS_BASE}/${capaUrl}` : capaUrl}
-                                alt="" className="w-full h-auto"
-                                onError={ev => { (ev.target as HTMLImageElement).style.display = 'none'; }} />
+                            ? <Image src={capaUrl.startsWith('assets/') ? `${DOCS_BASE}/${capaUrl}` : capaUrl}
+                                alt="" fill unoptimized sizes="80px" className="object-contain" />
                             : <div className="w-full h-16 flex items-center justify-center text-slate-500 text-xs">sem imagem</div>
                           }
                         </div>
