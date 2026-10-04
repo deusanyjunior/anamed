@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { coverUrl, readCatalog, routeFromStudy } from '../lib/catalog';
 
@@ -22,7 +23,7 @@ export default function HomePage() {
                 return (
                   <Link className="card card-clickable" href={href} key={estudo.Exercicios}>
                     <div className="card-media">
-                      {capa ? <img src={capa} alt={estudo.Titulo} loading="lazy" /> : <div className="small" style={{ padding: 12 }}>Sem imagem</div>}
+                      {capa ? <Image className="card-cover" src={capa} alt={estudo.Titulo} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 360px" /> : <div className="small" style={{ padding: 12 }}>Sem imagem</div>}
                     </div>
                     <div className="card-body">
                       <div className="pill">Estudo</div>

@@ -1,18 +1,18 @@
 # AnaMed Editor
 
-Aplicação local para gerenciar os conteúdos do site AnaMed armazenados em `../docs/assets`. O editor é uma aplicação Next.js independente e altera os arquivos do projeto diretamente; não é necessário editar os JSONs manualmente.
+Aplicação local para gerenciar os conteúdos do site AnaMed armazenados em `../web/data`. O editor é uma aplicação Next.js independente e altera os arquivos do projeto diretamente; não é necessário editar os JSONs manualmente.
 
 ## Pré-requisitos
 
 - Node.js e npm instalados
-- Dependências instaladas nos projetos `editor` e `docs`
+- Dependências instaladas nos projetos `editor` e `web`
 
 ## Como executar
 
 A partir da raiz do repositório, instale as dependências uma vez:
 
 ```bash
-cd docs
+cd web
 npm install
 cd ../editor
 npm install
@@ -21,7 +21,7 @@ npm install
 Para permitir o preview dos assets, inicie o site em outro terminal:
 
 ```bash
-cd docs
+cd web
 npm run dev -- -p 8000
 ```
 
@@ -34,7 +34,7 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-O site em `http://localhost:8000` é usado para visualizar as imagens, os áudios e os vídeos existentes em `docs/assets`. O editor e o site público continuam sendo aplicações separadas.
+O site em `http://localhost:8000` é usado para visualizar as imagens, os áudios e os vídeos existentes em `web/data`. O editor e o site público continuam sendo aplicações separadas.
 
 Para gerar e executar a versão de produção do editor:
 
@@ -57,7 +57,7 @@ npm run start
 - Editar indicação e informações de copyright das imagens
 - Editar capas dos estudos
 - Visualizar imagens e reproduzir áudios e vídeos durante a edição
-- Salvar as alterações nos arquivos JSON de `docs/assets/`
+- Salvar as alterações nos arquivos JSON de `web/data/`
 
 ## Título, rota e dataset
 
@@ -86,13 +86,13 @@ Para manter compatibilidade com estudos antigos, quando `Rota` não estiver pree
 Os datasets ficam no caminho definido por `Exercicios`, por exemplo:
 
 ```text
-docs/assets/ossos/esqueleto-axial/esqueleto-axial.json
+web/data/ossos/esqueleto-axial/esqueleto-axial.json
 ```
 
-Os assets associados ficam normalmente em:
+Os dados associados ficam normalmente em:
 
 ```text
-docs/assets/<tema>/<estudo>/
+web/data/<tema>/<estudo>/
 ├── imagens/
 ├── audios/
 └── arquivos de vídeo
@@ -105,7 +105,7 @@ Os uploads de imagens são gravados na pasta `imagens/` do estudo, os uploads de
 Antes de publicar alterações, execute os comandos abaixo em cada aplicação:
 
 ```bash
-cd docs
+cd web
 npm run lint
 npm run build
 
@@ -114,4 +114,4 @@ npm run lint
 npm run build
 ```
 
-O editor deve ser utilizado localmente e com cuidado, pois suas operações de salvamento e upload alteram os arquivos compartilhados em `docs/assets/`.
+O editor deve ser utilizado localmente e com cuidado, pois suas operações de salvamento e upload alteram os arquivos compartilhados em `web/data/`.

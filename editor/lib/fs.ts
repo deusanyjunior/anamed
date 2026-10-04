@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import type { EstudosCatalog, StudyDataset } from '@/types';
 
-export const DOCS_ASSETS = path.resolve(process.cwd(), '..', 'docs', 'assets');
+export const DOCS_ASSETS = path.resolve(process.cwd(), '..', 'web', 'data');
 
 export function readCatalog(): EstudosCatalog {
   const raw = fs.readFileSync(path.join(DOCS_ASSETS, 'estudos.json'), 'utf-8');

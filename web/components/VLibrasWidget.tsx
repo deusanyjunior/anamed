@@ -20,10 +20,9 @@ export default function VLibrasWidget() {
 
   return (
     <>
-      <div {...{ vw: true }} className="enabled vlibras-widget" aria-label="VLibras">
-        <div {...{ 'vw-access-button': true }} className="active" />
-        <div {...{ 'vw-plugin-wrapper': true }}>
-          <div className="vw-plugin-top-wrapper" />
+      <div {...{ vw: 'true' }} className="enabled vlibras-widget" aria-label="VLibras">
+        <div {...{ 'vw-access-button': 'true' }} className="active" />
+        <div {...{ 'vw-plugin-wrapper': 'true' }}>          <div className="vw-plugin-top-wrapper" />
         </div>
       </div>
       <Script

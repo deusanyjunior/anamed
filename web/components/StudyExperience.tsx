@@ -1,9 +1,10 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useMemo, useState } from 'react';
 import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '../lib/types';
 
-type DeepLink = { itemId?: string; audioId?: string; autoplay?: boolean };
+type DeepLink = { itemId?: string };
 type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string; deepLink?: DeepLink };
 type Entry = { item: StudyItem; retries: number };
 type Session = { id: string; finishedAt: string; grupos: string[]; total: number; corretas: number; acuracia: number };
@@ -18,21 +19,19 @@ function normalizeAnswer(value: string) {
   return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().trim();
 }
 
-function studyLink(params: { itemId: string; audioId?: string; autoplay?: boolean }) {
+function studyLink(itemId: string) {
   if (typeof window === 'undefined') return '';
   const url = new URL(window.location.href);
   url.search = '';
-  url.searchParams.set('item', params.itemId);
-  if (params.audioId) url.searchParams.set('audio', params.audioId);
-  if (params.autoplay) url.searchParams.set('autoplay', '1');
+  url.searchParams.set('item', itemId);
   return url.toString();
 }
 
-function CopyLinkButton({ itemId, audioId, autoplay = false }: { itemId: string; audioId?: string; autoplay?: boolean }) {
+function CopyLinkButton({ itemId }: { itemId: string }) {
   const [copied, setCopied] = useState(false);
 
   async function copyLink() {
-    const link = studyLink({ itemId, audioId, autoplay });
+    const link = studyLink(itemId);
     if (!link) return;
     try {
       await navigator.clipboard.writeText(link);
@@ -73,11 +72,13 @@ function copyrightText(image: StudyImage) {
 
 function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
   return (
-    <div className="grid2">
+    <div className="study-image-carousel" role="region" aria-label="Imagens do estudo">
       {images.map((image, index) => (
         <div className="img-wrap" key={`${image.url}-${index}`}>
           {image.indicação && <div className="small" style={{ padding: '6px 8px' }}>{image.indicação}</div>}
-          <img src={imageUrl(image.url)} alt={alt} loading="lazy" />
+          <div className="study-image-frame">
+            <Image src={imageUrl(image.url)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+          </div>
           {copyrightText(image)}
         </div>
       ))}
@@ -87,70 +88,26 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
 
 function AudioWithTranscript({
   audio,
-  itemId,
-  registerAudio,
-  autoplayBlocked,
-  onAutoplaySuccess,
-  onAutoplayFailure,
 }: {
   audio: StudyAudio;
-  itemId?: string;
-  registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
-  autoplayBlocked: boolean;
-  onAutoplaySuccess: () => void;
-  onAutoplayFailure: () => void;
 }) {
   const hasTranscript = Boolean(audio.Transcricao?.trim());
   const [showTranscript, setShowTranscript] = useState(false);
-  const audioElement = useRef<HTMLAudioElement | null>(null);
-  const fallbackButton = useRef<HTMLButtonElement | null>(null);
-
-  useEffect(() => {
-    if (autoplayBlocked) fallbackButton.current?.focus();
-  }, [autoplayBlocked]);
-
-  const setAudioElement = useCallback((element: HTMLAudioElement | null) => {
-    audioElement.current = element;
-    registerAudio(audio.id, element);
-  }, [audio.id, registerAudio]);
-
-  async function playAudio() {
-    if (!audioElement.current) return;
-    try {
-      await audioElement.current.play();
-      onAutoplaySuccess();
-    } catch {
-      onAutoplayFailure();
-    }
-  }
 
   return (
     <div>
       <div className="media-heading">
         <div>
           {audio.Titulo && <div className="small">{audio.Titulo}</div>}
-          {audio.id && <div className="media-id">ID do áudio: <code>{audio.id}</code> {itemId && <CopyLinkButton itemId={itemId} audioId={audio.id} autoplay />}</div>}
+          {audio.id && <div className="media-id">ID do áudio: <code>{audio.id}</code></div>}
         </div>
       </div>
       <audio
-        ref={setAudioElement}
         controls
         preload="metadata"
         src={imageUrl(audio.url)}
         style={{ width: '100%' }}
       />
-      {autoplayBlocked && (
-        <button
-          ref={fallbackButton}
-          type="button"
-          className="btn btn-primary"
-          aria-label={`Reproduzir ${audio.Titulo || 'áudio'}`}
-          onClick={playAudio}
-          style={{ marginTop: 6 }}
-        >
-          ▶ Reproduzir áudio
-        </button>
-      )}
       {hasTranscript && (
         <div style={{ marginTop: 6 }}>
           <button
@@ -209,23 +166,11 @@ function VideoMedia({ video }: { video: StudyVideo }) {
 }
 
 function Media({
-  itemId,
   audios = [],
   videos = [],
-  registerAudio,
-  autoplayAudioId,
-  autoplayBlockedAudioId,
-  onAutoplaySuccess,
-  onAutoplayFailure,
 }: {
-  itemId?: string;
   audios?: StudyAudio[];
   videos?: StudyVideo[];
-  registerAudio: (id: string | undefined, element: HTMLAudioElement | null) => void;
-  autoplayAudioId?: string;
-  autoplayBlockedAudioId?: string;
-  onAutoplaySuccess: () => void;
-  onAutoplayFailure: () => void;
 }) {
   if (!audios.length && !videos.length) return null;
   return (
@@ -233,11 +178,6 @@ function Media({
       {audios.map((audio, index) => <AudioWithTranscript
         key={audio.id ?? `audio-${audio.url}-${index}`}
         audio={audio}
-        itemId={itemId}
-        registerAudio={registerAudio}
-        autoplayBlocked={audio.id === autoplayBlockedAudioId && audio.id === autoplayAudioId}
-        onAutoplaySuccess={onAutoplaySuccess}
-        onAutoplayFailure={onAutoplayFailure}
       />)}
       {videos.map((video, index) => <div key={`video-${video.url}-${index}`}>
         {video.Titulo && <div className="small" style={{ marginBottom: 4 }}>{video.Titulo}</div>}
@@ -264,11 +204,6 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
   const [answered, setAnswered] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [history, setHistory] = useState<Session[]>([]);
-  const audioElements = useRef(new Map<string, HTMLAudioElement>());
-  const autoplayAttempt = useRef<string | null>(null);
-  const [audioRegistryVersion, setAudioRegistryVersion] = useState(0);
-  const [autoplayBlockedAudioId, setAutoplayBlockedAudioId] = useState<string>();
-  const [autoplayMessage, setAutoplayMessage] = useState('');
 
   useEffect(() => {
     try {
@@ -308,38 +243,8 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       itemElement.focus({ preventScroll: true });
     });
 
-    if (deepLink.autoplay && deepLink.audioId) {
-      const audio = audioElements.current.get(deepLink.audioId);
-      const attemptKey = `${deepLink.itemId}:${deepLink.audioId}`;
-      if (audio && autoplayAttempt.current !== attemptKey) {
-        autoplayAttempt.current = attemptKey;
-        audio.play().then(() => {
-          setAutoplayBlockedAudioId(undefined);
-          setAutoplayMessage('Áudio reproduzido.');
-        }).catch(() => {
-          setAutoplayBlockedAudioId(deepLink.audioId);
-          setAutoplayMessage('O navegador bloqueou a reprodução automática. Pressione o botão Reproduzir áudio.');
-        });
-      }
-    }
-
     return () => cancelAnimationFrame(frame);
-  }, [audioRegistryVersion, dataset.itens, deepLink?.audioId, deepLink?.autoplay, deepLink?.itemId, expandedGroups, expandedItems, phase]);
-
-  const registerAudio = useCallback((id: string | undefined, element: HTMLAudioElement | null) => {
-    if (!id) return;
-    if (element) audioElements.current.set(id, element); else audioElements.current.delete(id);
-    setAudioRegistryVersion(previous => previous + 1);
-  }, []);
-
-  function handleAutoplaySuccess() {
-    setAutoplayBlockedAudioId(undefined);
-    setAutoplayMessage('Áudio reproduzido.');
-  }
-
-  function handleAutoplayFailure() {
-    setAutoplayMessage('Não foi possível reproduzir o áudio. Tente novamente.');
-  }
+  }, [dataset.itens, deepLink?.itemId, expandedGroups, expandedItems, phase]);
 
   function toggleGroup(group: string) {
     setExpandedGroups(previous => {
@@ -435,7 +340,6 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
         <button className={`btn ${phase === 'study' ? 'btn-primary' : ''}`} onClick={() => setPhase('study')}>Estudo</button>
         <button className={`btn ${phase !== 'study' ? 'btn-primary' : ''}`} onClick={() => setPhase('setup')}>Quiz</button>
       </div>
-      {autoplayMessage && <div role="status" aria-live="polite" className="small" style={{ marginTop: 10 }}>{autoplayMessage}</div>}
 
       {phase === 'study' && (
         <div>
@@ -481,14 +385,8 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
                   {itemOpen && <div id={contentId} className="item-accordion-body">
                     <Images images={item.Imagens ?? []} alt={item.Item} />
                     <Media
-                      itemId={item.id}
                       audios={item.Audios}
                       videos={item.Videos}
-                      registerAudio={registerAudio}
-                      autoplayAudioId={deepLink?.audioId}
-                      autoplayBlockedAudioId={autoplayBlockedAudioId}
-                      onAutoplaySuccess={handleAutoplaySuccess}
-                      onAutoplayFailure={handleAutoplayFailure}
                     />
                   </div>}
                 </article>;
@@ -514,14 +412,8 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
         <div className="small" style={{ marginBottom: 10 }}>Descrição de {total} | Corretas: {correctCount}</div>
         <Images images={current.item.Imagens ?? []} />
         <Media
-          itemId={current.item.id}
           audios={current.item.Audios}
           videos={current.item.Videos}
-          registerAudio={registerAudio}
-          autoplayAudioId={deepLink?.audioId}
-          autoplayBlockedAudioId={autoplayBlockedAudioId}
-          onAutoplaySuccess={handleAutoplaySuccess}
-          onAutoplayFailure={handleAutoplayFailure}
         />
         <p style={{ margin: '14px 0 6px', fontWeight: 700 }}>{current.item.Descricao}</p>
         <form onSubmit={submitAnswer}>
@@ -533,14 +425,8 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       {phase === 'reveal' && current && <div className="quiz-panel">
         <Images images={current.item.Imagens ?? []} />
         <Media
-          itemId={current.item.id}
           audios={current.item.Audios}
           videos={current.item.Videos}
-          registerAudio={registerAudio}
-          autoplayAudioId={deepLink?.audioId}
-          autoplayBlockedAudioId={autoplayBlockedAudioId}
-          onAutoplaySuccess={handleAutoplaySuccess}
-          onAutoplayFailure={handleAutoplayFailure}
         />
         <p style={{ margin: '14px 0 4px', fontWeight: 700 }}>{current.item.Descricao}</p>
         <p className="small quiz-answer">Seu item: <strong>{userAnswer || '(em branco)'}</strong></p>

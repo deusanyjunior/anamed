@@ -1,4 +1,4 @@
-// POST /api/upload?dir=anatomia/ossos  → salva arquivo em docs/assets/anatomia/ossos/
+// POST /api/upload?dir=anatomia/ossos  → salva arquivo em web/data/anatomia/ossos/
 import { NextRequest, NextResponse } from 'next/server';
 import { writeFile } from 'fs/promises';
 import path from 'path';

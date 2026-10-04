@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import type { EstudosCatalog, EstudoRef, StudyDataset } from './types';
 
-export const ASSETS_DIR = path.join(process.cwd(), 'assets');
+export const ASSETS_DIR = path.join(process.cwd(), 'data');
 
 function assertSafeRelativePath(value: string) {
   const normalized = value.replaceAll('\\', '/');
@@ -70,7 +70,7 @@ export function readDataset(exercicios: string): StudyDataset {
   const file = path.join(ASSETS_DIR, relative);
   const resolved = path.resolve(file);
   if (resolved !== ASSETS_DIR && !resolved.startsWith(`${path.resolve(ASSETS_DIR)}${path.sep}`)) {
-    throw new Error('Dataset fora da pasta de assets');
+    throw new Error('Dataset fora da pasta de dados');
   }
   return JSON.parse(fs.readFileSync(file, 'utf8')) as StudyDataset;
 }

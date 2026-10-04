@@ -33,7 +33,7 @@ Aplicação React/Next.js para estudo e memorização de conteúdos de Anatomia.
 
 ```
 anamed/
-├── docs/                         # site público (Next.js)
+├── web/                         # site público (Next.js)
 │   ├── app/
 │   │   ├── [tema]/[estudo]/      # rota dinâmica de cada estudo
 │   │   ├── assets/[...path]/      # entrega segura de assets
@@ -42,13 +42,13 @@ anamed/
 │   │   └── globals.css
 │   ├── components/               # componentes React client-side
 │   ├── lib/                      # tipos e leitura dos JSONs
-│   ├── assets/                   # catálogo, datasets e imagens
+│   ├── data/                    # catálogo, datasets e imagens
 │   ├── package.json
 │   └── next.config.ts
 └── editor/                       # editor local independente (Next.js)
 ```
 
-## Site público (`docs/`)
+## Site público (`web/`)
 
 ### Funcionalidades
 
@@ -76,7 +76,7 @@ gera:
 ### Executando localmente
 
 ```bash
-cd docs
+cd web
 npm install
 npm run dev -- -p 8000
 ```
@@ -86,14 +86,14 @@ Acesse [http://localhost:8000](http://localhost:8000).
 Para executar a versão de produção:
 
 ```bash
-cd docs
+cd web
 npm run build
 npm run start -- -p 8000
 ```
 
 ### Publicando na Vercel
 
-Configure `docs` como **Root Directory** do projeto na Vercel. Use os comandos padrão do Next.js:
+Configure `web` como **Root Directory** do projeto na Vercel. Use os comandos padrão do Next.js:
 
 - Install Command: `npm install`
 - Build Command: `npm run build`
@@ -109,7 +109,7 @@ https://anamed.vercel.app/ossos/esqueleto-axial
 
 O site inclui a Aniah, uma tutora de anatomia acessível somente a usuários autenticados com uma conta Google verificada no domínio `@unifesp.br`. A chamada ao Gemini ocorre exclusivamente no servidor.
 
-Copie `docs/.env.example` para `docs/.env.local` durante o desenvolvimento e configure as mesmas variáveis em **Vercel → Settings → Environment Variables**. Nunca use `NEXT_PUBLIC_GEMINI_API_KEY`: a chave do Gemini deve permanecer server-side.
+Copie `web/.env.example` para `web/.env.local` durante o desenvolvimento e configure as mesmas variáveis em **Vercel → Settings → Environment Variables**. Nunca use `NEXT_PUBLIC_GEMINI_API_KEY`: a chave do Gemini deve permanecer server-side.
 
 No Google Cloud, cadastre estes URIs de redirecionamento:
 
@@ -122,7 +122,7 @@ Em produção, configure também `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_
 
 ## Editor (`editor/`)
 
-O editor é uma aplicação Next.js independente para gerenciar os conteúdos em `docs/assets/` sem editar JSON manualmente.
+O editor é uma aplicação Next.js independente para gerenciar os conteúdos em `web/data/` sem editar JSON manualmente.
 
 ### Funcionalidades
 
@@ -135,7 +135,7 @@ O editor é uma aplicação Next.js independente para gerenciar os conteúdos em
 - Renomear arquivos de imagem em disco
 - Editar indicação e dados de copyright por imagem
 - Editar capas dos estudos
-- Salvar tudo nos JSONs em `docs/assets/`
+- Salvar tudo nos JSONs em `web/data/`
 
 ### Como usar
 
@@ -149,14 +149,14 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-O editor continua separado do site público. As duas aplicações compartilham os dados em `docs/assets/`.
+O editor continua separado do site público. As duas aplicações compartilham os dados em `web/data/`.
 
 ## Adicionando conteúdo manualmente
 
 Para adicionar um novo tema ou estudo diretamente nos arquivos:
 
-1. Crie a pasta `docs/assets/<tema>/<estudo>/` e coloque as imagens lá.
-2. Crie o dataset `docs/assets/<tema>/<estudo>.json` seguindo o schema:
+1. Crie a pasta `web/data/<tema>/<estudo>/` e coloque as imagens lá.
+2. Crie o dataset `web/data/<tema>/<estudo>.json` seguindo o schema:
 
 ```json
 {
@@ -202,7 +202,7 @@ Para adicionar um novo tema ou estudo diretamente nos arquivos:
 }
 ```
 
-O estudo de áudio foi dividido em dois datasets: `docs/assets/ossos/cingulo/cingulo.json`, com os grupos Clavícula e Escápula, e `docs/assets/ossos/membro-superior/membro-superior.json`, com os grupos Mão, Rádio, Ulna e Úmero. Os arquivos de áudio ficam nas respectivas subpastas `audios/`, e a transcrição opcional deve ser colocada em `Transcricao`, dentro do objeto correspondente em `Audios`.
+O estudo de áudio foi dividido em dois datasets: `web/data/ossos/cingulo/cingulo.json`, com os grupos Clavícula e Escápula, e `web/data/ossos/membro-superior/membro-superior.json`, com os grupos Mão, Rádio, Ulna e Úmero. Os arquivos de áudio ficam nas respectivas subpastas `audios/`, e a transcrição opcional deve ser colocada em `Transcricao`, dentro do objeto correspondente em `Audios`.
 
 
 ```json

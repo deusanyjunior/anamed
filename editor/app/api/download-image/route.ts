@@ -1,6 +1,6 @@
 // POST /api/download-image
 // body: { url: "https://...", dir: "anatomia/ossos" }
-// baixa a imagem e salva em docs/assets/<dir>/, retorna a URL relativa
+// baixa a imagem e salva em web/data/<dir>/, retorna a URL relativa
 import { NextRequest, NextResponse } from 'next/server';
 import { writeFile } from 'fs/promises';
 import path from 'path';

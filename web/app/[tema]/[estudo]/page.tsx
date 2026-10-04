@@ -24,9 +24,6 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
   const query = await searchParams;
   const first = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] : value;
   const itemId = first(query.item);
-  const audioId = first(query.audio);
-  const autoplayValue = first(query.autoplay);
-  const autoplay = autoplayValue === '' || autoplayValue === '1' || autoplayValue === 'true';
   const found = findStudy(tema, estudo, readCatalog());
   if (!found) notFound();
 
@@ -52,7 +49,7 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
         dataset={dataset}
         studyTitle={found.estudo.Titulo}
         studyKey={routeFromStudy(found.estudo)}
-        deepLink={{ itemId, audioId, autoplay }}
+        deepLink={{ itemId }}
       />
     </main>
   );
