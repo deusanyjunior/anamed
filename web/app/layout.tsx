@@ -4,6 +4,7 @@ import './globals.css';
 import AuthSessionProvider from '../components/SessionProvider';
 import AniahChat from '../components/AniahChat';
 import VLibrasWidget from '../components/VLibrasWidget';
+import AccessibilityZoom from '../components/AccessibilityZoom';
 
 export const metadata: Metadata = {
   title: 'AnaMed — Anatomia Quiz & Atlas',
@@ -16,10 +17,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <div className="container">
           <header className="site-header">
-            <Link className="title" href="/">
-              <span className="brand-gradient"><span className="brand-blue">Ana</span><span className="brand-red">Med</span></span>
-              <span> — Anatomia Quiz & Atlas</span>
-            </Link>
+            <div className="site-header-row">
+              <Link className="title" href="/">
+                <span className="brand-gradient"><span className="brand-blue">Ana</span><span className="brand-red">Med</span></span>
+                <span> — Anatomia Quiz & Atlas</span>
+              </Link>
+              <AccessibilityZoom />
+            </div>
           </header>
           <AuthSessionProvider>
             {children}

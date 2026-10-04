@@ -373,3 +373,141 @@ body {
   pointer-events: none;
   overflow: visible;
 }
+
+.site-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.accessibility-zoom {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 6px 18px rgba(7, 94, 69, .14);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.accessibility-zoom-label {
+  margin-right: 3px;
+  font-weight: 700;
+}
+
+.accessibility-zoom button {
+  min-width: 28px;
+  height: 28px;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface-muted);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.accessibility-zoom button:hover:not(:disabled) {
+  background: var(--green-light);
+}
+
+.accessibility-zoom button:focus-visible {
+  outline: 2px solid rgba(8, 127, 91, .72);
+  outline-offset: 1px;
+}
+
+.accessibility-zoom button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+@media (max-width: 760px) {
+  .site-header-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .accessibility-zoom {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+.study-image-carousel-shell {
+  position: relative;
+  min-width: 0;
+  padding-bottom: 24px;
+}
+
+.study-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .92);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 22px;
+  box-shadow: 0 3px 10px rgba(7, 94, 69, .16);
+}
+
+.study-carousel-arrow:hover:not(:disabled) {
+  background: var(--green-light);
+}
+
+.study-carousel-arrow:disabled {
+  cursor: not-allowed;
+  opacity: .35;
+}
+
+.study-carousel-arrow:focus-visible,
+.study-carousel-dots button:focus-visible {
+  outline: 2px solid rgba(8, 127, 91, .72);
+  outline-offset: 2px;
+}
+
+.study-carousel-arrow-left { left: 8px; }
+.study-carousel-arrow-right { right: 8px; }
+
+.study-carousel-dots {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.study-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #b8d8c9;
+  cursor: pointer;
+}
+
+.study-carousel-dots button.active {
+  width: 18px;
+  background: var(--green-dark);
+}

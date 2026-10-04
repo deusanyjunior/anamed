@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyOverlay, StudyVideo } from '../lib/types';
 
 type DeepLink = { itemId?: string };
@@ -133,18 +133,56 @@ function OverlaySvg({ overlays = [] }: { overlays?: StudyOverlay[] }) {
 }
 
 function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  function updateCurrentIndex() {
+    const carousel = carouselRef.current;
+    if (!carousel || !carousel.children.length) return;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+    Array.from(carousel.children).forEach((child, index) => {
+      const distance = Math.abs((child as HTMLElement).offsetLeft - carousel.scrollLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    setCurrentIndex(closestIndex);
+  }
+
+  function scrollToImage(index: number) {
+    const carousel = carouselRef.current;
+    const target = carousel?.children[index] as HTMLElement | undefined;
+    if (!carousel || !target) return;
+    carousel.scrollTo({ left: target.offsetLeft, behavior: 'smooth' });
+    setCurrentIndex(index);
+  }
+
+  if (!images.length) return null;
+  const lastIndex = images.length - 1;
+
   return (
-    <div className="study-image-carousel" role="region" aria-label="Imagens do estudo">
-      {images.map((image, index) => (
-        <div className="img-wrap" key={`${image.url}-${index}`}>
-          {image.indicação && <div className="small" style={{ padding: '6px 8px' }}>{image.indicação}</div>}
-          <div className="study-image-frame">
-            <Image src={imageUrl(image.url)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
-            <OverlaySvg overlays={image.overlays} />
+    <div className="study-image-carousel-shell">
+      <div ref={carouselRef} className="study-image-carousel" role="region" aria-label="Imagens do estudo" onScroll={updateCurrentIndex}>
+        {images.map((image, index) => (
+          <div className="img-wrap" key={`${image.url}-${index}`}>
+            {image.indicação && <div className="small" style={{ padding: '6px 8px' }}>{image.indicação}</div>}
+            <div className="study-image-frame">
+              <Image src={imageUrl(image.url)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+              <OverlaySvg overlays={image.overlays} />
+            </div>
+            {copyrightText(image)}
           </div>
-          {copyrightText(image)}
+        ))}
+      </div>
+      {images.length > 1 && <>
+        <button type="button" className="study-carousel-arrow study-carousel-arrow-left" onClick={() => scrollToImage(Math.max(0, currentIndex - 1))} disabled={currentIndex === 0} aria-label="Imagem anterior">‹</button>
+        <button type="button" className="study-carousel-arrow study-carousel-arrow-right" onClick={() => scrollToImage(Math.min(lastIndex, currentIndex + 1))} disabled={currentIndex === lastIndex} aria-label="Próxima imagem">›</button>
+        <div className="study-carousel-dots" aria-label={`Imagem ${currentIndex + 1} de ${images.length}`}>
+          {images.map((image, index) => <button key={`${image.url}-dot-${index}`} type="button" className={index === currentIndex ? 'active' : ''} onClick={() => scrollToImage(index)} aria-label={`Exibir imagem ${index + 1}`} aria-current={index === currentIndex ? 'true' : undefined} />)}
         </div>
-      ))}
+      </>}
     </div>
   );
 }
