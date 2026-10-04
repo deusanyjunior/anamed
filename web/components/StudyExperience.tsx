@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
-import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '../lib/types';
+import { useEffect, useId, useMemo, useState } from 'react';
+import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyOverlay, StudyVideo } from '../lib/types';
 
 type DeepLink = { itemId?: string };
 type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string; deepLink?: DeepLink };
@@ -70,6 +70,52 @@ function copyrightText(image: StudyImage) {
   );
 }
 
+function OverlaySvg({ overlays = [] }: { overlays?: StudyOverlay[] }) {
+  const svgPrefix = useId().replaceAll(':', '');
+  if (!overlays.length) return null;
+  return (
+    <svg className="study-overlay" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        {overlays.filter(overlay => overlay.tipo === 'seta').map(overlay => (
+          <marker key={`arrow-${overlay.id}`} id={`${svgPrefix}-arrow-${overlay.id}`} markerWidth="0.08" markerHeight="0.08" refX="0.07" refY="0.04" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M 0 0 L 0.08 0.04 L 0 0.08 z" fill={overlay.cor ?? '#dc2626'} />
+          </marker>
+        ))}
+        {overlays.filter(overlay => overlay.tipo === 'area-inversa').map(overlay => (
+          <mask key={`mask-${overlay.id}`} id={`${svgPrefix}-inverse-${overlay.id}`} maskUnits="userSpaceOnUse" x="0" y="0" width="1" height="1">
+            <rect width="1" height="1" fill="white" />
+            <polygon points={overlay.pontos.map(point => `${point.x},${point.y}`).join(' ')} fill="black" />
+          </mask>
+        ))}
+      </defs>
+      {overlays.map(overlay => {
+        const points = overlay.pontos.map(point => `${point.x},${point.y}`).join(' ');
+        const color = overlay.cor ?? '#dc2626';
+        const width = overlay.espessura ?? 0.006;
+        const opacity = overlay.opacidade ?? 1;
+        if (overlay.tipo === 'seta' && overlay.pontos.length >= 2) {
+          const start = overlay.pontos[0];
+          const end = overlay.pontos[overlay.pontos.length - 1];
+          return <line key={overlay.id} x1={start.x} y1={start.y} x2={end.x} y2={end.y} stroke={color} strokeWidth={width} strokeLinecap="round" markerEnd={`url(#${svgPrefix}-arrow-${overlay.id})`} opacity={opacity} />;
+        }
+        if (overlay.tipo === 'linha' && overlay.pontos.length >= 2) {
+          return <polyline key={overlay.id} points={points} fill="none" stroke={color} strokeWidth={width} strokeLinejoin="round" strokeLinecap="round" opacity={opacity} />;
+        }
+        if (overlay.tipo === 'area-inversa' && overlay.pontos.length >= 3) {
+          return <g key={overlay.id}>
+            <rect x="0" y="0" width="1" height="1" fill={color} fillOpacity={Math.min(opacity, 0.35)} mask={`url(#${svgPrefix}-inverse-${overlay.id})`} />
+            <polygon points={points} fill="none" stroke={color} strokeWidth={width} strokeLinejoin="round" opacity={opacity} />
+          </g>;
+        }
+        if ((overlay.tipo === 'area' || overlay.tipo === 'area-preenchida') && overlay.pontos.length >= 3) {
+          return <polygon key={overlay.id} points={points} fill={overlay.tipo === 'area-preenchida' ? color : 'none'} fillOpacity={overlay.tipo === 'area-preenchida' ? Math.min(opacity, 0.35) : 0} stroke={color} strokeWidth={width} strokeLinejoin="round" opacity={opacity} />;
+        }
+        return null;
+      })}
+    </svg>
+  );
+}
+
 function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
   return (
     <div className="study-image-carousel" role="region" aria-label="Imagens do estudo">
@@ -78,6 +124,7 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
           {image.indicação && <div className="small" style={{ padding: '6px 8px' }}>{image.indicação}</div>}
           <div className="study-image-frame">
             <Image src={imageUrl(image.url)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+            <OverlaySvg overlays={image.overlays} />
           </div>
           {copyrightText(image)}
         </div>

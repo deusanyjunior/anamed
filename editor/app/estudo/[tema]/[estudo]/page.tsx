@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '@/types';
+import OverlayEditor from '@/components/OverlayEditor';
 
 const DOCS_BASE = 'http://localhost:8000';
 
@@ -66,6 +67,9 @@ export default function EstudoEditor() {
   const [expandedCopyright, setExpandedCopyright] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadingFor, setUploadingFor] = useState<number | null>(null);
+  const [imagePickerFor, setImagePickerFor] = useState<number | null>(null);
+  const [availableImages, setAvailableImages] = useState<{ name: string; url: string }[]>([]);
+  const [loadingImages, setLoadingImages] = useState(false);
 
   useEffect(() => {
     if (!datasetPath) return;
@@ -112,6 +116,45 @@ export default function EstudoEditor() {
     const itens = [...dataset.itens, emptyItem()];
     setDataset({ ...dataset, itens });
     setExpandedIdx(itens.length - 1);
+  }
+
+  async function openImagePicker(idx: number) {
+    setImagePickerFor(idx);
+    setLoadingImages(true);
+    try {
+      const response = await fetch(`/api/assets?dir=${encodeURIComponent(imageDir)}`);
+      const body = await response.json() as { images?: { name: string; url: string }[]; error?: string };
+      if (!response.ok) throw new Error(body.error || 'Não foi possível listar as imagens.');
+      setAvailableImages(body.images ?? []);
+    } catch (error) {
+      alert(error instanceof Error ? error.message : 'Não foi possível listar as imagens.');
+      setImagePickerFor(null);
+    } finally {
+      setLoadingImages(false);
+    }
+  }
+
+  function reuseImage(itemIdx: number, url: string) {
+    if (!dataset) return;
+    const item = dataset.itens[itemIdx];
+    if (item.Imagens.some(image => image.url === url)) {
+      setImagePickerFor(null);
+      return;
+    }
+    updateItem(itemIdx, { ...item, Imagens: [...item.Imagens, { url }] });
+    setImagePickerFor(null);
+  }
+
+  async function deleteAsset(url: string) {
+    if (!confirm('Remover este arquivo físico? A operação só será permitida se ele não estiver referenciado.')) return;
+    const response = await fetch('/api/assets', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
+    const body = await response.json() as { error?: string; references?: { source: string; itemId?: string; item?: string }[] };
+    if (!response.ok) {
+      const refs = body.references?.map(reference => `${reference.source}${reference.item ? ` — ${reference.item}` : ''}`).join('\\n') ?? '';
+      alert(`${body.error || 'Não foi possível remover.'}${refs ? `\\n\\nReferências:\\n${refs}` : ''}`);
+      return;
+    }
+    setAvailableImages(previous => previous.filter(image => image.url !== url));
   }
 
   async function uploadImage(idx: number, file: File) {
@@ -446,6 +489,11 @@ export default function EstudoEditor() {
                               ))}
                             </div>
                           )}
+                          <OverlayEditor
+                            imageUrl={img.url}
+                            overlays={img.overlays}
+                            onChange={overlays => updateImage(idx, imgIdx, { ...img, overlays: overlays.length ? overlays : undefined })}
+                          />
                         </div>
                         <div className="flex flex-col gap-1">
                           <button onClick={() => moveImage(idx, imgIdx, -1)} disabled={imgIdx === 0}
@@ -478,6 +526,11 @@ export default function EstudoEditor() {
                       className="text-xs bg-slate-200 hover:bg-slate-300 border border-slate-300 rounded-lg px-3 py-1.5 text-slate-700">
                       ↑ Upload imagem
                     </button>
+                    <button
+                      onClick={() => openImagePicker(idx)}
+                      className="text-xs bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg px-3 py-1.5 text-blue-700">
+                      ▧ Usar imagem do estudo
+                    </button>
                     <div className="flex gap-2">
                       <input
                         id={`url-input-${idx}`}
@@ -495,6 +548,27 @@ export default function EstudoEditor() {
                     </div>
                   </div>
                 </div>
+                {imagePickerFor === idx && (
+                  <div className="mt-3 border border-blue-200 rounded-lg bg-blue-50 p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <strong className="text-xs text-blue-900">Selecionar imagem existente</strong>
+                      <button type="button" onClick={() => setImagePickerFor(null)} className="text-xs text-slate-600">Fechar</button>
+                    </div>
+                    {loadingImages ? <p className="text-xs text-slate-600">Carregando imagens…</p> : availableImages.length === 0 ? <p className="text-xs text-slate-600">Nenhuma imagem encontrada na pasta deste estudo.</p> : (
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-h-72 overflow-y-auto">
+                        {availableImages.map(image => (
+                          <div key={image.url} className="rounded border border-slate-200 bg-white p-1">
+                            <button type="button" onClick={() => reuseImage(idx, image.url)} className="w-full text-left hover:border-blue-500">
+                              <img src={`${DOCS_BASE}/${image.url}`} alt={image.name} className="w-full aspect-square object-contain rounded bg-slate-100" />
+                              <span className="block truncate text-[10px] text-slate-700 mt-1">{image.name}</span>
+                            </button>
+                            <button type="button" onClick={() => deleteAsset(image.url)} className="text-[10px] text-red-600 mt-1">Excluir arquivo</button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 {/* Áudios */}
                 <div>

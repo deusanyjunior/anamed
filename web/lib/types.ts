@@ -5,10 +5,25 @@ export type CopyrightInfo = {
   observacao?: string;
 };
 
+export type OverlayPoint = {
+  x: number;
+  y: number;
+};
+
+export type StudyOverlay = {
+  id: string;
+  tipo: 'seta' | 'linha' | 'area' | 'area-preenchida' | 'area-inversa';
+  pontos: OverlayPoint[];
+  cor?: string;
+  espessura?: number;
+  opacidade?: number;
+};
+
 export type StudyImage = {
   url: string;
   indicação?: string;
   Copyright?: CopyrightInfo;
+  overlays?: StudyOverlay[];
 };
 
 export type StudyAudio = {
