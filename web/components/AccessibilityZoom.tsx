@@ -7,6 +7,7 @@ const storageKey = 'anamed-accessibility-zoom';
 
 export default function AccessibilityZoom() {
   const [zoom, setZoom] = useState(1);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const saved = Number(window.localStorage.getItem(storageKey));
@@ -35,11 +36,17 @@ export default function AccessibilityZoom() {
   }
 
   return (
-    <div className="accessibility-zoom" aria-label="Controles de zoom">
-      <span className="accessibility-zoom-label">Zoom</span>
-      <button type="button" onClick={() => changeZoom(-1)} aria-label="Diminuir zoom" disabled={zoom === zoomLevels[0]}>−</button>
-      <button type="button" onClick={resetZoom} aria-label="Restaurar zoom padrão">{Math.round(zoom * 100)}%</button>
-      <button type="button" onClick={() => changeZoom(1)} aria-label="Aumentar zoom" disabled={zoom === zoomLevels[zoomLevels.length - 1]}>+</button>
+    <div className={`accessibility-zoom ${open ? 'is-open' : ''}`} aria-label="Controles de zoom">
+      {open && (
+        <div className="accessibility-zoom-panel">
+          <button type="button" onClick={() => changeZoom(-1)} aria-label="Diminuir zoom" disabled={zoom === zoomLevels[0]}>−</button>
+          <button type="button" onClick={resetZoom} aria-label="Restaurar zoom padrão">{Math.round(zoom * 100)}%</button>
+          <button type="button" onClick={() => changeZoom(1)} aria-label="Aumentar zoom" disabled={zoom === zoomLevels[zoomLevels.length - 1]}>+</button>
+        </div>
+      )}
+      <button type="button" className="accessibility-zoom-toggle" onClick={() => setOpen(previous => !previous)} aria-expanded={open} aria-label={open ? 'Fechar controles de zoom' : 'Abrir controles de zoom'}>
+        Zoom
+      </button>
     </div>
   );
 }

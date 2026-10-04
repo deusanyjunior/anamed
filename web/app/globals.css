@@ -285,7 +285,7 @@ body {
 .vw-access-button {
   right: 20px !important;
   left: auto !important;
-  bottom: 92px !important;
+  bottom: 164px !important;
   z-index: 19 !important;
 }
 
@@ -293,7 +293,7 @@ body {
 .vw-plugin-wrapper {
   right: 20px !important;
   left: auto !important;
-  bottom: 92px !important;
+  bottom: 164px !important;
   z-index: 19 !important;
 }
 
@@ -303,7 +303,7 @@ body {
   .vlibras-widget .vw-plugin-wrapper,
   .vw-plugin-wrapper {
     right: 16px !important;
-    bottom: 88px !important;
+    bottom: 160px !important;
   }
 }
 
@@ -510,4 +510,30 @@ body {
 .study-carousel-dots button.active {
   width: 18px;
   background: var(--green-dark);
+}
+
+.accessibility-zoom {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.accessibility-zoom-panel {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.accessibility-zoom-toggle {
+  width: 100%;
+}
+
+.accessibility-zoom.is-open .accessibility-zoom-toggle {
+  background: var(--green-light);
+}
+
+@media (max-width: 760px) {
+  .site-title-subtitle {
+    display: block;
+    margin-top: 4px;
+  }
 }

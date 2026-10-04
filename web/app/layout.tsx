@@ -20,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="site-header-row">
               <Link className="title" href="/">
                 <span className="brand-gradient"><span className="brand-blue">Ana</span><span className="brand-red">Med</span></span>
-                <span> — Anatomia Quiz & Atlas</span>
+                <span className="site-title-subtitle"> ⚕ Anatomia Quiz & Atlas</span>
               </Link>
               <AccessibilityZoom />
             </div>
