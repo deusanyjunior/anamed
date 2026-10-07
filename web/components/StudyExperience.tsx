@@ -5,14 +5,16 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyOverlay, StudyVideo } from '../lib/types';
 
 type DeepLink = { itemId?: string };
-type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string; deepLink?: DeepLink };
+type Props = { dataset: StudyDataset; studyTitle: string; studyKey: string; mediaBase: string; deepLink?: DeepLink };
 type Entry = { item: StudyItem; retries: number };
 type Session = { id: string; finishedAt: string; grupos: string[]; total: number; corretas: number; acuracia: number };
 
 type Phase = 'study' | 'setup' | 'question' | 'reveal' | 'done';
 
-function imageUrl(url: string) {
-  return url.startsWith('/') ? url : `/${url}`;
+function imageUrl(url: string, mediaBase = '') {
+  if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
+  if (url.startsWith('assets/')) return `/${url}`;
+  return `${mediaBase}/${url}`;
 }
 
 function normalizeAnswer(value: string) {
@@ -132,7 +134,7 @@ function OverlaySvg({ overlays = [] }: { overlays?: StudyOverlay[] }) {
   );
 }
 
-function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
+function Images({ images, alt = '', mediaBase }: { images: StudyImage[]; alt?: string; mediaBase: string }) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -169,7 +171,7 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
           <div className="img-wrap" key={`${image.url}-${index}`}>
             {image.indicação && <div className="small" style={{ padding: '6px 8px' }}>{image.indicação}</div>}
             <div className="study-image-frame">
-              <Image src={imageUrl(image.url)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
+              <Image src={imageUrl(image.url, mediaBase)} alt={alt} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw" />
               <OverlaySvg overlays={image.overlays} />
             </div>
             {copyrightText(image)}
@@ -189,8 +191,10 @@ function Images({ images, alt = '' }: { images: StudyImage[]; alt?: string }) {
 
 function AudioWithTranscript({
   audio,
+  mediaBase,
 }: {
   audio: StudyAudio;
+  mediaBase: string;
 }) {
   const hasTranscript = Boolean(audio.Transcricao?.trim());
   const [showTranscript, setShowTranscript] = useState(false);
@@ -206,7 +210,7 @@ function AudioWithTranscript({
       <audio
         controls
         preload="metadata"
-        src={imageUrl(audio.url)}
+        src={imageUrl(audio.url, mediaBase)}
         style={{ width: '100%' }}
       />
       {hasTranscript && (
@@ -249,7 +253,7 @@ function youtubeEmbedUrl(value: string) {
   }
 }
 
-function VideoMedia({ video }: { video: StudyVideo }) {
+function VideoMedia({ video, mediaBase }: { video: StudyVideo; mediaBase: string }) {
   if (video.Tipo === 'youtube') {
     const embedUrl = youtubeEmbedUrl(video.url);
     if (!embedUrl) return <div className="small">URL do YouTube inválida.</div>;
@@ -263,15 +267,17 @@ function VideoMedia({ video }: { video: StudyVideo }) {
     />;
   }
 
-  return <video controls preload="metadata" src={imageUrl(video.url)} style={{ width: '100%', borderRadius: 12 }} />;
+  return <video controls preload="metadata" src={imageUrl(video.url, mediaBase)} style={{ width: '100%', borderRadius: 12 }} />;
 }
 
 function Media({
   audios = [],
   videos = [],
+  mediaBase,
 }: {
   audios?: StudyAudio[];
   videos?: StudyVideo[];
+  mediaBase: string;
 }) {
   if (!audios.length && !videos.length) return null;
   return (
@@ -279,16 +285,17 @@ function Media({
       {audios.map((audio, index) => <AudioWithTranscript
         key={audio.id ?? `audio-${audio.url}-${index}`}
         audio={audio}
+        mediaBase={mediaBase}
       />)}
       {videos.map((video, index) => <div key={`video-${video.url}-${index}`}>
         {video.Titulo && <div className="small" style={{ marginBottom: 4 }}>{video.Titulo}</div>}
-        <VideoMedia video={video} />
+        <VideoMedia video={video} mediaBase={mediaBase} />
       </div>)}
     </div>
   );
 }
 
-export default function StudyExperience({ dataset, studyTitle, studyKey, deepLink }: Props) {
+export default function StudyExperience({ dataset, studyTitle, studyKey, mediaBase, deepLink }: Props) {
   const groups = useMemo(() => [...new Set(dataset.itens.map(item => item.Grupo))], [dataset.itens]);
   const [phase, setPhase] = useState<Phase>('study');
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
@@ -484,8 +491,9 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
                     <span aria-hidden="true" style={{ transform: itemOpen ? 'rotate(180deg)' : undefined }}>▾</span>
                   </button>
                   {itemOpen && <div id={contentId} className="item-accordion-body">
-                    <Images images={item.Imagens ?? []} alt={item.Item} />
+                    <Images images={item.Imagens ?? []} alt={item.Item} mediaBase={mediaBase} />
                     <Media
+                      mediaBase={mediaBase}
                       audios={item.Audios}
                       videos={item.Videos}
                     />
@@ -511,8 +519,9 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
 
       {phase === 'question' && current && <div className="quiz-panel">
         <div className="small" style={{ marginBottom: 10 }}>Descrição de {total} | Corretas: {correctCount}</div>
-        <Images images={current.item.Imagens ?? []} />
+        <Images images={current.item.Imagens ?? []} mediaBase={mediaBase} />
         <Media
+          mediaBase={mediaBase}
           audios={current.item.Audios}
           videos={current.item.Videos}
         />
@@ -524,8 +533,9 @@ export default function StudyExperience({ dataset, studyTitle, studyKey, deepLin
       </div>}
 
       {phase === 'reveal' && current && <div className="quiz-panel">
-        <Images images={current.item.Imagens ?? []} />
+        <Images images={current.item.Imagens ?? []} mediaBase={mediaBase} />
         <Media
+          mediaBase={mediaBase}
           audios={current.item.Audios}
           videos={current.item.Videos}
         />

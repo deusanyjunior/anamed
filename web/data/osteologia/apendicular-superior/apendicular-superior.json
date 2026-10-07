@@ -1,0 +1,711 @@
+{
+  "schema": "bones_audio_v2",
+  "grupos": [
+    {
+      "ID": "clavicula",
+      "Grupo": "Clavícula",
+      "itens": [
+        {
+          "Descricao": "Extremidade medial da clavícula, junto ao esterno",
+          "Item": "Extremidade esternal da clavícula",
+          "Imagens": [
+            {
+              "url": "imagens/za-clavicula-extremidadeesternal.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            },
+            {
+              "url": "imagens/za-clavicula-extremidadeesternal1.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ],
+          "Audios": [
+            {
+              "url": "audios/clavicula-1.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a extremidade esternal da clavícula.",
+              "id": "clavicula-1-audio-1"
+            }
+          ],
+          "Videos": [
+            {
+              "url": "https://youtu.be/LUai2wbBdHU?si=5UBANyiYA8vWkwuV",
+              "Titulo": "Diferença entre a EXTREMIDADE ACROMIAL X EXTREMIDADE ESTERNAL da clavícula ",
+              "Tipo": "youtube"
+            }
+          ],
+          "id": "clavicula-1"
+        },
+        {
+          "Descricao": "Porção alongada entre as extremidades da clavícula",
+          "Item": "Corpo",
+          "Imagens": [
+            {
+              "url": "imagens/za-clavicula-corpo.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            },
+            {
+              "url": "imagens/za-clavicula-corpo1.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ],
+          "Audios": [
+            {
+              "url": "audios/clavicula-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o corpo da clavícula.",
+              "id": "clavicula-2-audio-1"
+            }
+          ],
+          "Videos": [
+            {
+              "url": "https://youtube.com/shorts/NmeQsPlZCmU?si=WpXW5UhIanTVO1IQ",
+              "Titulo": "Detalhes da clavícula",
+              "Tipo": "youtube"
+            }
+          ],
+          "id": "clavicula-2"
+        },
+        {
+          "Descricao": "Extremidade lateral da clavícula, junto ao acrômio",
+          "Item": "Extremidade acromial",
+          "Imagens": [
+            {
+              "url": "imagens/za-clavicula-extremidadeacromial.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            },
+            {
+              "url": "imagens/za-clavicula-extremidadeacromial1.png",
+              "indicação": "Área destacada em verde",
+              "Copyright": {
+                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
+              }
+            }
+          ],
+          "Audios": [
+            {
+              "url": "audios/clavicula-3.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a extremidade acromial da clavícula.",
+              "id": "clavicula-3-audio-1"
+            }
+          ],
+          "Videos": [
+            {
+              "url": "https://youtu.be/LUai2wbBdHU?si=5UBANyiYA8vWkwuV",
+              "Titulo": "Diferença entre a EXTREMIDADE ACROMIAL X EXTREMIDADE ESTERNAL da clavícula",
+              "Tipo": "youtube"
+            }
+          ],
+          "id": "clavicula-3"
+        }
+      ]
+    },
+    {
+      "ID": "escapula",
+      "Grupo": "Escápula",
+      "itens": [
+        {
+          "Descricao": "Crista posterior que divide as fossas supra e infraespinal",
+          "Item": "Espinha",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-1.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a espinha da escápula.",
+              "id": "escapula-1-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-1"
+        },
+        {
+          "Descricao": "Prolongamento da espinha que se articula com a clavícula",
+          "Item": "Acrômio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o acrômio.",
+              "id": "escapula-2-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-2"
+        },
+        {
+          "Descricao": "Superfície articular lateral para a cabeça do úmero",
+          "Item": "Cavidade glenoidal",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-3.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a cavidade glenoidal.",
+              "id": "escapula-3-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-3"
+        },
+        {
+          "Descricao": "Projeção anterior da escápula para inserção muscular",
+          "Item": "Processo coracoide",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-4.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o processo coracoide.",
+              "id": "escapula-4-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-4"
+        },
+        {
+          "Descricao": "Vértice inferior da escápula",
+          "Item": "Ângulo inferior",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-5.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o ângulo inferior.",
+              "id": "escapula-5-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-5"
+        },
+        {
+          "Descricao": "Depressão posterior acima da espinha da escápula",
+          "Item": "Fossa supraespinal",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-6.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a fossa supraespinal.",
+              "id": "escapula-6-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-6"
+        },
+        {
+          "Descricao": "Depressão posterior abaixo da espinha da escápula",
+          "Item": "Fossa infraespinal",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-7.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a fossa infraespinal.",
+              "id": "escapula-7-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-7"
+        },
+        {
+          "Descricao": "Depressão da face costal da escápula",
+          "Item": "Fossa subescapular",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/escapula-8.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a fossa subescapular.",
+              "id": "escapula-8-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "escapula-8"
+        }
+      ]
+    },
+    {
+      "ID": "mao",
+      "Grupo": "Mão",
+      "itens": [
+        {
+          "Descricao": "Fileira proximal dos ossos carpais",
+          "Item": "Osso escafóide, osso semilunar, osso piramidal, osso piziforme",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-1.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a filera proximal de ossos carpais. Essa filera contém o osso escafóide em seguida o semilunar, o piramidal e o piziforme.",
+              "id": "mao-1-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-1"
+        },
+        {
+          "Descricao": "Fileira distal dos ossos carpais",
+          "Item": "Osso trapésio, osso trapezoide, osso capitato, osso hamato",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a fileradistau de ossos carpais. Essa filera contém o osso trapésio em seguida o trapezoide, o capitato e o amato.",
+              "id": "mao-2-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-2"
+        },
+        {
+          "Descricao": "Osso com base, corpo e cabeça entre carpo e falanges",
+          "Item": "Osso metacarpo",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-3.mp3",
+              "Titulo": "Mão — áudio 3",
+              "Transcricao": "Você está analisando um dos cinco ossos metacarpais. Esse osso contém uma base proximal aos ossos do carpo, uma região média correspondente ao corpo do osso e uma região distal aos ossos do carpo e proximal as falanges correspondente à cabeça do osso.",
+              "id": "mao-3-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-3"
+        },
+        {
+          "Descricao": "Osso entre o metacarpo e a falange média",
+          "Item": "Falange proximal da mão",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-4.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa a falange proximal.",
+              "id": "mao-4-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-4"
+        },
+        {
+          "Descricao": "Osso entre a falange distal e falange proximal",
+          "Item": "Falange média",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-5.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa a falange média.",
+              "id": "mao-5-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-5"
+        },
+        {
+          "Descricao": "Falange mais distante do carpo",
+          "Item": "Falange distal",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/mao-6.mp3",
+              "Titulo": "Mão — áudio 6",
+              "Transcricao": "Você está analisando uma das 14 falanges da mão, sendo essa, a falange distal.",
+              "id": "mao-6-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "mao-6"
+        }
+      ]
+    },
+    {
+      "ID": "radio",
+      "Grupo": "Rádio",
+      "itens": [
+        {
+          "Descricao": "Parte do osso rádio próxima ao úmero",
+          "Item": "Cabeça do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-1.mp3",
+              "Titulo": "Audiodescricao",
+              "Transcricao": "Você está analisando a cabeça do rádio.",
+              "id": "radio-1-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-1"
+        },
+        {
+          "Descricao": "Parte do osso rádio entre a cabeça e a tuberosidade",
+          "Item": "Colo do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o colo do rádio.",
+              "id": "radio-2-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-2"
+        },
+        {
+          "Descricao": "Parte do rádio entre o colo e a incisura ulnar",
+          "Item": "Corpo do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-3.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o corpo do rádio.",
+              "id": "radio-3-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-3"
+        },
+        {
+          "Descricao": "Processo do rádio próximo do osso escafoide da mão",
+          "Item": "Processo estiloide do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-4.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o processo Estiloide do Rádio.",
+              "id": "radio-4-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-4"
+        },
+        {
+          "Descricao": "Parte do osso rádio entre o colo e o corpo",
+          "Item": "Tuberosidade do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-5.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a tuberosidade do rádio.",
+              "id": "radio-5-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-5"
+        },
+        {
+          "Descricao": "Parte distal do radio em contato com o osso ulna",
+          "Item": "Incisura ulnar do rádio",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/radio-6.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a incisura ulnar do rádio.",
+              "id": "radio-6-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "radio-6"
+        }
+      ]
+    },
+    {
+      "ID": "ulna",
+      "Grupo": "Ulna",
+      "itens": [
+        {
+          "Descricao": "Parte do osso ulna posterior à incisura troclear",
+          "Item": "Olécrano da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-1.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o ólecrano.",
+              "id": "ulna-1-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-1"
+        },
+        {
+          "Descricao": "Depressão da ulna entre o olécrano e o processo coronoide",
+          "Item": "Incisura troclear da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a incisura troclear.",
+              "id": "ulna-2-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-2"
+        },
+        {
+          "Descricao": "Parte da ulna entre a incisura troclear e a cabeça",
+          "Item": "Corpo da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-3.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o corpo da una.",
+              "id": "ulna-3-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-3"
+        },
+        {
+          "Descricao": "Extremidade distal da ulna próxima ao punho",
+          "Item": "Cabeça da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-4.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a cabeça da una.",
+              "id": "ulna-4-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-4"
+        },
+        {
+          "Descricao": "Projeção distal da ulna próxima ao punho",
+          "Item": "Processo estiloide da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-5.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o processo Estiloide da Una.",
+              "id": "ulna-5-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-5"
+        },
+        {
+          "Descricao": "Projeção anterior da ulna abaixo da incisura troclear",
+          "Item": "Processo coronoide da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-6.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o processo coronóide da UNA?",
+              "id": "ulna-6-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-6"
+        },
+        {
+          "Descricao": "Parte da ulna abaixo do processo coronoide",
+          "Item": "Tuberosidade da ulna",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/ulna-7.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a tuberosidade da urna.",
+              "id": "ulna-7-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "ulna-7"
+        }
+      ]
+    },
+    {
+      "ID": "umero",
+      "Grupo": "Úmero",
+      "itens": [
+        {
+          "Descricao": "Parte proximal do úmero que se articula com a escápula",
+          "Item": "Cabeça do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-1.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a cabeça do húmero.",
+              "id": "umero-1-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-1"
+        },
+        {
+          "Descricao": "Proeminência lateral do úmero para inserção muscular",
+          "Item": "Tubérculo maior do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-2.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o tubérculo maior do úmero.",
+              "id": "umero-2-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-2"
+        },
+        {
+          "Descricao": "Proeminência anterior do úmero para inserção muscular",
+          "Item": "Tubérculo menor do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-3.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o tubérculo menor do úmero.",
+              "id": "umero-3-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-3"
+        },
+        {
+          "Descricao": "Parte do úmero entre a cabeça e os epicôndilos",
+          "Item": "Corpo do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-4.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o corpo do húmero.",
+              "id": "umero-4-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-4"
+        },
+        {
+          "Descricao": "Proeminência medial do úmero próxima à ulna",
+          "Item": "Epicôndilo medial do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-5.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o epicóndilo medial.",
+              "id": "umero-5-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-5"
+        },
+        {
+          "Descricao": "Superfície articular lateral do úmero para o rádio",
+          "Item": "Capítulo do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-6.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o capítulo do húmero.",
+              "id": "umero-6-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-6"
+        },
+        {
+          "Descricao": "Superfície articular medial do úmero para a ulna",
+          "Item": "Tróclea do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-7.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a trocleta do úmero.",
+              "id": "umero-7-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-7"
+        },
+        {
+          "Descricao": "Proeminência lateral do úmero próxima ao rádio",
+          "Item": "Epicôndilo lateral do úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-8.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o Epicóndil lateral.",
+              "id": "umero-8-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-8"
+        },
+        {
+          "Descricao": "Depressão posterior do úmero para o olécrano",
+          "Item": "Fossa do olécrano no úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-9.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando a fossa do alécrano.",
+              "id": "umero-9-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-9"
+        },
+        {
+          "Descricao": "Sulco posterior do úmero por onde passa o nervo radial",
+          "Item": "Sulco do nervo radial no úmero",
+          "Imagens": [],
+          "Audios": [
+            {
+              "url": "audios/umero-10.mp3",
+              "Titulo": "Indicação em áudio",
+              "Transcricao": "Você está analisando o sulco do nervonar.",
+              "id": "umero-10-audio-1"
+            }
+          ],
+          "Videos": [],
+          "id": "umero-10"
+        }
+      ]
+    }
+  ]
+}
+

@@ -8,7 +8,7 @@
       "Item": "Osso frontal",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-frontal01.png",
+          "url": "imagens/za-frontal01.png",
           "indicação": "Osso em amarelo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -157,7 +157,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-frontal02.png",
+          "url": "imagens/za-frontal02.png",
           "indicação": "Osso em amarelo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -165,7 +165,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-frontal03.png",
+          "url": "imagens/za-frontal03.png",
           "indicação": "Osso em amarelo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -250,7 +250,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-frontal04.png",
+          "url": "imagens/za-frontal04.png",
           "indicação": "Osso em amarelo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -355,7 +355,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-frontal05.png",
+          "url": "imagens/za-frontal05.png",
           "indicação": "Osso em amarelo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -473,7 +473,7 @@
       "Item": "Osso occipital",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital01.png",
+          "url": "imagens/za-occipital01.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -618,7 +618,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital02.png",
+          "url": "imagens/za-occipital02.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -626,7 +626,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital03.png",
+          "url": "imagens/za-occipital03.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -807,7 +807,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital04.png",
+          "url": "imagens/za-occipital04.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -917,7 +917,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital05.png",
+          "url": "imagens/za-occipital05.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1102,7 +1102,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital06.png",
+          "url": "imagens/za-occipital06.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1130,7 +1130,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital07.png",
+          "url": "imagens/za-occipital07.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1158,7 +1158,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital08.png",
+          "url": "imagens/za-occipital08.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1186,7 +1186,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-occipital09.png",
+          "url": "imagens/za-occipital09.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1308,7 +1308,7 @@
       "Item": "Osso esfenoide",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide01.png",
+          "url": "imagens/za-esfenoide01.png",
           "indicação": "Osso em vista anterior",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1336,7 +1336,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide02.png",
+          "url": "imagens/za-esfenoide02.png",
           "indicação": "Osso em vista posterior",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1364,7 +1364,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide03.png",
+          "url": "imagens/za-esfenoide03.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1477,7 +1477,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide04.png",
+          "url": "imagens/za-esfenoide04.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1666,7 +1666,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-esfenoide06.png",
+          "url": "imagens/za-esfenoide06.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1848,7 +1848,7 @@
       "Item": "Osso etmoide",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide01.png",
+          "url": "imagens/za-etmoide01.png",
           "indicação": "Osso em vista anterior",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1876,7 +1876,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide02.png",
+          "url": "imagens/za-etmoide02.png",
           "indicação": "Osso em vista lateral esquerda",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1904,7 +1904,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide03.png",
+          "url": "imagens/za-etmoide03.png",
           "indicação": "Osso em vista posterior",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -1932,7 +1932,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide04.png",
+          "url": "imagens/za-etmoide04.png",
           "indicação": "Osso cinza no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2025,7 +2025,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-etmoide05.png",
+          "url": "imagens/za-etmoide05.png",
           "indicação": "Osso cinza no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2119,7 +2119,7 @@
       "Item": "Osso parietal",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-parietal01.png",
+          "url": "imagens/za-parietal01.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2127,7 +2127,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-parietal02.png",
+          "url": "imagens/za-parietal02.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2135,7 +2135,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-parietal03.png",
+          "url": "imagens/za-parietal03.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2143,7 +2143,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-parietal04.png",
+          "url": "imagens/za-parietal04.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2151,7 +2151,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-parietal05.png",
+          "url": "imagens/za-parietal05.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2168,7 +2168,7 @@
       "Item": "Osso temporal",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-temporal01.png",
+          "url": "imagens/za-temporal01.png",
           "indicação": "Osso em rosa",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2176,7 +2176,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-temporal02.png",
+          "url": "imagens/za-temporal02.png",
           "indicação": "Osso em rosa",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2184,7 +2184,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-temporal03.png",
+          "url": "imagens/za-temporal03.png",
           "indicação": "Osso em rosa",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2192,7 +2192,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-temporal04.png",
+          "url": "imagens/za-temporal04.png",
           "indicação": "Osso em rosa",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2209,7 +2209,7 @@
       "Item": "Osso nasal",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-nasal01.png",
+          "url": "imagens/za-nasal01.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2217,7 +2217,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-nasal02.png",
+          "url": "imagens/za-nasal02.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2225,7 +2225,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-nasal03.png",
+          "url": "imagens/za-nasal03.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2233,7 +2233,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-nasal04.png",
+          "url": "imagens/za-nasal04.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2241,7 +2241,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-nasal05.png",
+          "url": "imagens/za-nasal05.png",
           "indicação": "Osso em amarelo no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2258,7 +2258,7 @@
       "Item": "Osso lacrimal",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-lacrimal01.png",
+          "url": "imagens/za-lacrimal01.png",
           "indicação": "Osso verde escuro no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2266,7 +2266,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-lacrimal02.png",
+          "url": "imagens/za-lacrimal02.png",
           "indicação": "Osso verde escuro no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2274,7 +2274,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-lacrimal03.png",
+          "url": "imagens/za-lacrimal03.png",
           "indicação": "Osso verde escuro no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2291,7 +2291,7 @@
       "Item": "Osso zigomático",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico01.png",
+          "url": "imagens/za-zigomatico01.png",
           "indicação": "Osso em roxo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2299,7 +2299,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico02.png",
+          "url": "imagens/za-zigomatico02.png",
           "indicação": "Osso em roxo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2307,7 +2307,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico03.png",
+          "url": "imagens/za-zigomatico03.png",
           "indicação": "Osso em roxo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2315,7 +2315,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico04.png",
+          "url": "imagens/za-zigomatico04.png",
           "indicação": "Osso em roxo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2323,7 +2323,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-zigomatico05.png",
+          "url": "imagens/za-zigomatico05.png",
           "indicação": "Osso em roxo",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2340,7 +2340,7 @@
       "Item": "Osso maxila",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-maxila01.png",
+          "url": "imagens/za-maxila01.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2348,7 +2348,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-maxila02.png",
+          "url": "imagens/za-maxila02.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2356,7 +2356,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-maxila03.png",
+          "url": "imagens/za-maxila03.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2364,7 +2364,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-maxila04.png",
+          "url": "imagens/za-maxila04.png",
           "indicação": "Osso em verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2381,7 +2381,7 @@
       "Item": "Osso concha nasal inferior",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-conchanasalinferior01.png",
+          "url": "imagens/za-conchanasalinferior01.png",
           "indicação": "Osso em bege no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2389,7 +2389,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-conchanasalinferior02.png",
+          "url": "imagens/za-conchanasalinferior02.png",
           "indicação": "Osso em bege no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2397,7 +2397,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-conchanasalinferior03.png",
+          "url": "imagens/za-conchanasalinferior03.png",
           "indicação": "Osso em bege no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2414,7 +2414,7 @@
       "Item": "Osso palatino",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-palatino01.png",
+          "url": "imagens/za-palatino01.png",
           "indicação": "Osso destacado em vermelho e verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2422,7 +2422,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-palatino02.png",
+          "url": "imagens/za-palatino02.png",
           "indicação": "Osso destacado em vermelho e verde",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2430,7 +2430,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-palatino03.png",
+          "url": "imagens/za-palatino03.png",
           "indicação": "Osso em vermelho",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2447,7 +2447,7 @@
       "Item": "Osso vômer",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer01.png",
+          "url": "imagens/za-vomer01.png",
           "indicação": "Osso em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2474,7 +2474,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer02.png",
+          "url": "imagens/za-vomer02.png",
           "indicação": "Osso em rosa em destaque vista anterior",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2482,7 +2482,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer03.png",
+          "url": "imagens/za-vomer03.png",
           "indicação": "Osso em rosa em destaque vista lateral",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2490,7 +2490,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer04.png",
+          "url": "imagens/za-vomer04.png",
           "indicação": "Osso em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2605,7 +2605,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer05.png",
+          "url": "imagens/za-vomer05.png",
           "indicação": "Osso em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2720,7 +2720,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-vomer06.png",
+          "url": "imagens/za-vomer06.png",
           "indicação": "Osso em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2812,7 +2812,7 @@
       "Item": "Osso mandíbula",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-mandibula01.png",
+          "url": "imagens/za-mandibula01.png",
           "indicação": "Osso em bege no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2975,7 +2975,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-mandibula02.png",
+          "url": "imagens/za-mandibula02.png",
           "indicação": "Osso em bege no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -2983,7 +2983,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-mandibula03.png",
+          "url": "imagens/za-mandibula03.png",
           "indicação": "Osso em bege no centro vista lateral",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3110,7 +3110,7 @@
           ]
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-mandibula04.png",
+          "url": "imagens/za-mandibula04.png",
           "indicação": "Osso em bege no centro vista lateral",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3127,7 +3127,7 @@
       "Item": "Ossículo martelo",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-martelo01.png",
+          "url": "imagens/za-martelo01.png",
           "indicação": "Ossículo em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3135,7 +3135,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-martelo02.png",
+          "url": "imagens/za-martelo02.png",
           "indicação": "Ossículo em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3152,7 +3152,7 @@
       "Item": "Ossículo bigorna",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-bigorna01.png",
+          "url": "imagens/za-bigorna01.png",
           "indicação": "Ossículo rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3160,7 +3160,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-bigorna02.png",
+          "url": "imagens/za-bigorna02.png",
           "indicação": "Ossículo rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3177,7 +3177,7 @@
       "Item": "Ossículo estribo",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-estribo01.png",
+          "url": "imagens/za-estribo01.png",
           "indicação": "Ossículo em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3185,7 +3185,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-estribo02.png",
+          "url": "imagens/za-estribo02.png",
           "indicação": "Ossículo em rosa em destaque",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3202,7 +3202,7 @@
       "Item": "Osso hioide",
       "Imagens": [
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-hioide01.png",
+          "url": "imagens/za-hioide01.png",
           "indicação": "Osso em bege em destaque no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3210,7 +3210,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-hioide02.png",
+          "url": "imagens/za-hioide02.png",
           "indicação": "Osso em bege em destaque no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3218,7 +3218,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-hioide03.png",
+          "url": "imagens/za-hioide03.png",
           "indicação": "Osso em bege em destaque no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3226,7 +3226,7 @@
           }
         },
         {
-          "url": "assets/ossos/esqueleto-axial/imagens/za-hioide04.png",
+          "url": "imagens/za-hioide04.png",
           "indicação": "Osso em bege em destaque no centro",
           "Copyright": {
             "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
@@ -3239,3 +3239,4 @@
     }
   ]
 }
+

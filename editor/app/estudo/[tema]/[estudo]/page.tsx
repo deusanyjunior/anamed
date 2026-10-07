@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
+import { Fragment, useEffect, useState, useRef } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import type { StudyAudio, StudyDataset, StudyImage, StudyItem, StudyVideo } from '@/types';
@@ -25,8 +25,14 @@ function youtubeEmbedUrl(value: string) {
   }
 }
 
-function videoFileUrl(url: string) {
-  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : `${DOCS_BASE}/${url}`;
+function mediaUrl(url: string, studyDir: string) {
+  if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
+  if (url.startsWith('assets/')) return `${DOCS_BASE}/${url}`;
+  return `${DOCS_BASE}/assets/${studyDir}/${url}`;
+}
+
+function videoFileUrl(url: string, studyDir: string) {
+  return mediaUrl(url, studyDir);
 }
 
 function newEntityId(prefix: string) {
@@ -48,23 +54,25 @@ function normalizeDataset(dataset: StudyDataset): StudyDataset {
   };
 }
 
-function emptyItem(): StudyItem {
-  return { id: newEntityId('item'), Grupo: '', Descricao: '', Item: '', Imagens: [], Audios: [], Videos: [] };
+function emptyItem(group = ''): StudyItem {
+  return { id: newEntityId('item'), Grupo: group, Descricao: '', Item: '', Imagens: [], Audios: [], Videos: [] };
 }
 
 export default function EstudoEditor() {
   const params = useParams();
   const searchParams = useSearchParams();
   const datasetPath = searchParams.get('path') ?? '';
-  const studyDir = datasetPath.replace(/\.json$/, '');
+  const studyRoute = searchParams.get('route') ?? datasetPath.replace(/\/[^/]+$/, '').replace(/\.json$/, '');
+  const studyDir = studyRoute;
   const imageDir = `${studyDir}/imagens`;
   const audioDir = `${studyDir}/audios`;
-  const videoDir = studyDir;
+  const videoDir = `${studyDir}/videos`;
 
   const [dataset, setDataset] = useState<StudyDataset | null>(null);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [expandedCopyright, setExpandedCopyright] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadingFor, setUploadingFor] = useState<number | null>(null);
@@ -74,8 +82,8 @@ export default function EstudoEditor() {
 
   useEffect(() => {
     if (!datasetPath) return;
-    fetch(`/api/dataset?path=${datasetPath}`).then(r => r.json()).then(body => setDataset(normalizeDataset(body)));
-  }, [datasetPath]);
+    fetch(`/api/dataset?path=${encodeURIComponent(datasetPath)}&route=${encodeURIComponent(studyRoute)}`).then(r => r.json()).then(body => setDataset(normalizeDataset(body)));
+  }, [datasetPath, studyRoute]);
 
   useEffect(() => {
     if (expandedIdx === null) return;
@@ -88,7 +96,7 @@ export default function EstudoEditor() {
 
   async function save(ds: StudyDataset) {
     setSaving(true);
-    await fetch(`/api/dataset?path=${datasetPath}`, {
+    await fetch(`/api/dataset?path=${encodeURIComponent(datasetPath)}&route=${encodeURIComponent(studyRoute)}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(ds),
@@ -102,6 +110,20 @@ export default function EstudoEditor() {
     if (!dataset) return;
     const itens = dataset.itens.map((it, i) => i === idx ? updated : it);
     setDataset({ ...dataset, itens });
+  }
+
+  function updateGroup(group: string, newGroup: string) {
+    if (!dataset) return;
+    const itens = dataset.itens.map(item => (item.Grupo || '(sem grupo)') === group ? { ...item, Grupo: newGroup } : item);
+    setDataset({ ...dataset, itens });
+  }
+
+  function toggleGroup(group: string) {
+    setCollapsedGroups(previous => {
+      const next = new Set(previous);
+      if (next.has(group)) next.delete(group); else next.add(group);
+      return next;
+    });
   }
 
   function moveItem(idx: number, dir: -1 | 1) {
@@ -126,6 +148,22 @@ export default function EstudoEditor() {
     const itens = [...dataset.itens, emptyItem()];
     setDataset({ ...dataset, itens });
     setExpandedIdx(itens.length - 1);
+  }
+
+  function addItemToGroup(group: string) {
+    if (!dataset) return;
+    const item = emptyItem(group === '(sem grupo)' ? '' : group);
+    const lastIndex = dataset.itens.reduce((last, candidate, index) => (candidate.Grupo || '(sem grupo)') === group ? index : last, -1);
+    const insertIndex = lastIndex + 1;
+    const itens = [...dataset.itens];
+    itens.splice(insertIndex, 0, item);
+    setDataset({ ...dataset, itens });
+    setCollapsedGroups(previous => {
+      const next = new Set(previous);
+      next.delete(group);
+      return next;
+    });
+    setExpandedIdx(insertIndex);
   }
 
   async function openImagePicker(idx: number) {
@@ -157,7 +195,8 @@ export default function EstudoEditor() {
 
   async function deleteAsset(url: string) {
     if (!confirm('Remover este arquivo físico? A operação só será permitida se ele não estiver referenciado.')) return;
-    const response = await fetch('/api/assets', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
+    const targetUrl = url.startsWith('assets/') ? url : `assets/${studyDir}/${url}`;
+    const response = await fetch('/api/assets', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: targetUrl }) });
     const body = await response.json() as { error?: string; references?: { source: string; itemId?: string; item?: string }[] };
     if (!response.ok) {
       const refs = body.references?.map(reference => `${reference.source}${reference.item ? ` — ${reference.item}` : ''}`).join('\\n') ?? '';
@@ -313,10 +352,8 @@ export default function EstudoEditor() {
 
   if (!dataset) return <p className="text-slate-600">Carregando...</p>;
 
-  const grupos = [...new Set(dataset.itens.map(i => i.Grupo).filter(Boolean))];
   const exemploDescricao = dataset.itens.find(i => i.Descricao)?.Descricao ?? 'Ex: Nome do osso';
   const exemploItem = dataset.itens.find(i => i.Item)?.Item ?? 'Ex: Osso frontal';
-  const exemploGrupo = grupos[0] ?? 'Ex: Crânio > Neurocrânio';
 
   // placeholders de copyright baseados no primeiro item que tiver imagem com copyright
   const copyrightPlaceholders: Record<string, string> = {
@@ -351,8 +388,18 @@ export default function EstudoEditor() {
 
       {/* Lista de itens */}
       <div className="space-y-2 mb-4">
-        {dataset.itens.map((item, idx) => (
-          <div key={idx} data-editor-item-index={idx} className="border border-slate-300 rounded-xl overflow-hidden bg-white">
+        {dataset.itens.map((item, idx) => {
+          const group = item.Grupo || '(sem grupo)';
+          const firstInGroup = dataset.itens.findIndex(candidate => (candidate.Grupo || '(sem grupo)') === group) === idx;
+          const collapsed = collapsedGroups.has(group);
+          return <Fragment key={item.id ?? idx}>
+            {firstInGroup && <div className="flex items-center gap-2 rounded-lg border border-slate-300 bg-slate-100 px-3 py-2 mt-3 first:mt-0">
+              <button type="button" onClick={() => toggleGroup(group)} className="text-slate-700 text-sm" aria-label={collapsed ? `Expandir grupo ${group}` : `Recolher grupo ${group}`}>{collapsed ? '▸' : '▾'}</button>
+              <input className="flex-1 bg-transparent border-0 text-sm font-semibold text-slate-800 outline-none focus:bg-white focus:border focus:border-blue-400 rounded px-1" value={group === '(sem grupo)' ? '' : group} placeholder="Nome do grupo" onChange={event => updateGroup(group, event.target.value)} />
+              <span className="text-xs text-slate-500">{dataset.itens.filter(candidate => (candidate.Grupo || '(sem grupo)') === group).length} item(ns)</span>
+              <button type="button" onClick={() => addItemToGroup(group)} className="text-xs rounded border border-blue-200 bg-blue-50 px-2 py-1 text-blue-700 hover:bg-blue-100">+ Item</button>
+            </div>}
+            {!collapsed && <div data-editor-item-index={idx} className="border border-slate-300 rounded-xl overflow-hidden bg-white">
             {/* Cabeçalho do item */}
             <div className="flex items-center gap-2 px-3 py-2 bg-slate-100">
               <div className="flex flex-col gap-0.5">
@@ -404,21 +451,6 @@ export default function EstudoEditor() {
                   />
                 </div>
 
-                {/* Grupo com sugestões */}
-                <div>
-                  <label className="text-xs text-slate-600 block mb-1">Grupo</label>
-                  <input
-                    list={`grupos-${idx}`}
-                    className="w-full bg-white border border-slate-200 rounded-lg px-3 py-1.5 text-sm text-slate-900 outline-none focus:border-blue-500"
-                    placeholder={exemploGrupo}
-                    value={item.Grupo}
-                    onChange={e => updateItem(idx, { ...item, Grupo: e.target.value })}
-                  />
-                  <datalist id={`grupos-${idx}`}>
-                    {grupos.map(g => <option key={g} value={g} />)}
-                  </datalist>
-                </div>
-
                 {/* Imagens */}
                 <div>
                   <label className="text-xs text-slate-600 block mb-2">Imagens</label>
@@ -428,7 +460,7 @@ export default function EstudoEditor() {
                         {/* Preview */}
                         <div className="relative w-20 h-20 flex-shrink-0 rounded overflow-hidden bg-slate-100 border border-slate-200">
                           <Image
-                            src={`${DOCS_BASE}/${img.url}`}
+                            src={mediaUrl(img.url, studyDir)}
                             alt=""
                             fill
                             unoptimized
@@ -445,7 +477,7 @@ export default function EstudoEditor() {
                                 className="flex-1 bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 cursor-default select-all outline-none"
                                 value={img.url}
                               />
-                              {img.url.startsWith('assets/') && (
+                              {(!/^https?:\/\//i.test(img.url) && !img.url.startsWith('/')) && (
                                 <button
                                   type="button"
                                   className="text-xs bg-slate-200 hover:bg-slate-300 border border-slate-300 rounded px-2 py-1 whitespace-nowrap text-slate-700"
@@ -456,7 +488,7 @@ export default function EstudoEditor() {
                                     const res = await fetch('/api/rename', {
                                       method: 'POST',
                                       headers: { 'Content-Type': 'application/json' },
-                                      body: JSON.stringify({ oldUrl: img.url, newName }),
+                                      body: JSON.stringify({ oldUrl: img.url, newName, baseDir: studyDir }),
                                     });
                                     const { url, error } = await res.json();
                                     if (error) { alert('Erro: ' + error); return; }
@@ -503,6 +535,7 @@ export default function EstudoEditor() {
                           )}
                           <OverlayEditor
                             imageUrl={img.url}
+                            mediaBase={studyDir}
                             overlays={img.overlays}
                             onChange={overlays => updateImage(idx, imgIdx, { ...img, overlays: overlays.length ? overlays : undefined })}
                           />
@@ -571,7 +604,7 @@ export default function EstudoEditor() {
                         {availableImages.map(image => (
                           <div key={image.url} className="rounded border border-slate-200 bg-white p-1">
                             <button type="button" onClick={() => reuseImage(idx, image.url)} className="relative w-full aspect-square text-left hover:border-blue-500">
-                              <Image src={`${DOCS_BASE}/${image.url}`} alt={image.name} fill unoptimized sizes="(max-width: 640px) 50vw, 120px" className="object-contain rounded bg-slate-100" />
+                              <Image src={mediaUrl(image.url, studyDir)} alt={image.name} fill unoptimized sizes="(max-width: 640px) 50vw, 120px" className="object-contain rounded bg-slate-100" />
                               <span className="block truncate text-[10px] text-slate-700 mt-1">{image.name}</span>
                             </button>
                             <button type="button" onClick={() => deleteAsset(image.url)} className="text-[10px] text-red-600 mt-1">Excluir arquivo</button>
@@ -588,7 +621,7 @@ export default function EstudoEditor() {
                   <div className="space-y-2">
                     {(item.Audios ?? []).map((audio, audioIdx) => (
                       <div key={audioIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
-                        <audio controls preload="metadata" src={`${DOCS_BASE}/${audio.url}`} className="max-w-full" />
+                        <audio controls preload="metadata" src={mediaUrl(audio.url, studyDir)} className="max-w-full" />
                         <div className="flex-1 space-y-2">
                           <div>
                             <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`audio-id-${idx}-${audioIdx}`}>ID do áudio</label>
@@ -628,7 +661,7 @@ export default function EstudoEditor() {
                   <div className="space-y-2">
                     {(item.Videos ?? []).map((video, videoIdx) => (
                       <div key={videoIdx} className="flex gap-3 items-center bg-slate-50 rounded-lg p-2">
-                        {video.Tipo === 'youtube' ? (youtubeEmbedUrl(video.url) ? <iframe src={youtubeEmbedUrl(video.url) ?? undefined} title={video.Titulo || 'Prévia do YouTube'} className="w-40 aspect-video rounded max-w-full" /> : <div className="w-40 text-xs text-red-600">URL do YouTube inválida</div>) : <video controls preload="metadata" src={videoFileUrl(video.url)} className="w-40 max-w-full" />}
+                        {video.Tipo === 'youtube' ? (youtubeEmbedUrl(video.url) ? <iframe src={youtubeEmbedUrl(video.url) ?? undefined} title={video.Titulo || 'Prévia do YouTube'} className="w-40 aspect-video rounded max-w-full" /> : <div className="w-40 text-xs text-red-600">URL do YouTube inválida</div>) : <video controls preload="metadata" src={videoFileUrl(video.url, studyDir)} className="w-40 max-w-full" />}
                         <div className="flex-1 space-y-2">
                           <div>
                             <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`video-type-${idx}-${videoIdx}`}>Tipo do vídeo</label>
@@ -662,8 +695,9 @@ export default function EstudoEditor() {
                 </div>
               </div>
             )}
-          </div>
-        ))}
+            </div>}
+          </Fragment>;
+        })}
       </div>
 
       {/* Adicionar item */}

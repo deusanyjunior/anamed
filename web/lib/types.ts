@@ -53,10 +53,17 @@ export type StudyItem = {
   Videos?: StudyVideo[];
 };
 
+export type StudyGroup = {
+  ID: string;
+  Grupo: string;
+  itens: Omit<StudyItem, 'Grupo'>[];
+};
+
 export type StudyDataset = {
   schema?: string;
   geradoEm?: string;
   itens: StudyItem[];
+  grupos?: StudyGroup[];
 };
 
 export type EstudoImagemItem = {
@@ -74,6 +81,7 @@ export type EstudoRef = {
 
 export type Tema = {
   Tema: string;
+  Rota?: string;
   Estudos: EstudoRef[];
 };
 

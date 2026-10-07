@@ -27,8 +27,18 @@ export function routeFromExercises(exercicios: string): string {
   return withoutExtension;
 }
 
-export function routeFromStudy(estudo: EstudoRef): string {
-  return estudo.Rota ? assertSafeRoute(estudo.Rota) : routeFromExercises(estudo.Exercicios);
+function assertSafeThemeRoute(value: string) {
+  const normalized = value.replaceAll('\\', '/').trim();
+  if (!normalized || normalized.startsWith('/') || normalized.endsWith('/') || normalized.includes('/') || normalized.includes('..') || normalized.toLowerCase().endsWith('.json')) {
+    throw new Error('Rota de tema inválida');
+  }
+  return normalized;
+}
+
+export function routeFromStudy(estudo: EstudoRef, tema?: { Rota?: string }): string {
+  const route = estudo.Rota ? assertSafeRoute(estudo.Rota) : routeFromExercises(estudo.Exercicios);
+  const parts = route.split('/').filter(Boolean);
+  return tema?.Rota ? `${assertSafeThemeRoute(tema.Rota)}/${parts.slice(1).join('/')}` : route;
 }
 
 function assertSafeRoute(value: string) {
@@ -40,8 +50,8 @@ function assertSafeRoute(value: string) {
   return parts.join('/');
 }
 
-export function routePartsFromStudy(estudo: EstudoRef) {
-  const route = routeFromStudy(estudo);
+export function routePartsFromStudy(estudo: EstudoRef, tema?: { Rota?: string }) {
+  const route = routeFromStudy(estudo, tema);
   const parts = route.split('/').filter(Boolean);
   return { tema: parts[0], estudo: parts.slice(1).join('/') };
 }
@@ -58,29 +68,38 @@ export function allStudies(catalog = readCatalog()) {
 }
 
 export function findStudy(temaSlug: string, estudoSlug: string, catalog = readCatalog()) {
-  return allStudies(catalog).find(({ estudo }) => {
-    const route = routePartsFromStudy(estudo);
+  return allStudies(catalog).find(({ tema, estudo }) => {
+    const route = routePartsFromStudy(estudo, tema);
     return route.tema === temaSlug && route.estudo === estudoSlug;
   });
 }
 
-export function readDataset(exercicios: string): StudyDataset {
-  const relative = assertSafeRelativePath(exercicios);
+export function readDataset(exercicios: string, studyRoute?: string): StudyDataset {
+  const relative = assertSafeRelativePath(studyRoute ? `${studyRoute}/${exercicios}` : exercicios);
   if (!relative.toLowerCase().endsWith('.json')) throw new Error('Dataset inválido');
   const file = path.join(ASSETS_DIR, relative);
   const resolved = path.resolve(file);
   if (resolved !== ASSETS_DIR && !resolved.startsWith(`${path.resolve(ASSETS_DIR)}${path.sep}`)) {
     throw new Error('Dataset fora da pasta de dados');
   }
-  return JSON.parse(fs.readFileSync(file, 'utf8')) as StudyDataset;
+  const raw = JSON.parse(fs.readFileSync(file, 'utf8')) as StudyDataset;
+  if (!raw.grupos) return raw;
+  return {
+    ...raw,
+    itens: raw.grupos.flatMap(group => group.itens.map(item => ({ ...item, Grupo: group.Grupo }))),
+  };
 }
 
 export function imageUrl(url: string) {
   return url.startsWith('/') ? url : `/${url}`;
 }
 
-export function coverUrl(estudo: EstudoRef) {
+export function coverUrl(estudo: EstudoRef, studyRoute?: string) {
   if (!estudo.Imagem) return '';
-  if (typeof estudo.Imagem === 'string') return imageUrl(estudo.Imagem);
-  return estudo.Imagem[0]?.url ? imageUrl(estudo.Imagem[0].url) : '';
+  const value = typeof estudo.Imagem === 'string' ? estudo.Imagem : estudo.Imagem[0]?.url;
+  if (!value) return '';
+  if (/^https?:\/\//i.test(value) || value.startsWith('/')) return value;
+  if (value.startsWith('assets/')) return imageUrl(value);
+  const base = studyRoute ?? estudo.Exercicios.replace(/\/[^/]+$/, '');
+  return `/assets/${base}/${value}`;
 }

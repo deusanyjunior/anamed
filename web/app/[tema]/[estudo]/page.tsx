@@ -10,7 +10,7 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return allStudies().map(({ estudo }) => routePartsFromStudy(estudo));
+  return allStudies().map(({ tema, estudo }) => routePartsFromStudy(estudo, tema));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -29,10 +29,12 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
 
   let dataset;
   try {
-    dataset = readDataset(found.estudo.Exercicios);
+    dataset = readDataset(found.estudo.Exercicios, routeFromStudy(found.estudo, found.tema));
   } catch {
     notFound();
   }
+
+  const mediaBase = `/assets/${routeFromStudy(found.estudo, found.tema)}`;
 
   return (
     <main>
@@ -48,7 +50,8 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
       <StudyExperience
         dataset={dataset}
         studyTitle={found.estudo.Titulo}
-        studyKey={routeFromStudy(found.estudo)}
+        studyKey={routeFromStudy(found.estudo, found.tema)}
+        mediaBase={mediaBase}
         deepLink={{ itemId }}
       />
     </main>

@@ -2,15 +2,16 @@
   "schema": "estudos_v1",
   "itens": [
     {
-      "Tema": "Ossos",
+      "Tema": "Osteologia",
+      "Rota": "osteologia",
       "Estudos": [
         {
-          "Titulo": "Esqueleto axial",
-          "Rota": "ossos/esqueleto-axial",
-          "Exercicios": "ossos/esqueleto-axial/esqueleto-axial.json",
+          "Titulo": "Axial",
+          "Rota": "osteologia/axial",
+          "Exercicios": "osteologia/axial/axial.json",
           "Imagem": [
             {
-              "url": "assets/ossos/esqueleto-axial/imagens/za-anatomia.png",
+              "url": "imagens/za-anatomia.png",
               "Copyright": {
                 "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
                 "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
@@ -19,26 +20,12 @@
           ]
         },
         {
-          "Titulo": "Detalhes do cíngulo superior",
-          "Rota": "ossos/cingulo",
-          "Exercicios": "ossos/cingulo/cingulo.json",
+          "Titulo": "Apendicular Superior",
+          "Rota": "osteologia/apendicular-superior",
+          "Exercicios": "apendicular-superior.json",
           "Imagem": [
             {
-              "url": "assets/ossos/cingulo/imagens/za-cingulo.png",
-              "Copyright": {
-                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
-                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
-              }
-            }
-          ]
-        },
-        {
-          "Titulo": "Detalhes do membro superior",
-          "Rota": "ossos/membro-superior",
-          "Exercicios": "ossos/membro-superior/membro-superior.json",
-          "Imagem": [
-            {
-              "url": "assets/ossos/membro-superior/membro-superior/imagens/za-membrosuperior.png",
+              "url": "imagens/za-cingulo.png",
               "Copyright": {
                 "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
                 "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"

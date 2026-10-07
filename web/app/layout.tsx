@@ -5,6 +5,7 @@ import AuthSessionProvider from '../components/SessionProvider';
 import AniahChat from '../components/AniahChat';
 import VLibrasWidget from '../components/VLibrasWidget';
 import AccessibilityZoom from '../components/AccessibilityZoom';
+import BackToTop from '../components/BackToTop';
 
 export const metadata: Metadata = {
   title: 'AnaMed — Anatomia Quiz & Atlas',
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <AuthSessionProvider>
             {children}
             <AniahChat />
+            <BackToTop />
             <VLibrasWidget />
           </AuthSessionProvider>
         </div>

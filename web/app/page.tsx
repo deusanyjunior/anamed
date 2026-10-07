@@ -18,8 +18,8 @@ export default function HomePage() {
             </div>
             <div className="grid-auto" style={{ padding: '0 14px 14px' }}>
               {tema.Estudos.map(estudo => {
-                const href = `/${routeFromStudy(estudo)}`;
-                const capa = coverUrl(estudo);
+                const href = `/${routeFromStudy(estudo, tema)}`;
+                const capa = coverUrl(estudo, routeFromStudy(estudo, tema));
                 return (
                   <Link className="card card-clickable" href={href} key={estudo.Exercicios}>
                     <div className="card-media">

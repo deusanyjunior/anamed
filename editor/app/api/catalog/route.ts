@@ -5,7 +5,17 @@ import type { EstudosCatalog } from '@/types';
 
 function validateCatalog(catalog: EstudosCatalog) {
   const routes = new Set<string>();
+  const themeRoutes = new Set<string>();
   for (const tema of catalog.itens ?? []) {
+    if (tema.Rota) {
+      const rotaTema = tema.Rota.replaceAll('\\', '/').trim();
+      if (!rotaTema || rotaTema.startsWith('/') || rotaTema.endsWith('/') || rotaTema.includes('/') || rotaTema.includes('..') || rotaTema.toLowerCase().endsWith('.json')) {
+        throw new Error(`Rota de tema inválida: ${tema.Rota}`);
+      }
+      if (themeRoutes.has(rotaTema)) throw new Error(`Rota de tema duplicada: ${rotaTema}`);
+      themeRoutes.add(rotaTema);
+      tema.Rota = rotaTema;
+    }
     for (const estudo of tema.Estudos ?? []) {
       if (!estudo.Rota) continue;
       const rota = estudo.Rota.replaceAll('\\', '/').trim();

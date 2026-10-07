@@ -8,8 +8,10 @@ type AssetReference = {
   item?: string;
 };
 
-function sameUrl(value: string | undefined, target: string) {
-  return value === target;
+function canonicalAssetUrl(value: string | undefined, studyDir: string) {
+  if (!value || /^https?:\/\//i.test(value) || value.startsWith('/')) return value;
+  if (value.startsWith('assets/')) return value;
+  return `assets/${studyDir}/${value}`;
 }
 
 export function assetReferences(targetUrl: string): AssetReference[] {
@@ -18,16 +20,17 @@ export function assetReferences(targetUrl: string): AssetReference[] {
 
   for (const tema of catalog.itens ?? []) {
     for (const estudo of tema.Estudos ?? []) {
+      const studyDir = estudo.Exercicios.replace(/\\/g, '/').replace(/\/[^/]+$/, '');
       const cover = typeof estudo.Imagem === 'string' ? estudo.Imagem : estudo.Imagem?.[0]?.url;
-      if (sameUrl(cover, targetUrl)) {
+      if (canonicalAssetUrl(cover, studyDir) === targetUrl) {
         references.push({ source: `${tema.Tema} / ${estudo.Titulo} (capa)` });
       }
 
       try {
-        const dataset = readDataset(estudo.Exercicios);
+        const dataset = readDataset(estudo.Exercicios, estudo.Rota);
         dataset.itens.forEach((item, itemIndex) => {
           item.Imagens?.forEach(image => {
-            if (sameUrl(image.url, targetUrl)) {
+            if (canonicalAssetUrl(image.url, studyDir) === targetUrl) {
               references.push({
                 source: estudo.Exercicios,
                 itemId: item.id ?? `item-${itemIndex + 1}`,
@@ -64,5 +67,5 @@ export function listImages(dir: string) {
   if (!fs.existsSync(resolved)) return [];
   return fs.readdirSync(resolved, { withFileTypes: true })
     .filter(entry => entry.isFile() && /\.(png|jpe?g|gif|webp|svg)$/i.test(entry.name))
-    .map(entry => ({ name: entry.name, url: `assets/${relative}/${entry.name}` }));
+    .map(entry => ({ name: entry.name, url: `${path.basename(relative)}/${entry.name}` }));
 }

@@ -47,5 +47,5 @@ export async function POST(req: NextRequest) {
   const buffer = Buffer.from(await res.arrayBuffer());
   await writeFile(path.join(targetDir, fileName), buffer);
 
-  return NextResponse.json({ url: `assets/${dir}/${fileName}` });
+  return NextResponse.json({ url: `${path.basename(dir)}/${fileName}` });
 }

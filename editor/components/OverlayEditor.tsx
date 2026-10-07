@@ -9,6 +9,7 @@ type OverlayTool = StudyOverlay['tipo'];
 
 type Props = {
   imageUrl: string;
+  mediaBase: string;
   overlays?: StudyOverlay[];
   onChange: (overlays: StudyOverlay[]) => void;
 };
@@ -51,8 +52,10 @@ function orientationConfig(id?: string) {
   return orientationOptions.find(option => option.id === id) ?? orientationOptions[0];
 }
 
-function previewUrl(url: string) {
-  return /^https?:\/\//i.test(url) || url.startsWith('/') ? url : `${DOCS_BASE}/${url}`;
+function previewUrl(url: string, mediaBase: string) {
+  if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
+  if (url.startsWith('assets/')) return `${DOCS_BASE}/${url}`;
+  return `${DOCS_BASE}/assets/${mediaBase}/${url}`;
 }
 
 function clamp(value: number) {
@@ -71,7 +74,7 @@ function pointsLabel(count: number) {
   return `${count} ${count === 1 ? 'ponto' : 'pontos'}`;
 }
 
-export default function OverlayEditor({ imageUrl, overlays = [], onChange }: Props) {
+export default function OverlayEditor({ imageUrl, mediaBase, overlays = [], onChange }: Props) {
   const frameRef = useRef<HTMLDivElement>(null);
   const svgPrefix = useId().replaceAll(':', '');
   const [tool, setTool] = useState<OverlayTool>('seta');
@@ -292,7 +295,7 @@ export default function OverlayEditor({ imageUrl, overlays = [], onChange }: Pro
 
       <p className="text-[11px] text-slate-500">{tool === 'seta' ? 'A seta usa dois pontos: origem e ponta. Após o segundo clique, os próximos alternam a substituição desses pontos.' : 'Clique na imagem para marcar pontos. Finalize a forma quando terminar; os pontos podem ser arrastados depois.'}</p>
       <div ref={frameRef} className="relative aspect-[4/3] w-full max-w-2xl overflow-hidden rounded border border-slate-200 bg-slate-100" onPointerDown={handleCanvasPointerDown} onPointerMove={moveDraggedPoint} onPointerUp={finishDragging} onPointerCancel={finishDragging}>
-        <Image src={previewUrl(imageUrl)} alt="Imagem para editar overlay" fill unoptimized sizes="(max-width: 640px) 100vw, 672px" className="object-contain" draggable={false} />
+        <Image src={previewUrl(imageUrl, mediaBase)} alt="Imagem para editar overlay" fill unoptimized sizes="(max-width: 640px) 100vw, 672px" className="object-contain" draggable={false} />
         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1 1" preserveAspectRatio="none">
           <defs>
             {previewOverlays.filter(overlay => overlay.tipo === 'seta').map(overlay => (

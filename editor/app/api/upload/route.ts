@@ -1,4 +1,4 @@
-// POST /api/upload?dir=anatomia/ossos  → salva arquivo em web/data/anatomia/ossos/
+// POST /api/upload?dir=anatomia/ossos  → salva arquivo na subpasta de mídia do estudo
 import { NextRequest, NextResponse } from 'next/server';
 import { writeFile } from 'fs/promises';
 import path from 'path';
@@ -19,6 +19,6 @@ export async function POST(req: NextRequest) {
   const filePath = path.join(targetDir, file.name);
   await writeFile(filePath, buffer);
 
-  const relativeUrl = `assets/${dir}/${file.name}`;
+  const relativeUrl = `${path.basename(dir)}/${file.name}`;
   return NextResponse.json({ url: relativeUrl });
 }
