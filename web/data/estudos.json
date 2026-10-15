@@ -8,7 +8,7 @@
         {
           "Titulo": "Axial",
           "Rota": "osteologia/axial",
-          "Exercicios": "osteologia/axial/axial.json",
+          "Exercicios": "axial.json",
           "Imagem": [
             {
               "url": "imagens/za-anatomia.png",

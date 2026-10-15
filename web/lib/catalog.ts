@@ -74,8 +74,20 @@ export function findStudy(temaSlug: string, estudoSlug: string, catalog = readCa
   });
 }
 
+export function datasetPath(exercicios: string, studyRoute?: string) {
+  const normalized = exercicios.replaceAll('\\', '/').trim();
+  if (!studyRoute || !normalized || normalized.includes('/') || normalized.includes('..') || !normalized.toLowerCase().endsWith('.json')) {
+    throw new Error('Exercicios deve ser apenas o nome do arquivo JSON; use Rota para a pasta.');
+  }
+  return `${studyRoute}/${normalized}`;
+}
+
+export function datasetDirectory(exercicios: string, studyRoute?: string) {
+  return datasetPath(exercicios, studyRoute).replace(/\/[^/]+$/, '');
+}
+
 export function readDataset(exercicios: string, studyRoute?: string): StudyDataset {
-  const relative = assertSafeRelativePath(studyRoute ? `${studyRoute}/${exercicios}` : exercicios);
+  const relative = assertSafeRelativePath(datasetPath(exercicios, studyRoute));
   if (!relative.toLowerCase().endsWith('.json')) throw new Error('Dataset inválido');
   const file = path.join(ASSETS_DIR, relative);
   const resolved = path.resolve(file);

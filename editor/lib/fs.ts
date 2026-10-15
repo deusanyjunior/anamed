@@ -18,7 +18,11 @@ export function writeCatalog(catalog: EstudosCatalog) {
 }
 
 function datasetFile(exercicios: string, studyRoute?: string) {
-  return path.join(DOCS_ASSETS, studyRoute ? studyRoute : '', exercicios);
+  const normalized = exercicios.replaceAll('\\', '/').trim();
+  if (!studyRoute || !normalized || normalized.includes('/') || normalized.includes('..') || !normalized.toLowerCase().endsWith('.json')) {
+    throw new Error('Exercicios deve ser apenas o nome do arquivo JSON; use Rota para a pasta.');
+  }
+  return path.join(DOCS_ASSETS, studyRoute, normalized);
 }
 
 export function readDataset(exercicios: string, studyRoute?: string): StudyDataset {
