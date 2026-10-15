@@ -12,13 +12,18 @@ export async function POST(req: NextRequest) {
   const file = formData.get('file') as File;
   if (!file) return NextResponse.json({ error: 'no file' }, { status: 400 });
 
-  const targetDir = path.join(DOCS_ASSETS, dir);
+  const normalizedDir = dir.replaceAll('\\', '/').replace(/^\/+|\/+$/g, '');
+  if (!normalizedDir || normalizedDir.includes('..') || normalizedDir.split('/').some(part => !part || part === '.')) return NextResponse.json({ error: 'invalid dir' }, { status: 400 });
+  const targetDir = path.resolve(DOCS_ASSETS, normalizedDir);
+  if (!targetDir.startsWith(`${path.resolve(DOCS_ASSETS)}${path.sep}`)) return NextResponse.json({ error: 'invalid dir' }, { status: 400 });
   ensureDir(targetDir);
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const filePath = path.join(targetDir, file.name);
+  const safeName = file.name.replace(/[\\/]/g, '_');
+  if (!safeName || safeName === '.' || safeName === '..') return NextResponse.json({ error: 'invalid filename' }, { status: 400 });
+  const filePath = path.join(targetDir, safeName);
   await writeFile(filePath, buffer);
 
-  const relativeUrl = `${path.basename(dir)}/${file.name}`;
+  const relativeUrl = `${path.basename(normalizedDir)}/${safeName}`;
   return NextResponse.json({ url: relativeUrl });
 }

@@ -21,7 +21,7 @@ export default function HomePage() {
                 const href = `/${routeFromStudy(estudo, tema)}`;
                 const capa = coverUrl(estudo, routeFromStudy(estudo, tema));
                 return (
-                  <Link className="card card-clickable" href={href} key={estudo.Exercicios}>
+                  <Link className="card card-clickable" href={href} key={href}>
                     <div className="card-media">
                       {capa ? <Image className="card-cover" src={capa} alt={estudo.Titulo} fill sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 360px" /> : <div className="small" style={{ padding: 12 }}>Sem imagem</div>}
                     </div>

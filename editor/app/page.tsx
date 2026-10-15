@@ -13,10 +13,9 @@ function getCapaUrl(e: EstudoRef): string {
   return '';
 }
 
-function mediaUrl(url: string, exercicios: string) {
+function mediaUrl(url: string, studyDir: string) {
   if (/^https?:\/\//i.test(url) || url.startsWith('/')) return url;
   if (url.startsWith('assets/')) return `${DOCS_BASE}/${url}`;
-  const studyDir = exercicios.replace(/\.json$/, '');
   return `${DOCS_BASE}/assets/${studyDir}/${url}`;
 }
 
@@ -42,17 +41,20 @@ export default function Home() {
     return s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
 
-  function routeFromExercises(exercicios: string) {
-    const withoutExtension = exercicios.replace(/\.json$/i, '');
-    const parts = withoutExtension.split('/').filter(Boolean);
-    return parts.at(-1) === parts.at(-2) ? parts.slice(0, -1).join('/') : withoutExtension;
+  function routeFromStudy(estudo: EstudoRef, tema?: Tema) {
+    const raw = estudo.Rota || estudo.Exercicios?.replace(/\.json$/i, '') || '';
+    const theme = tema?.Rota || raw.split('/')[0];
+    const relative = raw.startsWith(`${theme}/`) ? raw.slice(theme.length + 1) : raw.split('/').at(-1) === raw.split('/').at(-2) ? raw.split('/').slice(-2, -1)[0] : raw;
+    return `${theme}/${relative}`;
   }
 
-  function routeFromStudy(estudo: EstudoRef, tema?: Tema) {
-    const route = estudo.Rota || routeFromExercises(estudo.Exercicios);
-    if (!tema?.Rota) return route;
-    const parts = route.split('/').filter(Boolean);
-    return `${tema.Rota}/${parts.slice(1).join('/')}`;
+  function studyRelativeRoute(estudo: EstudoRef, tema: Tema) {
+    const full = routeFromStudy(estudo, tema);
+    return full.slice(`${tema.Rota || ''}/`.length);
+  }
+
+  function datasetName(estudo: EstudoRef, tema: Tema) {
+    return `${studyRelativeRoute(estudo, tema).split('/').at(-1) || 'estudo'}.json`;
   }
 
   async function saveTemaDetails(temaAntigo: Tema, nome: string, rota: string) {
@@ -66,35 +68,36 @@ export default function Home() {
     }
     const collision = catalog.itens.some(item => item !== temaAntigo && (item.Rota || slugify(item.Tema)) === rotaNova);
     if (collision) { alert('Essa rota já está sendo usada por outro tema.'); return; }
-    const updated: EstudosCatalog = {
-      ...catalog,
-      itens: catalog.itens.map(item => item !== temaAntigo ? item : { ...item, Tema: nomeNovo, Rota: rotaNova }),
-    };
-    await saveCatalog(updated);
+    const response = await fetch('/api/rename-theme', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tema: temaAntigo.Tema, nomeNovo, rotaNova }),
+    });
+    if (!response.ok) { const result = await response.json(); alert(result.error || 'Não foi possível atualizar o tema.'); return; }
+    const updated = await fetch('/api/catalog').then(r => r.json()) as EstudosCatalog;
+    setCatalog(updated);
     setTemaDrafts(previous => ({ ...previous, [temaAntigo.Tema]: nomeNovo }));
     setTemaRouteDrafts(previous => ({ ...previous, [temaAntigo.Tema]: rotaNova }));
   }
 
   async function saveStudyRoute(temaNome: string, exercicios: string, value: string) {
     if (!catalog) return;
+    const currentTheme = catalog.itens.find(item => item.Tema === temaNome);
+    const currentStudy = currentTheme?.Estudos.find(item => item.Exercicios === exercicios || item.Rota === exercicios);
     const rota = value.trim().replaceAll('\\', '/');
     const parts = rota.split('/').filter(Boolean);
-    if (!rota || rota.startsWith('/') || rota.endsWith('/') || rota.includes('..') || rota.toLowerCase().endsWith('.json') || parts.length < 2) {
+    if (!rota || rota.startsWith('/') || rota.endsWith('/') || rota.includes('..') || rota.toLowerCase().endsWith('.json')) {
       alert('Rota inválida. Use o formato tema/estudo, sem .json.');
       return;
     }
-    const collision = catalog.itens.some(d => d.Estudos.some(e => e.Exercicios !== exercicios && routeFromStudy(e, d) === parts.join('/')));
+    const collision = catalog.itens.some(d => d.Estudos.some(e => e !== currentStudy && `${d.Rota || slugify(d.Tema)}/${e.Rota || ''}` === `${currentTheme?.Rota || slugify(temaNome)}/${parts.join('/')}`));
     if (collision) {
       alert('Essa rota já está sendo usada por outro estudo.');
       return;
     }
-    const currentTheme = catalog.itens.find(item => item.Tema === temaNome);
-    const currentStudy = currentTheme?.Estudos.find(item => item.Exercicios === exercicios);
-    const currentRoute = currentStudy ? routeFromStudy(currentStudy, currentTheme) : undefined;
     const response = await fetch('/api/rename-estudo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tema: temaNome, exercicios, rotaNova: parts.join('/'), baseDir: currentRoute }),
+      body: JSON.stringify({ tema: temaNome, rota: currentStudy?.Rota, exercicios, rotaNova: parts.join('/') }),
     });
     const result = await response.json() as { error?: string; exercicios?: string; rota?: string };
     if (!response.ok) { alert(result.error || 'Não foi possível renomear o estudo.'); return; }
@@ -197,8 +200,8 @@ export default function Home() {
     if (!newTitulo.trim() || !newTemaTarget || !catalog) return;
     const temaSlug = catalog.itens.find(item => item.Tema === newTemaTarget)?.Rota || slugify(newTemaTarget);
     const est = slugify(newTitulo.trim());
-    const exercicios = `${temaSlug}/${est}.json`;
-    await fetch(`/api/dataset?path=${encodeURIComponent(est)}&route=${encodeURIComponent(temaSlug)}`, {
+    const exercicios = `${est}.json`;
+    await fetch(`/api/dataset?path=${encodeURIComponent(exercicios)}&route=${encodeURIComponent(`${temaSlug}/${est}`)}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ itens: [] }),
@@ -207,7 +210,7 @@ export default function Home() {
       ...catalog,
       itens: catalog.itens.map(d =>
         d.Tema === newTemaTarget
-          ? { ...d, Estudos: [...d.Estudos, { Titulo: newTitulo.trim(), Rota: `${temaSlug}/${est}`, Exercicios: exercicios }] }
+          ? { ...d, Estudos: [...d.Estudos, { Titulo: newTitulo.trim(), Rota: est }] }
           : d
       ),
     };
@@ -221,7 +224,7 @@ export default function Home() {
     const res = await fetch('/api/rename-estudo', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tema, exercicios, tituloNovo }),
+      body: JSON.stringify({ tema, rota: exercicios, tituloNovo }),
     });
     const { error } = await res.json();
     if (error) { alert('Erro: ' + error); return; }
@@ -298,11 +301,11 @@ export default function Home() {
                       <span className="text-sm text-slate-900">{e.Titulo}</span>
                     </div>
                     <div className="flex gap-3">
-                      <Link href={`/estudo/${slugify(d.Tema)}/${slugify(e.Titulo)}?path=${encodeURIComponent(e.Exercicios)}&route=${encodeURIComponent(routeFromStudy(e, d))}`}
+                      <Link href={`/estudo/${slugify(d.Tema)}/${slugify(e.Titulo)}?path=${encodeURIComponent(datasetName(e, d))}&route=${encodeURIComponent(routeFromStudy(e, d))}`}
                         className="text-xs text-blue-600 hover:text-blue-700">Editar</Link>
                       <button onClick={() => openCapa(d.Tema, e)}
                         className="text-xs text-purple-600 hover:text-purple-700">Capa</button>
-                      <button onClick={() => renameEstudo(d.Tema, e.Exercicios, e.Titulo)}
+                      <button onClick={() => renameEstudo(d.Tema, e.Rota || '', e.Titulo)}
                         className="text-xs text-amber-600 hover:text-amber-700">Renomear</button>
                       <button onClick={() => deleteEstudo(d.Tema, e.Titulo)}
                         className="text-xs text-red-600 hover:text-red-700">Excluir</button>
@@ -310,13 +313,13 @@ export default function Home() {
                   </div>
 
                   <div className="border-t border-slate-200 px-3 py-2 bg-white">
-                    <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`study-route-${encodeURIComponent(e.Exercicios)}`}>Rota pública</label>
+                    <label className="text-xs text-slate-600 block mb-0.5" htmlFor={`study-route-${encodeURIComponent(e.Rota || '')}`}>Rota pública</label>
                     <input
-                      id={`study-route-${encodeURIComponent(e.Exercicios)}`}
+                      id={`study-route-${encodeURIComponent(e.Rota || '')}`}
                       className="w-full bg-white border border-slate-200 rounded px-2 py-1 text-xs text-slate-900 outline-none focus:border-blue-500"
-                      value={routeDrafts[e.Exercicios] ?? routeFromStudy(e, d)}
-                      onChange={event => setRouteDrafts(previous => ({ ...previous, [e.Exercicios]: event.target.value }))}
-                      onBlur={event => saveStudyRoute(d.Tema, e.Exercicios, event.target.value)}
+                      value={routeDrafts[e.Rota || ''] ?? studyRelativeRoute(e, d)}
+                      onChange={event => setRouteDrafts(previous => ({ ...previous, [e.Rota || '']: event.target.value }))}
+                      onBlur={event => saveStudyRoute(d.Tema, e.Rota || '', event.target.value)}
                     />
                     <div className="text-[11px] text-slate-500 mt-1">A rota pública corresponde à pasta do estudo; ao alterá-la, a pasta e o dataset serão movidos para acompanhar a nova rota.</div>
                   </div>
@@ -352,7 +355,7 @@ export default function Home() {
                                     const res = await fetch('/api/rename', {
                                       method: 'POST',
                                       headers: { 'Content-Type': 'application/json' },
-                                      body: JSON.stringify({ oldUrl: capaUrl, newName, baseDir: e.Exercicios.replace(/\.json$/, '') }),
+                                      body: JSON.stringify({ oldUrl: capaUrl, newName, baseDir: routeFromStudy(e, d) }),
                                     });
                                     const { url, error } = await res.json();
                                     if (error) { alert('Erro: ' + error); return; }

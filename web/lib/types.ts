@@ -74,7 +74,7 @@ export type EstudoImagemItem = {
 export type EstudoRef = {
   Titulo: string;
   Rota?: string;
-  Exercicios: string;
+  Exercicios?: string;
   Imagem?: string | EstudoImagemItem[];
   Copyright?: CopyrightInfo;
 };

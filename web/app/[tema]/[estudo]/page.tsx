@@ -29,7 +29,7 @@ export default async function StudyPage({ params, searchParams }: PageProps) {
 
   let dataset;
   try {
-    dataset = readDataset(found.estudo.Exercicios, routeFromStudy(found.estudo, found.tema));
+    dataset = readDataset(found.estudo, found.tema);
   } catch {
     notFound();
   }

@@ -7,31 +7,25 @@
       "Estudos": [
         {
           "Titulo": "Axial",
-          "Rota": "osteologia/axial",
-          "Exercicios": "axial.json",
-          "Imagem": [
-            {
-              "url": "imagens/za-anatomia.png",
-              "Copyright": {
-                "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
-                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
-              }
+          "Rota": "axial",
+          "Imagem": [{
+            "url": "imagens/za-anatomia.png",
+            "Copyright": {
+              "licenca": "Z-Anatomy CC-BY-SA 4.0 / BodyParts3D CC BY-SA 2.1 JP",
+              "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
             }
-          ]
+          }]
         },
         {
           "Titulo": "Apendicular Superior",
-          "Rota": "osteologia/apendicular-superior",
-          "Exercicios": "apendicular-superior.json",
-          "Imagem": [
-            {
-              "url": "imagens/za-cingulo.png",
-              "Copyright": {
-                "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
-                "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
-              }
+          "Rota": "apendicular-superior",
+          "Imagem": [{
+            "url": "imagens/za-cingulo.png",
+            "Copyright": {
+              "licenca": "CC-BY-SA 4.0 / CC BY-SA 2.1 JP",
+              "fonte": "Z-Anatomy / BodyParts3D/Anatomography (DBCLS)"
             }
-          ]
+          }]
         }
       ]
     }

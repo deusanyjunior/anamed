@@ -1,66 +1,52 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import type { EstudosCatalog, EstudoRef, StudyDataset } from './types';
+import type { EstudosCatalog, EstudoRef, StudyDataset, Tema } from './types';
 
 export const ASSETS_DIR = path.join(process.cwd(), 'data');
 
 function assertSafeRelativePath(value: string) {
   const normalized = value.replaceAll('\\', '/');
-  if (!normalized || normalized.startsWith('/') || normalized.includes('..')) {
-    throw new Error('Caminho de asset inválido');
-  }
+  if (!normalized || normalized.startsWith('/') || normalized.split('/').some(part => !part || part === '..' || part === '.')) throw new Error('Caminho de asset inválido');
   return normalized;
 }
 
 export function readCatalog(): EstudosCatalog {
-  const file = path.join(ASSETS_DIR, 'estudos.json');
-  return JSON.parse(fs.readFileSync(file, 'utf8')) as EstudosCatalog;
+  return JSON.parse(fs.readFileSync(path.join(ASSETS_DIR, 'estudos.json'), 'utf8')) as EstudosCatalog;
 }
 
-export function routeFromExercises(exercicios: string): string {
-  const safe = assertSafeRelativePath(exercicios);
-  const withoutExtension = safe.replace(/\.json$/i, '');
-  const parts = withoutExtension.split('/').filter(Boolean);
-  const filename = parts.at(-1);
-  const parent = parts.at(-2);
-  if (filename && filename === parent) return parts.slice(0, -1).join('/');
-  return withoutExtension;
-}
-
-function assertSafeThemeRoute(value: string) {
+function safeSegment(value: string, label: string) {
   const normalized = value.replaceAll('\\', '/').trim();
-  if (!normalized || normalized.startsWith('/') || normalized.endsWith('/') || normalized.includes('/') || normalized.includes('..') || normalized.toLowerCase().endsWith('.json')) {
-    throw new Error('Rota de tema inválida');
-  }
+  if (!normalized || normalized.startsWith('/') || normalized.endsWith('/') || normalized.includes('..') || normalized.toLowerCase().endsWith('.json')) throw new Error(`${label} inválida`);
+  return normalized.split('/').filter(Boolean).join('/');
+}
+
+function slugify(value: string) {
+  return value.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+export function themeRoute(tema: Pick<Tema, 'Rota' | 'Tema'>) {
+  const fallback = tema.Rota || (tema as Tema & { Estudos?: EstudoRef[] }).Estudos?.[0]?.Exercicios?.split(/[\\/]/)[0] || slugify((tema as Tema & { Tema: string }).Tema);
+  return safeSegment(fallback, 'Rota de tema');
+}
+
+export function studyRelativeRoute(estudo: EstudoRef, tema?: Pick<Tema, 'Rota' | 'Tema'>): string {
+  const raw = estudo.Rota || estudo.Exercicios?.replace(/\.json$/i, '') || '';
+  const normalized = safeSegment(raw, 'Rota de estudo');
+  const prefix = tema?.Rota ? `${safeSegment(tema.Rota, 'Rota de tema')}/` : '';
+  if (prefix && normalized.startsWith(prefix)) return normalized.slice(prefix.length);
+  const parts = normalized.split('/');
+  if (tema?.Rota && parts.length > 1 && parts[0] === tema.Rota) return parts.slice(1).join('/');
   return normalized;
 }
 
-export function routeFromStudy(estudo: EstudoRef, tema?: { Rota?: string }): string {
-  const route = estudo.Rota ? assertSafeRoute(estudo.Rota) : routeFromExercises(estudo.Exercicios);
-  const parts = route.split('/').filter(Boolean);
-  return tema?.Rota ? `${assertSafeThemeRoute(tema.Rota)}/${parts.slice(1).join('/')}` : route;
+export function routeFromStudy(estudo: EstudoRef, tema?: Pick<Tema, 'Rota' | 'Tema'>): string {
+  const relative = studyRelativeRoute(estudo, tema);
+  return tema?.Rota ? `${themeRoute(tema)}/${relative}` : relative;
 }
 
-function assertSafeRoute(value: string) {
-  const normalized = value.replaceAll('\\', '/').trim();
-  const parts = normalized.split('/').filter(Boolean);
-  if (!normalized || normalized.startsWith('/') || normalized.endsWith('/') || normalized.includes('..') || normalized.toLowerCase().endsWith('.json') || parts.length < 2) {
-    throw new Error('Rota de estudo inválida');
-  }
-  return parts.join('/');
-}
-
-export function routePartsFromStudy(estudo: EstudoRef, tema?: { Rota?: string }) {
-  const route = routeFromStudy(estudo, tema);
-  const parts = route.split('/').filter(Boolean);
-  return { tema: parts[0], estudo: parts.slice(1).join('/') };
-}
-
-export function routePartsFromExercises(exercicios: string) {
-  const route = routeFromExercises(exercicios);
-  const parts = route.split('/').filter(Boolean);
-  if (parts.length < 2) throw new Error(`Exercicios inválido: ${exercicios}`);
-  return { tema: parts[0], estudo: parts.slice(1).join('/') };
+export function routePartsFromStudy(estudo: EstudoRef, tema?: Pick<Tema, 'Rota' | 'Tema'>) {
+  const route = routeFromStudy(estudo, tema).split('/').filter(Boolean);
+  return { tema: route[0], estudo: route.slice(1).join('/') };
 }
 
 export function allStudies(catalog = readCatalog()) {
@@ -74,32 +60,35 @@ export function findStudy(temaSlug: string, estudoSlug: string, catalog = readCa
   });
 }
 
-export function datasetPath(exercicios: string, studyRoute?: string) {
+function legacyDatasetPath(exercicios: string, studyRoute?: string) {
   const normalized = exercicios.replaceAll('\\', '/').trim();
-  if (!studyRoute || !normalized || normalized.includes('/') || normalized.includes('..') || !normalized.toLowerCase().endsWith('.json')) {
-    throw new Error('Exercicios deve ser apenas o nome do arquivo JSON; use Rota para a pasta.');
-  }
-  return `${studyRoute}/${normalized}`;
+  if (!normalized || !normalized.toLowerCase().endsWith('.json')) throw new Error('Dataset inválido');
+  if (normalized.includes('/')) return assertSafeRelativePath(normalized);
+  if (!studyRoute) throw new Error('Rota do estudo ausente');
+  return assertSafeRelativePath(`${studyRoute}/${normalized}`);
 }
 
-export function datasetDirectory(exercicios: string, studyRoute?: string) {
-  return datasetPath(exercicios, studyRoute).replace(/\/[^/]+$/, '');
+export function datasetPathForStudy(estudo: EstudoRef, tema: Tema) {
+  const route = routeFromStudy(estudo, tema);
+  const filename = estudo.Exercicios?.split(/[\\/]/).filter(Boolean).at(-1) || `${studyRelativeRoute(estudo, tema).split('/').at(-1)}.json`;
+  return assertSafeRelativePath(`${route}/${filename}`);
 }
 
-export function readDataset(exercicios: string, studyRoute?: string): StudyDataset {
-  const relative = assertSafeRelativePath(datasetPath(exercicios, studyRoute));
-  if (!relative.toLowerCase().endsWith('.json')) throw new Error('Dataset inválido');
-  const file = path.join(ASSETS_DIR, relative);
-  const resolved = path.resolve(file);
-  if (resolved !== ASSETS_DIR && !resolved.startsWith(`${path.resolve(ASSETS_DIR)}${path.sep}`)) {
-    throw new Error('Dataset fora da pasta de dados');
-  }
+/** Compatibilidade: aceita a referência antiga (basename + rota) e a nova referência estudo+tema. */
+export function datasetPath(value: EstudoRef | string, studyRouteOrTema?: string | Tema) {
+  if (typeof value !== 'string') return datasetPathForStudy(value, studyRouteOrTema as Tema);
+  return legacyDatasetPath(value, typeof studyRouteOrTema === 'string' ? studyRouteOrTema : undefined);
+}
+
+export function datasetDirectory(value: EstudoRef | string, studyRouteOrTema?: string | Tema) {
+  return datasetPath(value, studyRouteOrTema).replace(/\/[^/]+$/, '');
+}
+
+export function readDataset(value: EstudoRef | string, studyRouteOrTema?: string | Tema): StudyDataset {
+  const file = path.join(ASSETS_DIR, datasetPath(value, studyRouteOrTema));
   const raw = JSON.parse(fs.readFileSync(file, 'utf8')) as StudyDataset;
   if (!raw.grupos) return raw;
-  return {
-    ...raw,
-    itens: raw.grupos.flatMap(group => group.itens.map(item => ({ ...item, Grupo: group.Grupo }))),
-  };
+  return { ...raw, itens: raw.grupos.flatMap(group => group.itens.map(item => ({ ...item, Grupo: group.Grupo }))) };
 }
 
 export function imageUrl(url: string) {
@@ -112,6 +101,5 @@ export function coverUrl(estudo: EstudoRef, studyRoute?: string) {
   if (!value) return '';
   if (/^https?:\/\//i.test(value) || value.startsWith('/')) return value;
   if (value.startsWith('assets/')) return imageUrl(value);
-  const base = studyRoute ?? estudo.Exercicios.replace(/\/[^/]+$/, '');
-  return `/assets/${base}/${value}`;
+  return `/assets/${studyRoute ?? routeFromStudy(estudo)}/${value}`;
 }

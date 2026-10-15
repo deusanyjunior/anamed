@@ -1,71 +1,41 @@
 import fs from 'fs';
 import path from 'path';
-import { DOCS_ASSETS, readCatalog, readDataset } from './fs';
+import { DOCS_ASSETS, readCatalog, readDataset, studyRoute, datasetName } from './fs';
 
-type AssetReference = {
-  source: string;
-  itemId?: string;
-  item?: string;
-};
-
+type AssetReference = { source: string; itemId?: string; item?: string };
 function canonicalAssetUrl(value: string | undefined, studyDir: string) {
   if (!value || /^https?:\/\//i.test(value) || value.startsWith('/')) return value;
   if (value.startsWith('assets/')) return value;
   return `assets/${studyDir}/${value}`;
 }
-
 export function assetReferences(targetUrl: string): AssetReference[] {
   const references: AssetReference[] = [];
-  const catalog = readCatalog();
-
-  for (const tema of catalog.itens ?? []) {
-    for (const estudo of tema.Estudos ?? []) {
-      const studyDir = estudo.Exercicios.replace(/\\/g, '/').replace(/\/[^/]+$/, '');
-      const cover = typeof estudo.Imagem === 'string' ? estudo.Imagem : estudo.Imagem?.[0]?.url;
-      if (canonicalAssetUrl(cover, studyDir) === targetUrl) {
-        references.push({ source: `${tema.Tema} / ${estudo.Titulo} (capa)` });
-      }
-
-      try {
-        const dataset = readDataset(estudo.Exercicios, estudo.Rota);
-        dataset.itens.forEach((item, itemIndex) => {
-          item.Imagens?.forEach(image => {
-            if (canonicalAssetUrl(image.url, studyDir) === targetUrl) {
-              references.push({
-                source: estudo.Exercicios,
-                itemId: item.id ?? `item-${itemIndex + 1}`,
-                item: item.Item,
-              });
-            }
-          });
-        });
-      } catch {
-        // Um dataset inválido não deve impedir a verificação dos demais.
-      }
-    }
+  for (const tema of readCatalog().itens ?? []) for (const estudo of tema.Estudos ?? []) {
+    const studyDir = studyRoute(tema, estudo);
+    const cover = typeof estudo.Imagem === 'string' ? estudo.Imagem : estudo.Imagem?.[0]?.url;
+    if (canonicalAssetUrl(cover, studyDir) === targetUrl) references.push({ source: `${tema.Tema} / ${estudo.Titulo} (capa)` });
+    try {
+      const dataset = readDataset(datasetName(tema, estudo), studyDir);
+      dataset.itens.forEach((item, itemIndex) => item.Imagens?.forEach(image => {
+        if (canonicalAssetUrl(image.url, studyDir) === targetUrl) references.push({ source: `${tema.Tema} / ${estudo.Titulo}`, itemId: item.id ?? `item-${itemIndex + 1}`, item: item.Item });
+      }));
+    } catch { /* mantém a exclusão de um asset independente de outros datasets inválidos */ }
   }
-
   return references;
 }
-
 export function resolveAssetUrl(url: string) {
   if (!url.startsWith('assets/')) throw new Error('Somente assets locais podem ser removidos');
   const relative = url.slice('assets/'.length).replaceAll('\\', '/');
   if (!relative || relative.includes('..') || relative.startsWith('/')) throw new Error('Caminho de asset inválido');
-  const root = path.resolve(DOCS_ASSETS);
-  const resolved = path.resolve(root, relative);
+  const root = path.resolve(DOCS_ASSETS); const resolved = path.resolve(root, relative);
   if (!resolved.startsWith(`${root}${path.sep}`)) throw new Error('Asset fora da pasta de dados');
   return resolved;
 }
-
 export function listImages(dir: string) {
-  const root = path.resolve(DOCS_ASSETS);
-  const relative = dir.replace(/^assets\/?/, '').replaceAll('\\', '/');
+  const root = path.resolve(DOCS_ASSETS); const relative = dir.replace(/^assets\/?/, '').replaceAll('\\', '/');
   if (!relative || relative.includes('..') || relative.startsWith('/')) throw new Error('Diretório inválido');
   const resolved = path.resolve(root, relative);
   if (!resolved.startsWith(`${root}${path.sep}`)) throw new Error('Diretório fora da pasta de dados');
   if (!fs.existsSync(resolved)) return [];
-  return fs.readdirSync(resolved, { withFileTypes: true })
-    .filter(entry => entry.isFile() && /\.(png|jpe?g|gif|webp|svg)$/i.test(entry.name))
-    .map(entry => ({ name: entry.name, url: `${path.basename(relative)}/${entry.name}` }));
+  return fs.readdirSync(resolved, { withFileTypes: true }).filter(entry => entry.isFile() && /\.(png|jpe?g|gif|webp|svg)$/i.test(entry.name)).map(entry => ({ name: entry.name, url: `${path.basename(relative)}/${entry.name}` }));
 }

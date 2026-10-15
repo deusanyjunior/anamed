@@ -17,10 +17,13 @@ export async function POST(req: NextRequest) {
   const oldRel = safeRelative;
   const dir = path.dirname(oldRel);
   const oldPath = path.join(DOCS_ASSETS, oldRel);
-  const newPath = path.join(DOCS_ASSETS, dir, newName);
+  const cleanName = String(newName).trim();
+  if (!cleanName || cleanName.includes('/') || cleanName.includes('\\') || cleanName === '.' || cleanName === '..') return NextResponse.json({ error: 'nome inválido' }, { status: 400 });
+  const newPath = path.join(DOCS_ASSETS, dir, cleanName);
+  const root = path.resolve(DOCS_ASSETS);
+  if (!newPath.startsWith(`${root}${path.sep}`)) return NextResponse.json({ error: 'caminho inválido' }, { status: 400 });
 
   await rename(oldPath, newPath);
-
-  const newUrl = isLegacy ? `assets/${dir}/${newName}` : `${path.basename(dir)}/${newName}`;
+  const newUrl = isLegacy ? `assets/${dir}/${cleanName}` : `${path.basename(dir)}/${cleanName}`;
   return NextResponse.json({ url: newUrl });
 }

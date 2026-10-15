@@ -41,11 +41,14 @@ export async function POST(req: NextRequest) {
   const safeBase = baseName.replace(/[^a-zA-Z0-9._-]/g, '_') || 'imagem';
   const fileName = safeBase + (ext || '.png');
 
-  const targetDir = path.join(DOCS_ASSETS, dir);
+  const normalizedDir = String(dir).replaceAll('\\', '/').replace(/^\/+|\/+$/g, '');
+  if (!normalizedDir || normalizedDir.includes('..') || normalizedDir.split('/').some((part: string) => !part || part === '.')) return NextResponse.json({ error: 'invalid dir' }, { status: 400 });
+  const targetDir = path.resolve(DOCS_ASSETS, normalizedDir);
+  if (!targetDir.startsWith(`${path.resolve(DOCS_ASSETS)}${path.sep}`)) return NextResponse.json({ error: 'invalid dir' }, { status: 400 });
   ensureDir(targetDir);
 
   const buffer = Buffer.from(await res.arrayBuffer());
   await writeFile(path.join(targetDir, fileName), buffer);
 
-  return NextResponse.json({ url: `${path.basename(dir)}/${fileName}` });
+  return NextResponse.json({ url: `${path.basename(normalizedDir)}/${fileName}` });
 }

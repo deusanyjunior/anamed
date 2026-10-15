@@ -6,14 +6,14 @@ import { readDataset, writeDataset } from '@/lib/fs';
 export async function GET(req: NextRequest) {
   const p = req.nextUrl.searchParams.get('path');
   const route = req.nextUrl.searchParams.get('route') || undefined;
-  if (!p) return NextResponse.json({ error: 'missing path' }, { status: 400 });
+  if (!p || !route) return NextResponse.json({ error: 'missing path or route' }, { status: 400 });
   return NextResponse.json(readDataset(p, route));
 }
 
 export async function PUT(req: NextRequest) {
   const p = req.nextUrl.searchParams.get('path');
   const route = req.nextUrl.searchParams.get('route') || undefined;
-  if (!p) return NextResponse.json({ error: 'missing path' }, { status: 400 });
+  if (!p || !route) return NextResponse.json({ error: 'missing path or route' }, { status: 400 });
   const body = await req.json();
   writeDataset(p, body, route);
   return NextResponse.json({ ok: true });
